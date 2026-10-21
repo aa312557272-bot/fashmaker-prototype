@@ -4,11 +4,11 @@
 
 | 功能 | 文档 | 原型 |
 | --- | --- | --- |
-| 商品详情长图 | [detail-page-flow.md](detail-page-flow.md) | [index.html](https://aa312557272-bot.github.io/fashmaker-prototype/index.html) |
-| 商品套图 | [product-suite-flow.md](product-suite-flow.md) | [product-suite.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html) |
-| 商品生视频 | [product-video-flow.md](product-video-flow.md) | [product-video.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-video.html) |
-| 批量生图 | [batch-flow.md](batch-flow.md) | [batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html) |
-| 资产库与商品库 | [asset-library-flow.md](asset-library-flow.md) | [asset-library.html](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html) |
+| 商品详情长图 | [detail-page-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-detail-page-flow-md) | [index.html](https://aa312557272-bot.github.io/fashmaker-prototype/index.html) |
+| 商品套图 | [product-suite-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-product-suite-flow-md) | [product-suite.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html) |
+| 商品生视频 | [product-video-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-product-video-flow-md) | [product-video.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-video.html) |
+| 批量生图 | [batch-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-batch-flow-md) | [batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html) |
+| 资产库与商品库 | [asset-library-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-asset-library-flow-md) | [asset-library.html](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html) |
 
 ## 共同交互原则
 
