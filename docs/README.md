@@ -10,11 +10,13 @@
 | 批量生图 | [batch-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-batch-flow-md) | [batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html) |
 | 资产库与商品库 | [asset-library-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-asset-library-flow-md) | [asset-library.html](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html) |
 
+[开发字段字典与结果归档规则](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/developer-field-contract.md)列出所有页面的精确选项、默认值与商品结果关联规则。
+
 ## 共同交互原则
 
 1. 当前任务始终占据创作页面右侧工作区。历史记录只在点击顶部「历史」后以抽屉出现。
 2. 单品任务生成完成后可直接查看本次结果，点击「新建」开始下一次；历史中的「以此任务再次生成」将快照复制成新任务。
-3. 历史保存任务字段、输入素材、提示词或分镜与结果预览；资产库「AI生成」保存按件浏览的结果素材记录。
+3. 历史保存任务字段、输入素材、提示词或分镜与结果预览；每项生成结果进入资产库「AI生成」，引用商品库商品时还进入对应商品详情素材区。
 4. 批量任务从详情长图或套图页面进入；至少 3 个商品任务，二次确认后直接生图。批次历史按批次和商品任务两级查看。
 5. 当前 HTML 原型不调用真实生成模型；结果、下载和视频播放能力需在产品开发阶段接入真实服务。
 

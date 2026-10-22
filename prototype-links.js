@@ -16,7 +16,7 @@
   if(picker){const open=document.createElement('a');open.className='open-full-library';open.href='asset-library.html';open.textContent='打开完整资产库 →';open.title='前往资产库选择商品，再从商品详情打开当前创作工具';picker.prepend(open)}
   if(page==='batch.html')return;
   let incoming=null;try{if(window.name.startsWith('fashmaker-asset-product:'))incoming=JSON.parse(window.name.slice('fashmaker-asset-product:'.length))}catch(e){};
-  if(!incoming)return;window.name='';
+  if(!incoming)return;window.name='';window.FashLinkedProduct={id:incoming.id||null,name:incoming.name||''};
   const source=(incoming.images||[]).slice(0,16);
   if(page==='index.html'){
     images.splice(0,images.length,...source);renderUploads();if(typeof renderThumbs==='function')renderThumbs();
