@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | 商品详情长图 | [detail-page-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-detail-page-flow-md) | [index.html](https://aa312557272-bot.github.io/fashmaker-prototype/index.html) |
 | 商品套图 | [product-suite-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-product-suite-flow-md) | [product-suite.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html) |
+| AI 换装 / 改姿势 / 多模特 / 多商品 | [ai-tryon-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/ai-tryon-flow.md) | 本地原型 `ai-tryon.html`（尚未发布） |
 | 商品生视频 | [product-video-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-product-video-flow-md) | [product-video.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-video.html) |
 | 爆款复刻 · 结构复刻（可开发说明） | [viral-remix-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-viral-remix-flow-md) | [viral-remix.html](https://aa312557272-bot.github.io/fashmaker-prototype/viral-remix.html) |
 | 批量生图 | [batch-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-batch-flow-md) | [batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html) |
