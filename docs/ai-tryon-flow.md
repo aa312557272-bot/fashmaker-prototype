@@ -1,7 +1,7 @@
 # FashMaker AI 换装 · 功能与开发说明
 
 > 版本：2026-11-06。交付范围：已确认交互、字段约定与开发验收。  
-> 对应本地原型：`ai-tryon.html`，包含「换装 / 改姿势 / 多模特 / 多商品」四个页签。当前网页尚未同步发布到 GitHub Pages。  
+> 对应原型：[ai-tryon.html](https://aa312557272-bot.github.io/fashmaker-prototype/ai-tryon.html)，包含「换装 / 改姿势 / 多模特 / 多商品」四个页签。网页通过 GitHub Pages 发布，仍为静态演示原型。  
 > 精确字段枚举与默认值见 [developer-field-contract.md 第 7 节](developer-field-contract.md#7-ai-换装)。当前原型使用浏览器存储与演示图片，不代表真实 AI 服务或线上持久化已经接入。
 
 ## 1. 目标与范围
