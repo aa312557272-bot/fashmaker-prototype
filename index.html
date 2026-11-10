@@ -14,7 +14,7 @@
 @media(max-width:680px){.app{display:block}.sidebar{display:none}.config{height:auto;max-height:none;border-right:0}.config-content{padding:16px}.generate-dock{position:sticky;bottom:0}.workspace{min-height:75vh}.canvas{padding:16px}.results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.long-art{height:300px}.art-title{font-size:16px}.art-product{height:120px}.canvas-head p{line-height:1.6}.preview-layout{grid-template-columns:1fr}.preview-art{height:60vh}.task-line{align-items:flex-start}.results-actions{width:100%;margin-left:0}.top-actions .pill:not(.active){display:none}}
  .panel-title-name{white-space:nowrap;flex:none}.batch-link{display:inline-flex;align-items:center;justify-content:center;gap:5px;flex:none;margin-left:auto;border:1px solid #4a514c;border-radius:9px;background:#242925;color:#f1f4f1;padding:7px 9px;font-size:10px;white-space:nowrap;visibility:visible;opacity:1}.batch-link:hover{border-color:#4a8d68;color:#baf1cd}
 </style>
-<link rel="stylesheet" href="prototype-links.css"></head>
+<link rel="stylesheet" href="prototype-links.css?v=20261110-models-2"></head>
 <body>
 <main class="app">
  <aside class="sidebar">
@@ -89,7 +89,7 @@
 <div class="modal-backdrop" id="assetModal"><div class="modal"><div class="modal-head"><h2>从资产库选择商品素材</h2><button class="close-btn" data-close="assetModal"><i class="fa-solid fa-xmark"></i></button></div><div class="asset-grid" id="assetGrid"></div></div></div>
 <div class="modal-backdrop" id="previewModal"><div class="modal"><div class="modal-head"><h2 id="previewTitle">详情长图预览</h2><button class="close-btn" data-close="previewModal"><i class="fa-solid fa-xmark"></i></button></div><div class="preview-layout"><div class="preview-art" id="previewArt"></div><div class="preview-info"><h3 id="previewInfoTitle">转化优先版 · 荧光科技风</h3><p>围绕核心卖点设计完整的详情页长图结构，包含产品主视觉、功能利益点、材质细节、真实使用场景与购买理由。</p><span class="tag success">生成完成</span><button class="action-btn" id="previewDownload"><i class="fa-solid fa-download"></i>&nbsp; 下载此方案</button></div></div></div></div>
 <div class="toast" id="toast"></div>
-<script src="prototype-generated-assets.js"></script><script>
+<script src="prototype-generated-assets.js?v=20261110-models-2"></script><script>
 const photoHead='https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=1000&q=88';
 const photoDetail='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=88';
 const photoScene='https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1000&q=88';
@@ -132,5 +132,5 @@ document.getElementById('batchCreate').onclick=()=>{const ratioMap={'Auto':'Auto
 视觉风格：${activeMode==='custom'?document.getElementById('customDirection').value:selectedStyle}`,module:'smart'},tasks:[{name:'商品任务 1',productId:window.FashLinkedProduct?.id,productName:window.FashLinkedProduct?.name,images:images.slice(0,6).map(x=>({src:x.src,name:x.name})),sellingPoints:document.getElementById('sellingPoints').value.trim(),styleMode:activeMode==='custom'?'custom':'recommended',style:selectedStyle,customStyle:document.getElementById('customDirection').value}]};window.name='fashmaker-batch:'+JSON.stringify(payload);location.href='batch.html'};
 renderUploads();renderThumbs();renderAssets();renderResults();updateTask();
 </script>
-<script src="prototype-links.js"></script><script src="prototype-task-history.js"></script></body>
+<script src="shared-sidebar.js?v=20261110-layout-3"></script><script src="custom-models.js?v=20261110-layout-3"></script><script src="prototype-links.js?v=20261110-models-2"></script><script src="prototype-task-history.js?v=20261110-models-2"></script></body>
 </html>
