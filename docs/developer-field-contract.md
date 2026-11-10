@@ -272,3 +272,12 @@
 | 资产 | 每版本每图独立归档，source=图文笔记，type=image，demo=true，按productId同时出现在商品详情 | — |
 
 完整规则及差异见 [图文笔记流程](graphic-notes-flow.md)，后台完整提示词见 [图文笔记提示词](graphic-notes-prompt.md)。原型不理解输入指令、不生成真实图片、不向平台发布。
+
+
+## 自定义模型正式开发交付（v1.0）
+
+- [完整开发规格](custom-models-development.md)：字段、条件校验、空间权限、适配协议、HTTP接口、任务状态、幂等重试、密钥管理、结果归档及30条验收用例。
+- [配置流程与原型边界](custom-models-flow.md)。
+- [JSON Schema](contracts/custom-model-config.schema.json)：创建/编辑配置、能力、模型选择和生成请求的数据校验。
+
+文字继续使用FashMaker平台模型，仅开放客户图片/视频模型。正式开发以完整规格为准。本文档中的“当前原型”指本机已更新演示版本；本次只同步开发文档，GitHub现有HTML不代表这些目标已完成。正式服务使用后端安全存储和版本化适配器，不使用浏览器保存生产密钥。

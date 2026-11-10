@@ -1,0 +1,1225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fashmaker.example/schemas/custom-model-config-v1.json",
+  "title": "FashMaker custom model API contracts v1",
+  "description": "Select a $defs entry for each request DTO. Root validates ConfigCreate. Cross-field comparisons, trimming, endpoint origin/SSRF and workspace authorization also require server validation.",
+  "allOf": [
+    {
+      "$ref": "#/$defs/ConfigCreate"
+    }
+  ],
+  "$defs": {
+    "EndpointSet": {
+      "type": "object",
+      "properties": {
+        "generateUrl": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri",
+              "maxLength": 2048,
+              "pattern": "^https://[^/?#@]+(?::443)?(?:/[^?#]*)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "editUrl": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri",
+              "maxLength": 2048,
+              "pattern": "^https://[^/?#@]+(?::443)?(?:/[^?#]*)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "createUrl": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri",
+              "maxLength": 2048,
+              "pattern": "^https://[^/?#@]+(?::443)?(?:/[^?#]*)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "statusUrlTemplate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 2048,
+              "pattern": "^https://[^/?#@]+/[^?#]*\\{taskId\\}[^?#]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "cancelUrlTemplate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "maxLength": 2048,
+              "pattern": "^https://[^/?#@]+/[^?#]*\\{taskId\\}[^?#]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "probeUrl": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri",
+              "maxLength": 2048,
+              "pattern": "^https://[^/?#@]+(?::443)?(?:/[^?#]*)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "CapabilitySet": {
+      "type": "object",
+      "properties": {
+        "operations": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "textToImage",
+              "imageToImage",
+              "textToVideo",
+              "imageToVideo",
+              "avatarSpeech"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "maxItems": 3
+        },
+        "inputFormats": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "image/jpeg",
+              "image/png",
+              "image/webp"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true,
+          "maxItems": 3
+        },
+        "maxInputImages": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        },
+        "maxInputImageBytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10485760
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maxTotalInputImageBytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 167772160
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "outputFormats": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "image/png",
+              "image/jpeg",
+              "image/webp",
+              "video/mp4"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "maxItems": 3
+        },
+        "ratios": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "4:3",
+              "3:4",
+              "3:2",
+              "2:3",
+              "5:4",
+              "4:5",
+              "2:1",
+              "1:2",
+              "21:9",
+              "9:21",
+              "3:1",
+              "1:3"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "maxItems": 15
+        },
+        "resolutions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "1K",
+              "2K",
+              "4K",
+              "480P",
+              "720P",
+              "1080P"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "maxItems": 3
+        },
+        "durationSeconds": {
+          "type": "array",
+          "items": {
+            "enum": [
+              10,
+              15,
+              30,
+              60
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true,
+          "maxItems": 4
+        },
+        "maxOutputsPerRequest": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "maxPromptChars": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32000
+        },
+        "supportsAudioInput": {
+          "type": "boolean"
+        },
+        "maxAudioBytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20971520
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "supportsNativeAudio": {
+          "type": "boolean"
+        },
+        "supportsCancel": {
+          "type": "boolean"
+        },
+        "supportsIdempotency": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "operations",
+        "inputFormats",
+        "maxInputImages",
+        "maxInputImageBytes",
+        "maxTotalInputImageBytes",
+        "outputFormats",
+        "ratios",
+        "resolutions",
+        "durationSeconds",
+        "maxOutputsPerRequest",
+        "maxPromptChars",
+        "supportsAudioInput",
+        "maxAudioBytes",
+        "supportsNativeAudio",
+        "supportsCancel",
+        "supportsIdempotency"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "maxInputImages": {
+                "const": 0
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "inputFormats": {
+                "maxItems": 0
+              },
+              "maxInputImageBytes": {
+                "type": "null"
+              },
+              "maxTotalInputImageBytes": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "inputFormats": {
+                "minItems": 1
+              },
+              "maxInputImageBytes": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10485760
+              },
+              "maxTotalInputImageBytes": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 167772160
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "supportsAudioInput": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "maxAudioBytes": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 20971520
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "maxAudioBytes": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "GenerationDefaults": {
+      "type": "object",
+      "properties": {
+        "ratio": {
+          "enum": [
+            "1:1",
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "5:4",
+            "4:5",
+            "2:1",
+            "1:2",
+            "21:9",
+            "9:21",
+            "3:1",
+            "1:3"
+          ]
+        },
+        "resolution": {
+          "enum": [
+            "1K",
+            "2K",
+            "4K",
+            "480P",
+            "720P",
+            "1080P"
+          ]
+        },
+        "durationSeconds": {
+          "enum": [
+            10,
+            15,
+            30,
+            60
+          ]
+        },
+        "outputCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "ConfigCreate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50,
+          "pattern": "\\S"
+        },
+        "kind": {
+          "enum": [
+            "image",
+            "video"
+          ]
+        },
+        "adapterKey": {
+          "enum": [
+            "image-api-v1",
+            "video-gateway-v1"
+          ]
+        },
+        "modelId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150,
+          "pattern": "\\S"
+        },
+        "endpoints": {
+          "$ref": "#/$defs/EndpointSet"
+        },
+        "capabilities": {
+          "$ref": "#/$defs/CapabilitySet"
+        },
+        "generationDefaults": {
+          "$ref": "#/$defs/GenerationDefaults"
+        },
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "apiKey": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "^(?!\\s*$)(?!\\*+$)[^\\r\\n]+$"
+        }
+      },
+      "required": [
+        "name",
+        "kind",
+        "adapterKey",
+        "modelId",
+        "endpoints",
+        "capabilities",
+        "apiKey"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "image"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "adapterKey": {
+                "const": "image-api-v1"
+              },
+              "endpoints": {
+                "properties": {
+                  "createUrl": {
+                    "type": "null"
+                  },
+                  "statusUrlTemplate": {
+                    "type": "null"
+                  },
+                  "cancelUrlTemplate": {
+                    "type": "null"
+                  }
+                }
+              },
+              "capabilities": {
+                "properties": {
+                  "operations": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "textToImage",
+                        "imageToImage"
+                      ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "maxItems": 2
+                  },
+                  "outputFormats": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "image/png",
+                        "image/jpeg",
+                        "image/webp"
+                      ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "maxItems": 3
+                  },
+                  "resolutions": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "1K",
+                        "2K",
+                        "4K"
+                      ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "maxItems": 3
+                  },
+                  "durationSeconds": {
+                    "maxItems": 0
+                  },
+                  "supportsAudioInput": {
+                    "const": false
+                  },
+                  "supportsNativeAudio": {
+                    "const": false
+                  },
+                  "supportsCancel": {
+                    "const": false
+                  }
+                }
+              },
+              "generationDefaults": {
+                "not": {
+                  "required": [
+                    "durationSeconds"
+                  ]
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "adapterKey": {
+                "const": "video-gateway-v1"
+              },
+              "endpoints": {
+                "required": [
+                  "createUrl",
+                  "statusUrlTemplate"
+                ],
+                "properties": {
+                  "createUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048,
+                    "pattern": "^https://[^/?#@]+(?::443)?(?:/[^?#]*)?$"
+                  },
+                  "statusUrlTemplate": {
+                    "type": "string",
+                    "maxLength": 2048,
+                    "pattern": "^https://[^/?#@]+/[^?#]*\\{taskId\\}[^?#]*$"
+                  },
+                  "generateUrl": {
+                    "type": "null"
+                  },
+                  "editUrl": {
+                    "type": "null"
+                  }
+                }
+              },
+              "capabilities": {
+                "properties": {
+                  "operations": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "textToVideo",
+                        "imageToVideo",
+                        "avatarSpeech"
+                      ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "maxItems": 3
+                  },
+                  "outputFormats": {
+                    "const": [
+                      "video/mp4"
+                    ]
+                  },
+                  "resolutions": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "480P",
+                        "720P",
+                        "1080P"
+                      ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "maxItems": 3
+                  },
+                  "durationSeconds": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        10,
+                        15,
+                        30,
+                        60
+                      ]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "maxItems": 4
+                  },
+                  "maxOutputsPerRequest": {
+                    "const": 1
+                  }
+                }
+              },
+              "generationDefaults": {
+                "properties": {
+                  "outputCount": {
+                    "const": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "capabilities": {
+                "properties": {
+                  "operations": {
+                    "contains": {
+                      "const": "textToImage"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "endpoints": {
+                "required": [
+                  "generateUrl"
+                ],
+                "properties": {
+                  "generateUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048,
+                    "pattern": "^https://[^/?#@]+(?::443)?(?:/[^?#]*)?$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "capabilities": {
+                "properties": {
+                  "operations": {
+                    "contains": {
+                      "const": "imageToImage"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "endpoints": {
+                "required": [
+                  "editUrl"
+                ],
+                "properties": {
+                  "editUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 2048,
+                    "pattern": "^https://[^/?#@]+(?::443)?(?:/[^?#]*)?$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "capabilities": {
+                "properties": {
+                  "operations": {
+                    "contains": {
+                      "enum": [
+                        "imageToImage",
+                        "imageToVideo",
+                        "avatarSpeech"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "capabilities": {
+                "properties": {
+                  "maxInputImages": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 16
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "capabilities": {
+                "properties": {
+                  "operations": {
+                    "contains": {
+                      "const": "avatarSpeech"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "capabilities": {
+                "properties": {
+                  "maxInputImages": {
+                    "type": "integer",
+                    "minimum": 2,
+                    "maximum": 16
+                  },
+                  "supportsAudioInput": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "capabilities": {
+                "properties": {
+                  "supportsCancel": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "endpoints": {
+                "required": [
+                  "cancelUrlTemplate"
+                ],
+                "properties": {
+                  "cancelUrlTemplate": {
+                    "type": "string",
+                    "maxLength": 2048,
+                    "pattern": "^https://[^/?#@]+/[^?#]*\\{taskId\\}[^?#]*$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ConfigPatch": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50,
+          "pattern": "\\S"
+        },
+        "modelId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150,
+          "pattern": "\\S"
+        },
+        "endpoints": {
+          "$ref": "#/$defs/EndpointSet"
+        },
+        "capabilities": {
+          "$ref": "#/$defs/CapabilitySet"
+        },
+        "generationDefaults": {
+          "$ref": "#/$defs/GenerationDefaults"
+        },
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "apiKey": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8192,
+              "pattern": "^(?!\\s*$)(?!\\*+$)[^\\r\\n]+$"
+            },
+            {
+              "const": ""
+            }
+          ]
+        }
+      },
+      "required": [],
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "ModelSelection": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "enum": [
+            "platform",
+            "custom"
+          ]
+        },
+        "modelConfigId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "platformModelId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expectedRevision": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "custom"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "modelConfigId",
+              "expectedRevision"
+            ],
+            "properties": {
+              "modelConfigId": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "expectedRevision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "platformModelId": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "required": [
+              "platformModelId"
+            ],
+            "properties": {
+              "platformModelId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 150
+              },
+              "modelConfigId": {
+                "type": "null"
+              },
+              "expectedRevision": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "GenerationParameters": {
+      "type": "object",
+      "properties": {
+        "ratio": {
+          "enum": [
+            "1:1",
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "3:2",
+            "2:3",
+            "5:4",
+            "4:5",
+            "2:1",
+            "1:2",
+            "21:9",
+            "9:21",
+            "3:1",
+            "1:3"
+          ]
+        },
+        "resolution": {
+          "enum": [
+            "1K",
+            "2K",
+            "4K",
+            "480P",
+            "720P",
+            "1080P"
+          ]
+        },
+        "durationSeconds": {
+          "enum": [
+            10,
+            15,
+            30,
+            60
+          ]
+        },
+        "outputCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        }
+      },
+      "required": [
+        "ratio",
+        "resolution",
+        "outputCount"
+      ],
+      "additionalProperties": false
+    },
+    "GenerationRequest": {
+      "type": "object",
+      "properties": {
+        "clientRequestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "feature": {
+          "enum": [
+            "detail-image",
+            "product-suite",
+            "batch-image",
+            "tryon",
+            "repose",
+            "multi-model",
+            "multi-product",
+            "outfit-separation",
+            "graphic-notes",
+            "product-video",
+            "viral-remix",
+            "digital-human",
+            "model-integration-test"
+          ]
+        },
+        "operation": {
+          "enum": [
+            "textToImage",
+            "imageToImage",
+            "textToVideo",
+            "imageToVideo",
+            "avatarSpeech"
+          ]
+        },
+        "modelSelection": {
+          "$ref": "#/$defs/ModelSelection"
+        },
+        "parameters": {
+          "$ref": "#/$defs/GenerationParameters"
+        },
+        "inputAssetIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "minItems": 0,
+          "uniqueItems": true,
+          "maxItems": 16
+        },
+        "audioAssetId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contentPlanId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "contentPlanRevision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "productId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "batchId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "parentTaskId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acknowledgement": {
+          "type": "object",
+          "properties": {
+            "thirdPartyUsage": {
+              "type": "boolean"
+            },
+            "configRevision": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "thirdPartyUsage",
+            "configRevision"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "clientRequestId",
+        "feature",
+        "operation",
+        "modelSelection",
+        "parameters",
+        "inputAssetIds",
+        "contentPlanId",
+        "contentPlanRevision",
+        "acknowledgement"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "operation": {
+                "enum": [
+                  "textToVideo",
+                  "imageToVideo",
+                  "avatarSpeech"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "parameters": {
+                "required": [
+                  "durationSeconds"
+                ],
+                "properties": {
+                  "outputCount": {
+                    "const": 1
+                  },
+                  "resolution": {
+                    "enum": [
+                      "480P",
+                      "720P",
+                      "1080P"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "parameters": {
+                "not": {
+                  "required": [
+                    "durationSeconds"
+                  ]
+                },
+                "properties": {
+                  "resolution": {
+                    "enum": [
+                      "1K",
+                      "2K",
+                      "4K"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "modelSelection": {
+                "properties": {
+                  "source": {
+                    "const": "custom"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "acknowledgement": {
+                "properties": {
+                  "thirdPartyUsage": {
+                    "const": true
+                  },
+                  "configRevision": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "acknowledgement": {
+                "properties": {
+                  "thirdPartyUsage": {
+                    "const": false
+                  },
+                  "configRevision": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
