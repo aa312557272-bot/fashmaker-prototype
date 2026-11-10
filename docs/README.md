@@ -7,6 +7,8 @@
 | 商品详情长图 | [detail-page-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-detail-page-flow-md) | [index.html](https://aa312557272-bot.github.io/fashmaker-prototype/index.html) |
 | 商品套图 | [product-suite-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-product-suite-flow-md) | [product-suite.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html) |
 | AI 换装 / 改姿势 / 多模特 / 多商品 | [ai-tryon-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/ai-tryon-flow.md) | [ai-tryon.html](https://aa312557272-bot.github.io/fashmaker-prototype/ai-tryon.html) |
+| 图文笔记 Agent | [graphic-notes-flow.md](graphic-notes-flow.md) | [graphic-notes.html](https://aa312557272-bot.github.io/fashmaker-prototype/graphic-notes.html) |
+| 数字人口播 | [digital-human-flow.md](digital-human-flow.md) | [digital-human.html](https://aa312557272-bot.github.io/fashmaker-prototype/digital-human.html) |
 | 商品生视频 | [product-video-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-product-video-flow-md) | [product-video.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-video.html) |
 | 爆款复刻 · 结构复刻（可开发说明） | [viral-remix-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-viral-remix-flow-md) | [viral-remix.html](https://aa312557272-bot.github.io/fashmaker-prototype/viral-remix.html) |
 | 批量生图 | [batch-flow.md](https://gist.github.com/aa312557272-bot/d6c17fa4a4b7d57e34b2b97ca6f71d84#file-batch-flow-md) | [batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html) |
@@ -33,3 +35,17 @@
 | 商品标题、描述、卖点、关联素材 | 资产库「商品」 | 本机浏览器本地存储 |
 
 这些存储方式仅用于原型演示；上线时应统一由服务端任务与资产模型管理。
+
+
+## 后台提示词文档
+
+- [数字人口播 · 后台提示词](digital-human-prompt.md)：商品文字生成、口播三方案、三种人物来源、我的声音、AI 人物参考图与内容包装提示词，版本 v1.2。
+
+
+同类基于用户素材和后台预设提示词的图片或视频功能，均需同步交付独立提示词 Markdown 文档，并随需求修改更新。
+
+数字人口播历史现按原上传文件、创作输入、生成内容、内容包装、分发设置及历次生成记录分区展示。新上传文件保留原始字节供本机下载；旧记录仅有预览时明确说明。完整规则见 [数字人口播历史说明](digital-human-flow.md#8-完整历史详情与原文件本次修订)。
+
+- [图文笔记 Agent · 后台提示词](graphic-notes-prompt.md)：完整对话生成与配图提示词，v1.0；直接工作台入口、三种预览、版本、历史及模拟发布见[流程](graphic-notes-flow.md)。
+
+图文笔记例外：按用户修订，历史仅保存图文结果及必要关联、时间与发布状态，不保存对话、生成要求和输入素材快照，旧历史自动清理上述输入字段；其他功能仍沿用完整任务历史。

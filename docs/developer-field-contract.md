@@ -11,7 +11,7 @@
 | `taskId` / `batchId` | 来源任务及批次 ID；重复生成产生新任务 ID。 |
 | `assetId` | 每张生成图或视频各有唯一 ID；同一个资产记录可同时在 AI 生成列表和所属商品详情中展示，不复制二进制文件。 |
 | `assetType` | `image` / `video`；详情长图为一张 `image`，套图逐张建 `image`，批量按各商品任务逐张建资产。 |
-| `source` | 商品详情长图 / 商品套图 / 商品生视频 / AI 换装 / AI 改姿势 / AI 多模特试穿 / AI 多商品试穿 / 爆款复刻 / 批量商品主图 / 批量详情图。 |
+| `source` | 商品详情长图 / 商品套图 / 商品生视频 / AI 换装 / AI 改姿势 / AI 多模特试穿 / AI 多商品试穿 / 数字人口播 / 图文笔记 / 爆款复刻 / 批量商品主图 / 批量详情图。 |
 
 生成成功时先落库资产，再建立 `productId → assetId` 关联；更新历史任务结果引用。商品有 ID 时，结果同时显示在「资产库 → 素材 → AI 生成」和「资产库 → 商品 → 对应商品详情 → 素材」；无商品 ID 时只进入 AI 生成，不靠同名或相似图片猜测归属。失败或取消不建结果资产。商品详情删除关联素材，只解除关联；从 AI 生成删除资产时，同步移除商品详情中的同一结果引用。商品被删除时，生成资产及历史仍应保留，原商品引用转为空。页面刷新和跨入口跳转后关联仍应存在。
 
@@ -196,3 +196,79 @@
 | 输出 | source=AI 多商品试穿；各自assetId/taskId/productId/productName，inputName保存商品输入图名 | — |
 
 不把多张商品图合为一套穿搭，不共享全局productId。结果逐项关联各自商品；无关联项仅进入AI生成。历史保存全部goods、模特、AI参数及设置/内容/结果。新建清空当前任务，复制历史新建taskId；生成中禁止切换和编辑，完成后只读。当前未接入真实生成服务。
+
+
+## 9. 数字人口播
+
+对应 [流程与改版差异](digital-human-flow.md)、[后台提示词 v1.2](digital-human-prompt.md)。不提供项目列表，沿用左侧配置、右侧当前任务、顶部历史抽屉。
+
+| 字段 | 选项 / 限制 | 默认 |
+| --- | --- | --- |
+| taskId / productId | 新任务 UUID；商品仅库选择/商品详情赋稳定 ID，纯上传为空 | 新 UUID / null |
+| 商品图 images | 1–6 张；JPG/JPEG、PNG、WEBP，每张 ≤10 MB；预览压缩最长边 1200px JPEG，原文件单独保留；库选择替换，上传追加 | 空 |
+| 商品名称 productName | 必填，最多 100 字符，历史保存生成时名称快照 | 空 |
+| sellingPoints / requirements | 卖点、创作要求，各 2000 字符选填 | 空 |
+| duration | 15 / 30 / 60 秒；目标时长，实际仅估算，不是精确成片承诺 | 30 秒 |
+| style | 种草活泼 / 专业介绍 / 自然分享 | 种草活泼 |
+| audience | 选填 200 字符 | 空 |
+| 生成方式 | 商品生成；链接识别仅提示待开放，不切换提交来源 | 商品生成 |
+| avatarMode / avatar | upload 本地上传、library 素材库、ai AI生成；单图，上传规格同商品图；保存 id/name/src/source/可选assetId/config；切换来源清空当前人物 | upload / null |
+| avatarConfig | gender 女性/男性，age 青年/中年/老年，appearance 东亚/欧美/南亚/非洲/拉美，body 标准/纤瘦/健美/丰满，details最多500字符；修改使当前AI参考图失效，需点击生成 | 女性/青年/东亚/标准/空 |
+| ratio | 9:16 / 16:9 / 1:1 | 9:16 |
+| voice | 爽快思思 2.0、VV 2.0、小何 2.0、云舟 2.0、通用女声、通用男声、开朗青年、质朴青年；均中文，不支持克隆/试听；弹窗另有「我的声音」 | 通用女声 |
+| voiceRef / 我的声音 | id/name/source(preset或mine)/sample；新建名称1–50字符，样本MP3/WAV/M4A ≤5MB；独立IndexedDB保存，任务复制完整声音快照；取消选择不应用 | 通用女声/preset |
+| music | 可选一份 MP3/WAV/M4A ≤5 MB，保存 name/src/mime；重复上传替换；可清除 | null |
+| scripts / selected | 每批 3 份，每份最多 3000 字符；单选非空文案；估计秒数=向上取整(去首尾空白字数/4) | 空 / null |
+| pack.title / titles | 标题最多 100 字符，3 个模板候选；可编辑 | 生成的第一候选 |
+| pack.copy | 最多 3000 字符，可编辑 | 已确认口播 |
+| pack.covers / cover | 商品图封面、数字人封面、至多一张上传封面；上传格式与大小同商品图；单选 | 商品图封面 |
+| pack.tags | 最多 10 个；每个 20 字符；去首尾空白和前置 #，区分大小写去重；可移除 | 商品名称前20字符、日常好物、商品分享 |
+| distribution.channels | 抖音 / 小红书 / 视频号 / 快手，多选；全部为未连接演示 | 空 |
+| distribution.overrides | 每渠道可分别覆盖 title（100字符）、copy（3000字符）；未覆盖字段跟随通用包装；封面与标签共用 | 空 |
+| mode / time | now 立即 / scheduled 定时；定时必须未来本机时间；不执行调度 | now / 空 |
+| submission | 模拟提交时保存时间、方式、封面、标签、所选渠道与各自最终标题/文案 | 空 |
+| 输出 | type=video，source=数字人口播，demo=true；仅数字人图演示封面，无真实视频 | — |
+
+生成前保存全部实际输入与修改后的口播；完成后只读左侧，在右侧编辑包装与分发。新建清空所有输入/结果/商品关联，历史复制保留输入/三方案/选中项，清除结果、包装与分发，产生新任务 ID。独立 IndexedDB 历史和共享本机 localStorage 结果资产，无云端持久化。包装和分发更新同一历史任务，不重复创建资产；有商品 ID 时同一结果同时进入 AI 生成与对应商品详情。
+
+截图未给出完整枚举与上限；此节为重做原型明确的新口径。与截图的真人视频上传、创建音色、平台已登录、真实播放器和发布按钮不同，当前支持三种来源的人物图、预设与我的声音样本选择、未连接渠道与明确的模拟发布。生成、包装和发布服务均待接入。
+
+数字人口播修订：默认人物为空；口播方案仍只校验商品，提交视频额外要求人物图。AI人物为固定占位图，无真实模型调用；我的声音仅保存样本，不做克隆。新建恢复本地上传来源及空形象，不删除声音库。历史复用兼容旧预设形象记录。
+
+### 9.1 AI 生成文字
+
+- 入口位于商品名称标签右侧；至少1张商品图可点击，无需预先填写名称。生成中和任务完成后禁用。
+- 一次填入 productName（≤100字符）、sellingPoints（≤2000字符）、requirements（≤2000字符）；可重复覆盖、手动编辑。已有名称与卖点作为演示模板依据保留，创作要求由已有输入及参数组织。不会改变productId。
+- 成功使旧scripts/selected失效；失败保留原值。textGeneration保存version=v1.2、demo、generatedAt、input、output，随历史存储与复制，新建为null。
+- 当前为本地模板，无真实识别或AI服务；正式接入按 [后台提示词](digital-human-prompt.md) 执行。
+
+### 9.2 完整历史快照
+
+| 字段 | 规则 |
+| --- | --- |
+| uploadedFiles[] | id/name/mime/size/lastModified/src/preview/kind；src为原始文件data URL，preview为压缩图或音频；原文件下载使用src。商品图、人物、自定义封面通过originalId关联；已应用声音、音乐保留原音频。移除/替换当前素材不删除任务内原文件。 |
+| generationLog[] | id/kind/label/createdAt/data；追加保存product-text、avatar、scripts、script-edited、video、package、submission。所有历史批次可读展开，不覆盖旧生成内容。 |
+| pack | 完整当前标题、标题候选、文案、标签、全部封面与选择；重新生成前后分别追加日志。 |
+| distribution | 完整渠道开关与覆盖、发布方式/时间/状态；历史按保存的通用包装解析每渠道最终内容，不从当前编辑任务读取。submission为提交时不可变快照，另记历次提交日志。 |
+
+首次文字/人物/方案生成即存创作任务；视频成功后更新同taskId。打开历史、新建、历史复用前保存已有生成内容的当前任务。历史采用原文件、创作输入、生成内容、包装、分发、历次生成六个分区；旧记录缺原文件/批次明确标识，不伪造恢复。复制历史保留原文件和输入，清空旧generationLog、结果、包装和分发。纯原文件上传而未生成内容的草稿暂不归档。仍为本机IndexedDB，无线上持久化。
+
+## 10. 图文笔记 Agent
+
+| 字段 | 选项 / 限制 | 默认 |
+| --- | --- | --- |
+| 入口 | 左侧图文笔记直接进入对话工作台，无任务列表页 | 空白新任务 |
+| images | 0–9 张 JPG/JPEG/PNG/WEBP，单张 ≤10 MB；本地每次替换全部，保存最长边 1200px JPEG；商品库带入最多9张 | 空 |
+| productId / productName | 仅商品库或商品详情入口带入稳定ID；上传或清空解除关联 | null / 空 |
+| request | 去首尾空白后1–2000字符；Enter发送，Shift+Enter换行 | 空 |
+| mode | full 全文模式、grid 平铺模式、cover 封面预览 | full |
+| versions / active | 每次发送新版本，含id、createdAt、title、body、tags、images、assetIds、demo；request仅当前页内存使用，不持久化；active为0起版本索引 | [] / 0 |
+| 输出 | 标题、正文、话题、按输入顺序配图；无素材时4张SVG风格示意；封面为首图 | 模板演示 |
+| 下载 | 当前版本完整JSON，含全部配图数据 | 生成后启用 |
+| 发布平台 | 小红书、抖音、微博、哔哩哔哩、微信公众号、快手、Instagram、TikTok；多选，至少1项 | 小红书 |
+| publications | id、version、versionId、platforms、createdAt、status=demo-submitted；仅本机记录，无真实发送 | [] |
+| 生成锁定 | 素材、输入、新建、历史、版本、发布、下载均锁定；预览模式可切换 | 非生成中 |
+| 历史 | IndexedDB fashmaker-graphic-notes / tasks，仅各版本图文结果及关联ID、时间、发布状态；不存对话、生成要求、输入快照；查看仅恢复结果，新建清空；v2自动清理旧记录输入 | 空 |
+| 资产 | 每版本每图独立归档，source=图文笔记，type=image，demo=true，按productId同时出现在商品详情 | — |
+
+完整规则及差异见 [图文笔记流程](graphic-notes-flow.md)，后台完整提示词见 [图文笔记提示词](graphic-notes-prompt.md)。原型不理解输入指令、不生成真实图片、不向平台发布。
