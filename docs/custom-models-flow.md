@@ -43,3 +43,8 @@
 [完整开发规格](custom-models-development.md)定义正式服务的全部配置字段、条件校验、空间权限、适配协议、HTTP接口、任务状态、幂等重试、密钥管理、结果归档及M01–M30验收。配套[JSON Schema](contracts/custom-model-config.schema.json)可供后端和测试使用。
 
 本页此前的localStorage/sessionStorage、image-api/video-task和格式检查属于当前静态原型；正式开发采用规格中的服务端安全存储、image-api-v1/video-gateway-v1及真实测试契约。此次只交付开发文档，HTML并未因此获得真实模型调用、空间默认、能力检测或线上存储。既有商品与任务规则继续适用；具体接入行为以新规格为准。
+
+
+## 2026-11-12 模型管理补齐
+
+原「自定义模型」入口升级为独立[模型管理页面](../model-management.html)。已实现本机图片/视频分类、平台/自定义列表、搜索筛选、默认设置、启停、详情、编辑删除、格式检查与试生成流程；新增字段与精确口径见[模型管理流程](model-management-flow.md)，试生成文本见[提示词](model-management-prompt.md)。检查成功仅format_valid，不等于真实连接passed；未引入真实模型调用、能力探测或线上密钥存储。本修订替代此前“尚无独立管理页面/默认设置”的当前原型描述，正式服务要求不变。

@@ -1,6 +1,6 @@
 # FashMaker 商品内容创作原型文档
 
-本目录记录最新原型的页面字段、任务状态、历史、资产归档与开发交付。文档统一链接到本仓库 `main` 分支，不再使用旧 Gist 副本；原型链接指向同步后的 GitHub Pages。最近更新：2026-11-10。
+本目录记录最新原型的页面字段、任务状态、历史、资产归档与开发交付。文档统一链接到本仓库 `main` 分支，不再使用旧 Gist 副本；原型链接指向同步后的 GitHub Pages。最近更新：2026-11-12。
 
 当前 HTML 为静态交互演示，使用本机浏览器存储，不调用真实 AI 服务。开发文档中的正式服务目标不代表已上线。
 
@@ -16,7 +16,7 @@
 | 爆款复刻 · 结构复刻 | [viral-remix-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/viral-remix-flow.md) | [viral-remix.html](https://aa312557272-bot.github.io/fashmaker-prototype/viral-remix.html?v=20261110-layout-4) |
 | 批量生图 | [batch-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/batch-flow.md) | [batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html?v=20261110-layout-4) |
 | 资产库与商品库 | [asset-library-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/asset-library-flow.md) | [asset-library.html](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html?v=20261110-layout-4) |
-| 自定义图片 / 视频模型 | [custom-models-development.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/custom-models-development.md) | [模型配置入口](https://aa312557272-bot.github.io/fashmaker-prototype/index.html?modelSettings=1&v=20261110-layout-4) |
+| 自定义图片 / 视频模型 | [custom-models-development.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/custom-models-development.md) | [模型管理](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html?v=20261112-model-management) |
 
 自定义模型的[配置流程](custom-models-flow.md)、[完整字段与接口规格](custom-models-development.md)及[JSON Schema](contracts/custom-model-config.schema.json)为同一交付，完整规格包含 30 条验收用例。文字固定使用 FashMaker 平台模型，客户只配置图片和视频模型。
 
@@ -53,3 +53,8 @@
 - [自定义模型 JSON Schema](contracts/custom-model-config.schema.json)：类型与字段校验；跨字段、安全、能力及租户规则仍由服务端校验。
 
 基于用户素材和后台预设提示词的图片/视频功能，规则变更须同步对应 `*-prompt.md`。自定义模型接入沿用业务提示词，不单独改变生成内容规则。
+
+
+## 模型管理页面（2026-11-12）
+
+[模型管理原型](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html?v=20261112-model-management)已补齐图片/视频页签、平台/自定义列表、搜索及筛选、详情、默认模型、启停、添加/编辑/删除、检查及试生成流程。[交互与本地字段](model-management-flow.md)、[试生成提示词与边界](model-management-prompt.md)和[正式开发规格](custom-models-development.md)分别说明已实现演示与待接入服务。文字仍固定平台模型。

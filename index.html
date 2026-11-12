@@ -132,5 +132,5 @@ document.getElementById('batchCreate').onclick=()=>{const ratioMap={'Auto':'Auto
 视觉风格：${activeMode==='custom'?document.getElementById('customDirection').value:selectedStyle}`,module:'smart'},tasks:[{name:'商品任务 1',productId:window.FashLinkedProduct?.id,productName:window.FashLinkedProduct?.name,images:images.slice(0,6).map(x=>({src:x.src,name:x.name})),sellingPoints:document.getElementById('sellingPoints').value.trim(),styleMode:activeMode==='custom'?'custom':'recommended',style:selectedStyle,customStyle:document.getElementById('customDirection').value}]};window.name='fashmaker-batch:'+JSON.stringify(payload);location.href='batch.html'};
 renderUploads();renderThumbs();renderAssets();renderResults();updateTask();
 </script>
-<script src="shared-sidebar.js?v=20261110-layout-3"></script><script src="custom-models.js?v=20261110-layout-3"></script><script src="prototype-links.js?v=20261110-models-2"></script><script src="prototype-task-history.js?v=20261110-models-2"></script></body>
+<script src="shared-sidebar.js?v=20261112-model-management"></script><script src="custom-models.js?v=20261112-model-management"></script><script src="prototype-links.js?v=20261110-models-2"></script><script src="prototype-task-history.js?v=20261110-models-2"></script></body>
 </html>
