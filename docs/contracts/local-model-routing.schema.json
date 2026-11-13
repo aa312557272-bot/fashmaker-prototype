@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FashMaker browser-local models and defaults v1.1",
+  "description": "Local prototype only. Validate keys together as an export; reference existence, kind matching and enabled status require runtime validation. Never include API keys.",
+  "type": "object",
+  "required": [
+    "models",
+    "preferences"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "models": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/LocalModel"
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "image": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^custom-"
+        },
+        "video": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^custom-"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^custom-"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "LocalModel": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "protocol",
+        "endpoint",
+        "modelId"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^custom-"
+        },
+        "kind": {
+          "enum": [
+            "image",
+            "video",
+            "text"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "protocol": {
+          "enum": [
+            "image-api",
+            "video-task",
+            "text-chat"
+          ]
+        },
+        "endpoint": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "modelId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "updatedAt": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "testStatus": {
+          "enum": [
+            "untested",
+            "format_valid",
+            "failed"
+          ]
+        },
+        "lastTest": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/LocalRecord"
+            }
+          ]
+        },
+        "lastTrial": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/LocalRecord"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "image"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "protocol": {
+                "const": "image-api"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "video"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "protocol": {
+                "const": "video-task"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "text"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "protocol": {
+                "const": "text-chat"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "LocalRecord": {
+      "type": "object",
+      "required": [
+        "at",
+        "message",
+        "demo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "at": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "message": {
+          "type": "string"
+        },
+        "demo": {
+          "const": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3575 @@
+{
+  "checkedAt": "2026-11-11",
+  "scope": "用户给定旧商品目录、Apifox llms.txt全目录、当前电商开放平台公开API和开发文档。非小程序、聚光广告或社区账号开放能力的整套目录。",
+  "coverage": {
+    "currentApis": 111,
+    "currentGuides": 37,
+    "apifoxPages": 114,
+    "legacyAttempted": 127,
+    "legacyReadable": 61,
+    "legacyEmpty": 63,
+    "legacyFailed": 3
+  },
+  "review": "全目录与用途梳理，核心授权/类目/素材/商品/消息精读；非核心模块未逐字段验证；未使用真实店铺调用写接口，未逐图识别。原文仅本机缓存。",
+  "entries": [
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取分类列表",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5747&apiNavigationId=35&gatewayId=103&gatewayVersionId=1661&id=1&apiParentNavigationId=14",
+      "navigationMethod": "common.getCategories",
+      "detailPath": "/ark/common.getCategories",
+      "updateTime": "2026-09-24T03:17:42.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "由末级分类获取规格（新）",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5744&apiNavigationId=37&gatewayId=103&gatewayVersionId=1661&id=2&apiParentNavigationId=14",
+      "navigationMethod": "common.getVariations",
+      "detailPath": "/ark/common.getVariations",
+      "updateTime": "2025-09-22T07:33:57.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "由末级分类获取属性",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5749&apiNavigationId=56&gatewayId=103&gatewayVersionId=1661&id=3&apiParentNavigationId=14",
+      "navigationMethod": "common.getAttributeLists",
+      "detailPath": "/ark/common.getAttributeLists",
+      "updateTime": "2026-09-10T07:22:04.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "由属性获取属性值",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5748&apiNavigationId=57&gatewayId=103&gatewayVersionId=1661&id=4&apiParentNavigationId=14",
+      "navigationMethod": "common.getAttributeValues",
+      "detailPath": "/ark/common.getAttributeValues",
+      "updateTime": "2026-01-12T06:58:41.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取快递公司信息",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5746&apiNavigationId=58&gatewayId=103&gatewayVersionId=1661&id=5&apiParentNavigationId=14",
+      "navigationMethod": "common.getExpressCompanyList",
+      "detailPath": "/ark/common.getExpressCompanyList",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取物流方案列表",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5745&apiNavigationId=59&gatewayId=103&gatewayVersionId=1661&id=6&apiParentNavigationId=14",
+      "navigationMethod": "common.getLogisticsList",
+      "detailPath": "/ark/common.getLogisticsList",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "运费模版列表",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5816&apiNavigationId=60&gatewayId=103&gatewayVersionId=1661&id=7&apiParentNavigationId=14",
+      "navigationMethod": "common.getCarriageTemplateList",
+      "detailPath": "/ark/common.getCarriageTemplateList",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "运费模版详情",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5815&apiNavigationId=61&gatewayId=103&gatewayVersionId=1661&id=8&apiParentNavigationId=14",
+      "navigationMethod": "common.getCarriageTemplate",
+      "detailPath": "/ark/common.getCarriageTemplate",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取品牌信息",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5965&apiNavigationId=62&gatewayId=103&gatewayVersionId=1661&id=9&apiParentNavigationId=14",
+      "navigationMethod": "common.brandSearch",
+      "detailPath": "/ark/common.brandSearch",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取物流模式列表",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5964&apiNavigationId=63&gatewayId=103&gatewayVersionId=1661&id=10&apiParentNavigationId=14",
+      "navigationMethod": "common.logisticsMode",
+      "detailPath": "/ark/common.logisticsMode",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取地址信息",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=9618&apiNavigationId=64&gatewayId=103&gatewayVersionId=1661&id=11&apiParentNavigationId=14",
+      "navigationMethod": "common.getNestZone",
+      "detailPath": "/ark/common.getNestZone",
+      "updateTime": "2026-01-09T06:53:17.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取老版本商家授权信息",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=6487&apiNavigationId=65&gatewayId=103&gatewayVersionId=1661&id=12&apiParentNavigationId=14",
+      "navigationMethod": "common.getSellerKeyInfo",
+      "detailPath": "/ark/common.getSellerKeyInfo",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "cc资质检查",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29209&apiNavigationId=66&gatewayId=103&gatewayVersionId=1661&id=13&apiParentNavigationId=14",
+      "navigationMethod": "common.ccCheck",
+      "detailPath": "/ark/common.ccCheck",
+      "updateTime": "2023-06-06T11:01:46.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "商品标题类目预测",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29202&apiNavigationId=67&gatewayId=103&gatewayVersionId=1661&id=14&apiParentNavigationId=14",
+      "navigationMethod": "common.categoryMatch",
+      "detailPath": "/ark/common.categoryMatch",
+      "updateTime": "2026-10-16T09:00:51.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "批量获取发货时间规则",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=22012&apiNavigationId=99&gatewayId=103&gatewayVersionId=1661&id=22&apiParentNavigationId=14",
+      "navigationMethod": "common.getDeliveryRule",
+      "detailPath": "/ark/common.getDeliveryRule",
+      "updateTime": "2026-01-14T06:45:48.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取地址信息（新）",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=23755&apiNavigationId=100&gatewayId=103&gatewayVersionId=1661&id=23&apiParentNavigationId=14",
+      "navigationMethod": "common.getZones",
+      "detailPath": "/ark/common.getZones",
+      "updateTime": "2022-11-02T07:34:31.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取商家地址库",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=23756&apiNavigationId=101&gatewayId=103&gatewayVersionId=1661&id=24&apiParentNavigationId=14",
+      "navigationMethod": "common.getAddressRecord",
+      "detailPath": "/ark/common.getAddressRecord",
+      "updateTime": "2022-11-02T07:34:31.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取预测类目（新）",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=30496&apiNavigationId=255&gatewayId=103&gatewayVersionId=1661&id=94&apiParentNavigationId=14",
+      "navigationMethod": "common.categoryMatchV2",
+      "detailPath": "/ark.xiaohongshu.com/ark/open_api/v3/common/categorymatchv2",
+      "updateTime": "2026-10-19T08:59:55.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "判断文本中是否含有违禁词",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=31356&apiNavigationId=261&gatewayId=165&gatewayVersionId=2804&id=95&apiParentNavigationId=14",
+      "navigationMethod": "common.checkForbiddenKeyword",
+      "detailPath": "/api/openapi/common/checkforbiddenkeyword",
+      "updateTime": "2023-10-24T06:37:18.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查看账号模板列表",
+      "category": "公共API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=40987&apiNavigationId=339&gatewayId=103&gatewayVersionId=1661&id=118&apiParentNavigationId=14",
+      "navigationMethod": "common.listAccountTemplate",
+      "detailPath": "/ark/common.listAccountTemplate",
+      "updateTime": "2026-01-06T09:57:59.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "订单列表",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27241&apiNavigationId=183&gatewayId=103&gatewayVersionId=1661&id=25&apiParentNavigationId=15",
+      "navigationMethod": "order.getOrderList",
+      "detailPath": "/ark/order.getOrderList",
+      "updateTime": "2026-08-18T07:38:09.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "订单详情",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27242&apiNavigationId=184&gatewayId=103&gatewayVersionId=1661&id=26&apiParentNavigationId=15",
+      "navigationMethod": "order.getOrderDetail",
+      "detailPath": "/ark/order.getOrderDetail",
+      "updateTime": "2026-09-04T09:43:20.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "订单收件人信息",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27240&apiNavigationId=185&gatewayId=103&gatewayVersionId=1661&id=27&apiParentNavigationId=15",
+      "navigationMethod": "order.getOrderReceiverInfo",
+      "detailPath": "/ark/order.getOrderReceiverInfo",
+      "updateTime": "2026-01-06T08:19:29.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "修改订单备注",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27236&apiNavigationId=186&gatewayId=103&gatewayVersionId=1661&id=28&apiParentNavigationId=15",
+      "navigationMethod": "order.modifySellerMarkInfo",
+      "detailPath": "/ark/order.modifySellerMarkInfo",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": " 订单发货",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27235&apiNavigationId=187&gatewayId=103&gatewayVersionId=1661&id=29&apiParentNavigationId=15",
+      "navigationMethod": "order.orderDeliver",
+      "detailPath": "/ark/order.orderDeliver",
+      "updateTime": "2025-05-28T08:28:09.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "修改快递单号",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=40685&apiNavigationId=188&gatewayId=103&gatewayVersionId=1661&id=30&apiParentNavigationId=15",
+      "navigationMethod": "order.modifyOrderExpressInfo",
+      "detailPath": "/ark/order.modifyOrderExpressInfo",
+      "updateTime": "2025-11-10T13:22:37.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "订单物流轨迹",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27239&apiNavigationId=189&gatewayId=103&gatewayVersionId=1661&id=31&apiParentNavigationId=15",
+      "navigationMethod": "order.getOrderTracking",
+      "detailPath": "/ark/order.getOrderTracking",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "海关申报信息",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27243&apiNavigationId=190&gatewayId=103&gatewayVersionId=1661&id=32&apiParentNavigationId=15",
+      "navigationMethod": "order.getOrderDeclareInfo",
+      "detailPath": "/ark/order.getOrderDeclareInfo",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "批量上传序列号",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=40323&apiNavigationId=315&gatewayId=103&gatewayVersionId=1661&id=110&apiParentNavigationId=15",
+      "navigationMethod": "order.batchBindSkuIdentifyInfo",
+      "detailPath": "/ark/order.batchBindSkuIdentifyInfo",
+      "updateTime": "2026-09-04T09:54:15.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "跨境清关支持口岸",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27238&apiNavigationId=193&gatewayId=103&gatewayVersionId=1661&id=35&apiParentNavigationId=15",
+      "navigationMethod": "order.getSupportedPortList",
+      "detailPath": "/ark/order.getSupportedPortList",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "跨境重推支付单",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27234&apiNavigationId=194&gatewayId=103&gatewayVersionId=1661&id=36&apiParentNavigationId=15",
+      "navigationMethod": "order.resendBondedPaymentRecord",
+      "detailPath": "/ark/order.resendBondedPaymentRecord",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "跨境商品备案信息查询",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27244&apiNavigationId=196&gatewayId=103&gatewayVersionId=1661&id=38&apiParentNavigationId=15",
+      "navigationMethod": "order.getCustomsInfo",
+      "detailPath": "/ark/order.getCustomsInfo",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "小包批次创建",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27245&apiNavigationId=197&gatewayId=103&gatewayVersionId=1661&id=39&apiParentNavigationId=15",
+      "navigationMethod": "order.createTransferBatch",
+      "detailPath": "/ark/order.createTransferBatch",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "开票列表查询",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29204&apiNavigationId=198&gatewayId=103&gatewayVersionId=1661&id=40&apiParentNavigationId=15",
+      "navigationMethod": "invoice.getInvoiceList",
+      "detailPath": "/ark/invoice.getInvoiceList",
+      "updateTime": "2026-01-09T09:23:58.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "开票结果回传（正向蓝票开具）",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29205&apiNavigationId=199&gatewayId=103&gatewayVersionId=1661&id=41&apiParentNavigationId=15",
+      "navigationMethod": "invoice.confirmInvoice",
+      "detailPath": "/ark/invoice.confirmInvoice",
+      "updateTime": "2025-09-10T07:17:08.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "发票冲红（逆向冲红）",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29203&apiNavigationId=200&gatewayId=103&gatewayVersionId=1661&id=42&apiParentNavigationId=15",
+      "navigationMethod": "invoice.reverseInvoice",
+      "detailPath": "/ark/invoice.reverseInvoice",
+      "updateTime": "2023-06-06T11:01:46.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "批量解密",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29208&apiNavigationId=201&gatewayId=103&gatewayVersionId=1661&id=43&apiParentNavigationId=15",
+      "navigationMethod": "data.batchDecrypt",
+      "detailPath": "/ark/data.batchDecrypt",
+      "updateTime": "2025-12-01T12:48:47.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "批量脱敏",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29207&apiNavigationId=202&gatewayId=103&gatewayVersionId=1661&id=44&apiParentNavigationId=15",
+      "navigationMethod": "data.batchDesensitise",
+      "detailPath": "/ark/data.batchDesensitise",
+      "updateTime": "2025-11-10T11:57:44.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": " 批量获取索引串",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29206&apiNavigationId=203&gatewayId=103&gatewayVersionId=1661&id=45&apiParentNavigationId=15",
+      "navigationMethod": "data.batchIndex",
+      "detailPath": "/ark/data.batchIndex",
+      "updateTime": "2023-06-06T11:01:46.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取KOS员工数据 ",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34050&apiNavigationId=272&gatewayId=165&gatewayVersionId=6302&id=96&apiParentNavigationId=15",
+      "navigationMethod": "businessdata.getKosData",
+      "detailPath": "/api/openapi/businessdata/getkosdata",
+      "updateTime": "2025-08-05T14:25:25.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "创建三方商品备案信息",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34872&apiNavigationId=287&gatewayId=278&gatewayVersionId=6249&id=106&apiParentNavigationId=15",
+      "navigationMethod": "order.createItemCustomsInfo",
+      "detailPath": "/api/openapi/order/createitemcustomsinfo",
+      "updateTime": "2024-06-24T11:22:26.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "订单充值结果回传接口",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=40804&apiNavigationId=337&gatewayId=103&gatewayVersionId=1661&id=117&apiParentNavigationId=15",
+      "navigationMethod": "order.rechargeResult",
+      "detailPath": "/ark/order.rechargeResult",
+      "updateTime": "2025-12-24T17:00:43.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "补发包裹",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41781&apiNavigationId=355&gatewayId=103&gatewayVersionId=1661&id=126&apiParentNavigationId=15",
+      "navigationMethod": "order.addSupplementPackage",
+      "detailPath": "/ark/order.addSupplementPackage",
+      "updateTime": "2026-07-09T04:01:59.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "卡券发货",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41866&apiNavigationId=360&gatewayId=103&gatewayVersionId=818&id=128&apiParentNavigationId=15",
+      "navigationMethod": "order.couponDelivery",
+      "detailPath": "/ark/order.couponDelivery",
+      "updateTime": "2026-09-21T10:00:43.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "卡券核销回传",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41867&apiNavigationId=361&gatewayId=103&gatewayVersionId=1661&id=129&apiParentNavigationId=15",
+      "navigationMethod": "order.couponVerify",
+      "detailPath": "/ark/order.couponVerify",
+      "updateTime": "2026-09-21T10:02:42.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "卡券列表查询",
+      "category": "订单API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41868&apiNavigationId=362&gatewayId=103&gatewayVersionId=1661&id=130&apiParentNavigationId=15",
+      "navigationMethod": "order.couponList",
+      "detailPath": "/ark/order.couponList",
+      "updateTime": "2026-09-21T10:07:18.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取售后列表（旧）",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5698&apiNavigationId=204&gatewayId=103&gatewayVersionId=1661&id=46&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.listAfterSaleApi",
+      "detailPath": "/ark/afterSale.listAfterSaleApi",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "售后详情（旧）",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=5699&apiNavigationId=205&gatewayId=103&gatewayVersionId=1661&id=47&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.getAfterSaleDetail",
+      "detailPath": "/ark/afterSale.getAfterSaleDetail",
+      "updateTime": "2021-08-03T08:22:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "售后审核（新）",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=17603&apiNavigationId=206&gatewayId=103&gatewayVersionId=1661&id=48&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.auditReturns",
+      "detailPath": "/ark/afterSale.auditReturnsNew",
+      "updateTime": "2026-09-04T05:22:45.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "售后确认收货（新）",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=17602&apiNavigationId=207&gatewayId=103&gatewayVersionId=1661&id=49&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.confirmReceive",
+      "detailPath": "/ark/afterSale.confirmReceiveNew",
+      "updateTime": "2026-09-04T05:23:05.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "售后换货确认收货并发货",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=21309&apiNavigationId=208&gatewayId=103&gatewayVersionId=1661&id=50&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.receiveAndShip",
+      "detailPath": "/ark/afterSale.receiveAndShipRequest",
+      "updateTime": "2023-06-05T10:46:58.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": " 获取售后拒绝原因",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=30109&apiNavigationId=209&gatewayId=165&gatewayVersionId=2804&id=51&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.rejectReasons",
+      "detailPath": "/api/openapi/aftersale/rejectreasons",
+      "updateTime": "2023-09-26T08:52:13.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": " 获取售后列表（新）",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=30115&apiNavigationId=210&gatewayId=165&gatewayVersionId=2804&id=52&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.listAfterSaleInfos",
+      "detailPath": "/api/openapi/aftersale/listaftersaleinfos",
+      "updateTime": "2026-09-04T05:31:31.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取售后详情（新）",
+      "category": "售后API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=30038&apiNavigationId=211&gatewayId=165&gatewayVersionId=2804&id=53&apiParentNavigationId=16",
+      "navigationMethod": "afterSale.getAfterSaleInfo",
+      "detailPath": "/api/openapi/aftersale/getaftersaleinfo",
+      "updateTime": "2026-09-04T05:30:40.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "商品列表完整版",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27228&apiNavigationId=221&gatewayId=103&gatewayVersionId=1661&id=63&apiParentNavigationId=17",
+      "navigationMethod": "product.getDetailSkuList",
+      "detailPath": "/ark/product.getDetailSkuList",
+      "updateTime": "2026-09-24T03:19:04.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "更新物流方案",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27222&apiNavigationId=222&gatewayId=103&gatewayVersionId=1661&id=64&apiParentNavigationId=17",
+      "navigationMethod": "product.updateSkuLogisticsPlan",
+      "detailPath": "/ark/product.updateSkuLogisticsPlan",
+      "updateTime": "2024-09-23T08:56:31.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "商品上下架",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27223&apiNavigationId=223&gatewayId=103&gatewayVersionId=1661&id=65&apiParentNavigationId=17",
+      "navigationMethod": "product.updateSkuAvailable",
+      "detailPath": "/ark/product.updateSkuAvailable",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "创建ITEM（即将废弃）",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27232&apiNavigationId=224&gatewayId=103&gatewayVersionId=1661&id=66&apiParentNavigationId=17",
+      "navigationMethod": "product.createItemV2",
+      "detailPath": "/ark/product.createItemV3",
+      "updateTime": "2025-02-26T11:46:03.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "更新ITEM",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27224&apiNavigationId=225&gatewayId=103&gatewayVersionId=1661&id=67&apiParentNavigationId=17",
+      "navigationMethod": "product.updateItemV2",
+      "detailPath": "/ark/product.updateItemV3",
+      "updateTime": "2025-02-26T11:47:33.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": " 删除ITEM",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27230&apiNavigationId=226&gatewayId=103&gatewayVersionId=1661&id=68&apiParentNavigationId=17",
+      "navigationMethod": "product.deleteItemV2",
+      "detailPath": "/ark/product.deleteItemNew",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "创建SKU（即将废弃）",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27231&apiNavigationId=227&gatewayId=103&gatewayVersionId=1661&id=69&apiParentNavigationId=17",
+      "navigationMethod": "product.createSkuV2",
+      "detailPath": "/ark/product.createSkuNew",
+      "updateTime": "2023-06-06T07:26:52.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "更新SKU",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27221&apiNavigationId=228&gatewayId=103&gatewayVersionId=1661&id=70&apiParentNavigationId=17",
+      "navigationMethod": "product.updateSkuV2",
+      "detailPath": "/ark/product.updateSkuNew",
+      "updateTime": "2023-03-15T08:30:32.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "删除SKU",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27229&apiNavigationId=229&gatewayId=103&gatewayVersionId=1661&id=71&apiParentNavigationId=17",
+      "navigationMethod": "product.deleteSkuV2",
+      "detailPath": "/ark/product.deleteSkuNew",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询Item列表",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27226&apiNavigationId=230&gatewayId=103&gatewayVersionId=1661&id=72&apiParentNavigationId=17",
+      "navigationMethod": "product.searchItemList",
+      "detailPath": "/ark/product.searchItemList",
+      "updateTime": "2026-07-09T08:31:52.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取ITEM详情",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27227&apiNavigationId=231&gatewayId=103&gatewayVersionId=1661&id=73&apiParentNavigationId=17",
+      "navigationMethod": "product.getItemInfo",
+      "detailPath": "/ark/product.getItemInfo",
+      "updateTime": "2026-09-01T08:48:57.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "修改价格",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27220&apiNavigationId=232&gatewayId=103&gatewayVersionId=1661&id=74&apiParentNavigationId=17",
+      "navigationMethod": "product.updateSkuPrice",
+      "detailPath": "/ark/product.updateSkuPrice",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "修改商品主图、主图视频",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27225&apiNavigationId=233&gatewayId=103&gatewayVersionId=1661&id=75&apiParentNavigationId=17",
+      "navigationMethod": "product.updateItemImage",
+      "detailPath": "/ark/product.updateItemImage",
+      "updateTime": "2023-03-10T12:35:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "创建商品Item+Sku（新）",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=38757&apiNavigationId=305&gatewayId=103&gatewayVersionId=1661&id=108&apiParentNavigationId=17",
+      "navigationMethod": "product.createItemAndSku",
+      "detailPath": "/ark/product.createItemAndSku",
+      "updateTime": "2026-09-24T03:14:18.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "更新商品Item+Sku（新）",
+      "category": "商品API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=38758&apiNavigationId=306&gatewayId=103&gatewayVersionId=1661&id=109&apiParentNavigationId=17",
+      "navigationMethod": "product.updateItemAndSku",
+      "detailPath": "/ark/product.updateItemAndSku",
+      "updateTime": "2026-09-24T03:14:48.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取商品库存",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27265&apiNavigationId=234&gatewayId=103&gatewayVersionId=1661&id=76&apiParentNavigationId=18",
+      "navigationMethod": "inventory.getSkuStock",
+      "detailPath": "/ark/inventory.getSkuStock",
+      "updateTime": "2024-10-25T04:03:09.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "同步库存",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27263&apiNavigationId=235&gatewayId=103&gatewayVersionId=1661&id=77&apiParentNavigationId=18",
+      "navigationMethod": "inventory.syncSkuStock",
+      "detailPath": "/ark/inventory.syncSkuStock",
+      "updateTime": "2024-10-25T04:02:14.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "增减库存",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=27264&apiNavigationId=236&gatewayId=103&gatewayVersionId=1661&id=78&apiParentNavigationId=18",
+      "navigationMethod": "inventory.incSkuStock",
+      "detailPath": "/ark/inventory.incSkuStock",
+      "updateTime": "2024-10-25T03:51:40.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "获取商品库存V2",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34182&apiNavigationId=273&gatewayId=165&gatewayVersionId=2804&id=97&apiParentNavigationId=18",
+      "navigationMethod": "inventory.getSkuStockV2",
+      "detailPath": "/api/openapi/inventory/getskustockv2",
+      "updateTime": "2024-10-17T09:37:40.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "同步库存V2",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34181&apiNavigationId=274&gatewayId=165&gatewayVersionId=2804&id=98&apiParentNavigationId=18",
+      "navigationMethod": "inventory.syncSkuStockV2",
+      "detailPath": "/api/openapi/inventory/syncskustockv2",
+      "updateTime": "2025-12-02T10:05:30.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "创建仓库",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34461&apiNavigationId=279&gatewayId=278&gatewayVersionId=6249&id=99&apiParentNavigationId=18",
+      "navigationMethod": "warehouse.create",
+      "detailPath": "/api/openapi/warehouse/create",
+      "updateTime": "2024-04-28T02:57:18.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "修改仓库",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34462&apiNavigationId=280&gatewayId=278&gatewayVersionId=6249&id=100&apiParentNavigationId=18",
+      "navigationMethod": "warehouse.update",
+      "detailPath": "/api/openapi/warehouse/update",
+      "updateTime": "2024-04-28T02:58:16.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "仓库列表",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34451&apiNavigationId=281&gatewayId=278&gatewayVersionId=6249&id=101&apiParentNavigationId=18",
+      "navigationMethod": "warehouse.list",
+      "detailPath": "/api/openapi/warehouse/list",
+      "updateTime": "2024-04-16T09:05:39.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "仓库详情",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34459&apiNavigationId=282&gatewayId=278&gatewayVersionId=6249&id=102&apiParentNavigationId=18",
+      "navigationMethod": "warehouse.info",
+      "detailPath": "/api/openapi/warehouse/info",
+      "updateTime": "2024-04-20T02:11:46.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "设置仓库覆盖地区",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34465&apiNavigationId=283&gatewayId=278&gatewayVersionId=6249&id=103&apiParentNavigationId=18",
+      "navigationMethod": "warehouse.setCoverage",
+      "detailPath": "/api/openapi/warehouse/setcoverage",
+      "updateTime": "2024-04-20T02:26:23.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "设置仓库优先级",
+      "category": "库存API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=34467&apiNavigationId=284&gatewayId=278&gatewayVersionId=6249&id=104&apiParentNavigationId=18",
+      "navigationMethod": "warehouse.setPriority",
+      "detailPath": "/api/openapi/warehouse/setpriority",
+      "updateTime": "2024-04-20T02:27:32.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "素材列表",
+      "category": "素材中心API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=14418&apiNavigationId=237&gatewayId=103&gatewayVersionId=1661&id=79&apiParentNavigationId=19",
+      "navigationMethod": "material.queryMaterial",
+      "detailPath": "/ark/material.queryMaterial",
+      "updateTime": "2026-08-26T06:29:51.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "上传素材",
+      "category": "素材中心API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=14416&apiNavigationId=238&gatewayId=103&gatewayVersionId=1661&id=80&apiParentNavigationId=19",
+      "navigationMethod": "material.uploadMaterial",
+      "detailPath": "/ark/material.uploadMaterial",
+      "updateTime": "2025-12-02T09:55:12.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "修改素材",
+      "category": "素材中心API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=14417&apiNavigationId=239&gatewayId=103&gatewayVersionId=1661&id=81&apiParentNavigationId=19",
+      "navigationMethod": "material.updateMaterial",
+      "detailPath": "/ark/material.updateMaterial",
+      "updateTime": "2021-12-16T04:31:24.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "删除素材",
+      "category": "素材中心API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=14419&apiNavigationId=240&gatewayId=103&gatewayVersionId=1661&id=82&apiParentNavigationId=19",
+      "navigationMethod": "material.deleteMaterial",
+      "detailPath": "/ark/material.deleteMaterial",
+      "updateTime": "2021-12-16T04:31:24.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询电子面单订购关系",
+      "category": "物流API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29631&apiNavigationId=241&gatewayId=278&gatewayVersionId=6249&id=83&apiParentNavigationId=20",
+      "navigationMethod": "express.queryEbillSubscribes",
+      "detailPath": "/api/openapi/express/queryebillsubscribes",
+      "updateTime": "2024-10-28T11:20:34.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询电子面单模板列表",
+      "category": "物流API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29632&apiNavigationId=242&gatewayId=278&gatewayVersionId=6249&id=84&apiParentNavigationId=20",
+      "navigationMethod": "express.queryEbillTemplates",
+      "detailPath": "/api/openapi/express/queryebilltemplates",
+      "updateTime": "2025-09-09T03:49:48.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "批量取号",
+      "category": "物流API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29636&apiNavigationId=243&gatewayId=278&gatewayVersionId=6249&id=85&apiParentNavigationId=20",
+      "navigationMethod": "express.createEbillOrders",
+      "detailPath": "/api/openapi/express/createebillorders",
+      "updateTime": "2026-08-11T03:30:54.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "更新面单",
+      "category": "物流API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29635&apiNavigationId=244&gatewayId=278&gatewayVersionId=6249&id=86&apiParentNavigationId=20",
+      "navigationMethod": "express.updateEbillOrder",
+      "detailPath": "/api/openapi/express/updateebillorder",
+      "updateTime": "2026-05-06T02:33:19.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "取消面单",
+      "category": "物流API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29637&apiNavigationId=245&gatewayId=278&gatewayVersionId=6249&id=87&apiParentNavigationId=20",
+      "navigationMethod": "express.cancelEbillOrder",
+      "detailPath": "/api/openapi/express/cancelebillorder",
+      "updateTime": "2024-10-28T11:20:57.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询面单",
+      "category": "物流API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29638&apiNavigationId=246&gatewayId=278&gatewayVersionId=6249&id=88&apiParentNavigationId=20",
+      "navigationMethod": "express.queryEbillOrder",
+      "detailPath": "/api/openapi/express/queryebillorder",
+      "updateTime": "2024-10-28T11:21:53.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询增值服务列表",
+      "category": "物流API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=40702&apiNavigationId=330&gatewayId=278&gatewayVersionId=6249&id=113&apiParentNavigationId=20",
+      "navigationMethod": "express.queryEbillServices",
+      "detailPath": "/api/openapi/express/queryebillservices",
+      "updateTime": "2025-11-11T11:30:52.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "带货达人侧详情查询",
+      "category": "财务API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=22567&apiNavigationId=247&gatewayId=103&gatewayVersionId=1661&id=89&apiParentNavigationId=21",
+      "navigationMethod": "bill.queryCpsSettle",
+      "detailPath": "/ark/bill.queryCpsSettle",
+      "updateTime": "2022-09-19T11:17:39.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询月度结算单下载地址",
+      "category": "财务API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=22568&apiNavigationId=248&gatewayId=103&gatewayVersionId=1661&id=90&apiParentNavigationId=21",
+      "navigationMethod": "bill.downloadStatement",
+      "detailPath": "/ark/bill.downloadStatement",
+      "updateTime": "2022-09-19T11:17:39.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "分页查询账户动账流水",
+      "category": "财务API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29893&apiNavigationId=249&gatewayId=165&gatewayVersionId=2804&id=91&apiParentNavigationId=21",
+      "navigationMethod": "finance.querySellerAccountRecords",
+      "detailPath": "/api/openapi/finance/queryselleraccountrecords",
+      "updateTime": "2025-12-03T07:22:12.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "分页查询订单货款结算明细",
+      "category": "财务API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29896&apiNavigationId=250&gatewayId=165&gatewayVersionId=2804&id=92&apiParentNavigationId=21",
+      "navigationMethod": "finance.pageQueryTransaction",
+      "detailPath": "/api/openapi/finance/pagequerytransaction",
+      "updateTime": "2025-11-24T04:00:12.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "分页查询其他服务款结算明细",
+      "category": "财务API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=29894&apiNavigationId=251&gatewayId=165&gatewayVersionId=2804&id=93&apiParentNavigationId=21",
+      "navigationMethod": "finance.pageQueryExpense",
+      "detailPath": "/api/openapi/finance/pagequeryexpense",
+      "updateTime": "2025-11-24T04:04:26.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "分页查询其他服务款结算账单",
+      "category": "财务API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41914&apiNavigationId=373&gatewayId=103&gatewayVersionId=1661&id=135&apiParentNavigationId=21",
+      "navigationMethod": "finance.pageQueryOtherSettleBill",
+      "detailPath": "/ark/finance.pageQueryOtherSettleBill",
+      "updateTime": "2026-11-05T11:36:22.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "近场轨迹推送",
+      "category": "即时零售API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=38304&apiNavigationId=303&gatewayId=103&gatewayVersionId=1661&id=107&apiParentNavigationId=304",
+      "navigationMethod": "express.instantshopping.updateInstantShoppingTrack",
+      "detailPath": "/ark/express/instantshopping/updateinstantshoppingtrack",
+      "updateTime": "2025-01-16T08:37:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "更新会员信息",
+      "category": "会员通API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=40780&apiNavigationId=334&gatewayId=103&gatewayVersionId=1661&id=115&apiParentNavigationId=332",
+      "navigationMethod": "memberpass.member.modify",
+      "detailPath": "/ark/memberpass.member.modify",
+      "updateTime": "2025-12-11T03:38:28.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询会员信息",
+      "category": "会员通API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=40781&apiNavigationId=335&gatewayId=103&gatewayVersionId=1661&id=116&apiParentNavigationId=332",
+      "navigationMethod": "memberpass.members.query",
+      "detailPath": "/ark/memberpass.members.query",
+      "updateTime": "2025-12-30T02:33:37.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询品牌其他店铺会员openId",
+      "category": "会员通API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41913&apiNavigationId=372&gatewayId=103&gatewayVersionId=1661&id=134&apiParentNavigationId=332",
+      "navigationMethod": "memberpass.member.openids.query",
+      "detailPath": "/ark/memberpass.member.openids.query",
+      "updateTime": "2026-11-04T13:43:55.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "分页查询供货单列表",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41309&apiNavigationId=346&gatewayId=278&gatewayVersionId=6249&id=121&apiParentNavigationId=343",
+      "navigationMethod": "vendor.getOrderList",
+      "detailPath": "/vendor/vendor.getOrderList",
+      "updateTime": "2026-09-23T12:23:00.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "供货单发货",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41310&apiNavigationId=344&gatewayId=278&gatewayVersionId=6249&id=119&apiParentNavigationId=343",
+      "navigationMethod": "vendor.orderDeliver",
+      "detailPath": "/vendor/vendor.orderDeliver",
+      "updateTime": "2026-10-20T02:37:18.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "修改供货单快递信息",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41311&apiNavigationId=345&gatewayId=278&gatewayVersionId=6249&id=120&apiParentNavigationId=343",
+      "navigationMethod": "vendor.modifyOrderExpressInfo",
+      "detailPath": "/vendor/vendor.modifyOrderExpressInfo",
+      "updateTime": "2026-02-10T06:04:34.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询供货关系",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41318&apiNavigationId=350&gatewayId=278&gatewayVersionId=6249&id=122&apiParentNavigationId=343",
+      "navigationMethod": "vendor.getSupplyRelationList",
+      "detailPath": "/vendor/vendor.getSupplyRelationList",
+      "updateTime": "2026-10-20T11:18:03.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "更新供货库存",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41317&apiNavigationId=351&gatewayId=278&gatewayVersionId=6249&id=123&apiParentNavigationId=343",
+      "navigationMethod": "vendor.updateInventory",
+      "detailPath": "/vendor/vendor.updateInventory",
+      "updateTime": "2026-04-13T10:46:24.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "查询供货商售后列表",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41680&apiNavigationId=352&gatewayId=278&gatewayVersionId=6249&id=124&apiParentNavigationId=343",
+      "navigationMethod": "vendor.listAfterSaleInfos",
+      "detailPath": "/api/openapi/vendor/listaftersaleinfos",
+      "updateTime": "2026-10-21T06:56:48.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "审核供货商售后",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41681&apiNavigationId=353&gatewayId=278&gatewayVersionId=6249&id=125&apiParentNavigationId=343",
+      "navigationMethod": "vendor.auditReturns",
+      "detailPath": "/api/openapi/vendor/auditreturns",
+      "updateTime": "2026-05-15T02:19:36.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "保税支付单重推",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41898&apiNavigationId=368&gatewayId=278&gatewayVersionId=6249&id=131&apiParentNavigationId=343",
+      "navigationMethod": "vendor.resendBondedPaymentRecord",
+      "detailPath": "/vendor/vendor.resendBondedPaymentRecord",
+      "updateTime": "2026-09-23T12:11:57.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "保税供货单申报信息查询",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41900&apiNavigationId=369&gatewayId=278&gatewayVersionId=6249&id=132&apiParentNavigationId=343",
+      "navigationMethod": "vendor.getOrderDeclareInfo",
+      "detailPath": "/vendor/vendor.getOrderDeclareInfo",
+      "updateTime": "2026-10-16T08:43:06.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "api",
+      "title": "保税清关结果回告",
+      "category": "供货商API",
+      "url": "https://open.xiaohongshu.com/document/api?apiId=41897&apiNavigationId=370&gatewayId=278&gatewayVersionId=6249&id=133&apiParentNavigationId=343",
+      "navigationMethod": "vendor.updateCustomsStatus",
+      "detailPath": "/vendor/vendor.updateCustomsStatus",
+      "updateTime": "2026-10-15T03:02:31.000Z",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "新手指南",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/32",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "应用开发",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/33",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "应用测试",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/34",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "授权流程 · 新（自研商家）",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/341",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "授权流程 · 新（三方服务商）",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/342",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "签名算法",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/39",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "系统参数说明",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/40",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "应用消息推送",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/41",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "SDK使用说明",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/42",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "接口限流说明",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/292",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "上架服务市场",
+      "category": "开发文档",
+      "url": "https://open.xiaohongshu.com/document/developer/file/43",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "商品基础介绍",
+      "category": "API调用场景",
+      "url": "https://open.xiaohongshu.com/document/developer/file/44",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "订单基础介绍",
+      "category": "API调用场景",
+      "url": "https://open.xiaohongshu.com/document/developer/file/45",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "跨境订单介绍",
+      "category": "API调用场景",
+      "url": "https://open.xiaohongshu.com/document/developer/file/46",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "订单接入方案",
+      "category": "API调用场景",
+      "url": "https://open.xiaohongshu.com/document/developer/file/47",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "售后接入说明",
+      "category": "API调用场景",
+      "url": "https://open.xiaohongshu.com/document/developer/file/48",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "财务接入说明",
+      "category": "API调用场景",
+      "url": "https://open.xiaohongshu.com/document/developer/file/49",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "会员通接入说明",
+      "category": "API调用场景",
+      "url": "https://open.xiaohongshu.com/document/developer/file/331",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "数据加密对接方案",
+      "category": "数据加解密",
+      "url": "https://open.xiaohongshu.com/document/developer/file/50",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "加密算法介绍",
+      "category": "数据加解密",
+      "url": "https://open.xiaohongshu.com/document/developer/file/51",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "新版小红书电子面单ISV对接改造",
+      "category": "电子面单",
+      "url": "https://open.xiaohongshu.com/document/developer/file/294",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "电子面单对接说明（新）",
+      "category": "电子面单",
+      "url": "https://open.xiaohongshu.com/document/developer/file/295",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "电子面单打印组件协议（新）",
+      "category": "电子面单",
+      "url": "https://open.xiaohongshu.com/document/developer/file/296",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "小红书云打印系统物料使用说明书",
+      "category": "电子面单",
+      "url": "https://open.xiaohongshu.com/document/developer/file/297",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "电子面单常见问题（新）",
+      "category": "电子面单",
+      "url": "https://open.xiaohongshu.com/document/developer/file/301",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "小红书打印组件使用问题",
+      "category": "电子面单",
+      "url": "https://open.xiaohongshu.com/document/developer/file/318",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "小红书开放平台开发者协议",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/54",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "数据安全承诺函",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/55",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "服务市场上架审核标准",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/102",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "开发者角色说明",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/103",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "小红书服务市场服务协议（服务商版）",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/104",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "小红书服务市场管理规范",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/105",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "企业管理类目管理规则",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/106",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "商品管理类目管理规则",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/107",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "订单管理类目管理规则",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/108",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "内容工具类目管理规则",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/109",
+      "status": "ok"
+    },
+    {
+      "source": "open.xiaohongshu.com",
+      "kind": "guide",
+      "title": "小红书服务市场保证金要求",
+      "category": "规则中心",
+      "url": "https://open.xiaohongshu.com/document/developer/file/110",
+      "status": "ok"
+    },
+    {
+      "title": "应用开发",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810909.md",
+      "status": "ok",
+      "chars": 3248,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "新手指南",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810914.md",
+      "status": "ok",
+      "chars": 886,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "应用测试",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810920.md",
+      "status": "ok",
+      "chars": 1673,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "授权流程（自研）",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810923.md",
+      "status": "ok",
+      "chars": 698,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "授权流程（软件服务商）",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810928.md",
+      "status": "ok",
+      "chars": 6319,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "签名算法",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810932.md",
+      "status": "ok",
+      "chars": 1177,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "系统参数说明",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810935.md",
+      "status": "ok",
+      "chars": 1240,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "应用消息推送",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810938.md",
+      "status": "ok",
+      "chars": 2908,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "SDK 使用说明",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810941.md",
+      "status": "ok",
+      "chars": 1333,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "发布服务",
+      "category": "开发文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810945.md",
+      "status": "ok",
+      "chars": 2523,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品基础介绍",
+      "category": "API 调用场景",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810949.md",
+      "status": "ok",
+      "chars": 1696,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单基础介绍",
+      "category": "API 调用场景",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810951.md",
+      "status": "ok",
+      "chars": 1012,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "跨境订单介绍",
+      "category": "API 调用场景",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810957.md",
+      "status": "ok",
+      "chars": 2185,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单接入方案",
+      "category": "API 调用场景",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810959.md",
+      "status": "ok",
+      "chars": 687,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "售后接入说明",
+      "category": "API 调用场景",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810962.md",
+      "status": "ok",
+      "chars": 1597,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "数据加密对接方案",
+      "category": "数据加解密",
+      "url": "https://xiaohongshu.apifox.cn/doc-895670.md",
+      "status": "ok",
+      "chars": 3972,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "加密算法介绍",
+      "category": "数据加解密",
+      "url": "https://xiaohongshu.apifox.cn/doc-895683.md",
+      "status": "ok",
+      "chars": 3821,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "新版小红书电子面单ISV对接改造",
+      "category": "电子面单",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811017.md",
+      "status": "ok",
+      "chars": 5705,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "电子面单对接说明（新）",
+      "category": "电子面单",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811019.md",
+      "status": "ok",
+      "chars": 32413,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "电子面单打印组件协议（新）",
+      "category": "电子面单",
+      "url": "https://xiaohongshu.apifox.cn/doc-7768557.md",
+      "status": "ok",
+      "chars": 26776,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "小红书云打印系统物料使用说明书",
+      "category": "电子面单",
+      "url": "https://xiaohongshu.apifox.cn/doc-7768561.md",
+      "status": "ok",
+      "chars": 38673,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "电子面单常见问题（新）",
+      "category": "电子面单",
+      "url": "https://xiaohongshu.apifox.cn/doc-7768567.md",
+      "status": "ok",
+      "chars": 12823,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "打印组件使用常见问题",
+      "category": "电子面单",
+      "url": "https://xiaohongshu.apifox.cn/doc-7768573.md",
+      "status": "ok",
+      "chars": 3804,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "小红书开放平台开发者协议",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811022.md",
+      "status": "ok",
+      "chars": 10994,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "数据安全承诺函",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811113.md",
+      "status": "ok",
+      "chars": 2205,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "服务市场上架审核标准",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811115.md",
+      "status": "ok",
+      "chars": 1016,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "开发者角色说明",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811119.md",
+      "status": "ok",
+      "chars": 1084,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "小红书服务市场服务协议（服务商版）",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811122.md",
+      "status": "ok",
+      "chars": 8549,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "小红书服务市场管理规范",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811123.md",
+      "status": "ok",
+      "chars": 6142,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "企业管理类目管理规则",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811125.md",
+      "status": "ok",
+      "chars": 2001,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品管理类目管理规则",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811127.md",
+      "status": "ok",
+      "chars": 2408,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单管理类目管理规则",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811128.md",
+      "status": "ok",
+      "chars": 2152,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "内容工具类目管理规则",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811130.md",
+      "status": "ok",
+      "chars": 2093,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "小红书服务市场保证金要求",
+      "category": "规则中心",
+      "url": "https://xiaohongshu.apifox.cn/doc-2811131.md",
+      "status": "ok",
+      "chars": 611,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品新建",
+      "category": "消息文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810862.md",
+      "status": "ok",
+      "chars": 223,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品上下架",
+      "category": "消息文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810865.md",
+      "status": "ok",
+      "chars": 216,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品审核驳回",
+      "category": "消息文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810867.md",
+      "status": "ok",
+      "chars": 233,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品删除",
+      "category": "消息文档",
+      "url": "https://xiaohongshu.apifox.cn/doc-2810868.md",
+      "status": "ok",
+      "chars": 223,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取分类列表",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-23906473.md",
+      "status": "ok",
+      "chars": 2421,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "批量获取发货时间规则",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-55930165.md",
+      "status": "ok",
+      "chars": 8130,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取地址信息（新）",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-55930514.md",
+      "status": "ok",
+      "chars": 3056,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取商家地址库",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-55933597.md",
+      "status": "ok",
+      "chars": 7066,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "由末级分类获取规格（新）",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24179911.md",
+      "status": "ok",
+      "chars": 1421,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "由末级分类获取属性",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24182150.md",
+      "status": "ok",
+      "chars": 2982,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "由属性获取属性值",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24182626.md",
+      "status": "ok",
+      "chars": 2615,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取快递公司信息",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24183020.md",
+      "status": "ok",
+      "chars": 2403,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取物流方案列表",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24184170.md",
+      "status": "ok",
+      "chars": 3994,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "运费模版列表",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24186624.md",
+      "status": "ok",
+      "chars": 9903,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "运费模版详情",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24188652.md",
+      "status": "ok",
+      "chars": 8617,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取品牌信息",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24190169.md",
+      "status": "ok",
+      "chars": 2830,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取物流模式列表",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24190981.md",
+      "status": "ok",
+      "chars": 1657,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取地址信息",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24191440.md",
+      "status": "ok",
+      "chars": 5644,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取老版本商家授权信息",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24191688.md",
+      "status": "ok",
+      "chars": 1283,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "cc资质检查",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24192138.md",
+      "status": "ok",
+      "chars": 1058,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品标题类目预测",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24193051.md",
+      "status": "ok",
+      "chars": 2469,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "由末级分类获取规格（旧）",
+      "category": "公共 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24193659.md",
+      "status": "ok",
+      "chars": 3256,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "带货达人侧详情查询",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-55956179.md",
+      "status": "ok",
+      "chars": 6340,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "查询月度结算单下载地址",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-55956492.md",
+      "status": "ok",
+      "chars": 1546,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单列表",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24196747.md",
+      "status": "ok",
+      "chars": 9996,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单详情",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24201582.md",
+      "status": "ok",
+      "chars": 24609,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单收件人信息",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24202364.md",
+      "status": "ok",
+      "chars": 4715,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "修改订单备注",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24203035.md",
+      "status": "ok",
+      "chars": 2912,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单发货",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24204499.md",
+      "status": "ok",
+      "chars": 3858,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "修改快递单号",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24206581.md",
+      "status": "ok",
+      "chars": 3274,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "订单物流轨迹",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24209468.md",
+      "status": "ok",
+      "chars": 6457,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "海关申报信息",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24210088.md",
+      "status": "ok",
+      "chars": 3412,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取取消申请列表（即将下线）",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24217042.md",
+      "status": "ok",
+      "chars": 6807,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "取消申请审核（即将下线）",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24218049.md",
+      "status": "ok",
+      "chars": 1872,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "跨境清关支持口岸",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24218631.md",
+      "status": "ok",
+      "chars": 5617,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "跨境重推支付单",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24220689.md",
+      "status": "ok",
+      "chars": 4745,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "跨境商品备案信息同步",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24221615.md",
+      "status": "ok",
+      "chars": 5302,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "跨境商品备案信息查询",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24223012.md",
+      "status": "ok",
+      "chars": 5810,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "小包批次创建",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24223363.md",
+      "status": "ok",
+      "chars": 5715,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "开票列表查询",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24227146.md",
+      "status": "ok",
+      "chars": 12335,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "开票结果回传（正向蓝票开具）",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24237687.md",
+      "status": "ok",
+      "chars": 5398,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "发票冲红（逆向冲红）",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24238211.md",
+      "status": "ok",
+      "chars": 4488,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "批量解密",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24238435.md",
+      "status": "ok",
+      "chars": 6659,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "批量脱敏",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24240167.md",
+      "status": "ok",
+      "chars": 6171,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "批量获取索引串",
+      "category": "订单 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24240907.md",
+      "status": "ok",
+      "chars": 4510,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "售后换货确认收货并发货",
+      "category": "售后 API",
+      "url": "https://xiaohongshu.apifox.cn/api-56677362.md",
+      "status": "ok",
+      "chars": 4875,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取售后列表",
+      "category": "售后 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24647726.md",
+      "status": "ok",
+      "chars": 12213,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "售后详情",
+      "category": "售后 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24655015.md",
+      "status": "ok",
+      "chars": 15542,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "售后审核（新）",
+      "category": "售后 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24657987.md",
+      "status": "ok",
+      "chars": 3525,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "售后确认收货（新）",
+      "category": "售后 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24660851.md",
+      "status": "ok",
+      "chars": 4268,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品列表基础版",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24682633.md",
+      "status": "ok",
+      "chars": 10425,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品列表完整版（新）",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24685962.md",
+      "status": "ok",
+      "chars": 26783,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "更新物流方案",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24695159.md",
+      "status": "ok",
+      "chars": 5151,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "商品上下架",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24838962.md",
+      "status": "ok",
+      "chars": 5043,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "创建ITEM",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24841892.md",
+      "status": "ok",
+      "chars": 16233,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "更新TEM",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24846432.md",
+      "status": "ok",
+      "chars": 13504,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "删除ITEM",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24848829.md",
+      "status": "ok",
+      "chars": 4798,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "创建SKU",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24854921.md",
+      "status": "ok",
+      "chars": 12512,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "更新SKU",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24860774.md",
+      "status": "ok",
+      "chars": 14165,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "删除SKU",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24861029.md",
+      "status": "ok",
+      "chars": 4953,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "查询Item列表",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24865354.md",
+      "status": "ok",
+      "chars": 12809,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取ITEM详情",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24868781.md",
+      "status": "ok",
+      "chars": 22433,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "修改价格",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24869044.md",
+      "status": "ok",
+      "chars": 5551,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "修改商品主图、主图视频",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24869344.md",
+      "status": "ok",
+      "chars": 5137,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "修改规格图",
+      "category": "商品 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24870010.md",
+      "status": "ok",
+      "chars": 4618,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "获取商品库存",
+      "category": "库存 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24902181.md",
+      "status": "ok",
+      "chars": 5861,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "同步库存",
+      "category": "库存 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24912495.md",
+      "status": "ok",
+      "chars": 6754,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "增减库存",
+      "category": "库存 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24914250.md",
+      "status": "ok",
+      "chars": 6587,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "素材列表",
+      "category": "素材中心 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24923720.md",
+      "status": "ok",
+      "chars": 7639,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "上传素材",
+      "category": "素材中心 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24925828.md",
+      "status": "ok",
+      "chars": 5773,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "修改素材",
+      "category": "素材中心 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24926201.md",
+      "status": "ok",
+      "chars": 6186,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "删除素材",
+      "category": "素材中心 API",
+      "url": "https://xiaohongshu.apifox.cn/api-24926244.md",
+      "status": "ok",
+      "chars": 4030,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "查询电子面单订购关系",
+      "category": "物流 API",
+      "url": "https://xiaohongshu.apifox.cn/api-99755883.md",
+      "status": "ok",
+      "chars": 11379,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "查询电子面单模板列表",
+      "category": "物流 API",
+      "url": "https://xiaohongshu.apifox.cn/api-99757260.md",
+      "status": "ok",
+      "chars": 7404,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "批量取号",
+      "category": "物流 API",
+      "url": "https://xiaohongshu.apifox.cn/api-99759590.md",
+      "status": "ok",
+      "chars": 17862,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "更新面单",
+      "category": "物流 API",
+      "url": "https://xiaohongshu.apifox.cn/api-99767097.md",
+      "status": "ok",
+      "chars": 9885,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "取消面单",
+      "category": "物流 API",
+      "url": "https://xiaohongshu.apifox.cn/api-99767674.md",
+      "status": "ok",
+      "chars": 5175,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "查询面单",
+      "category": "物流 API",
+      "url": "https://xiaohongshu.apifox.cn/api-99768736.md",
+      "status": "ok",
+      "chars": 4020,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "系统参数",
+      "category": "",
+      "url": "https://xiaohongshu.apifox.cn/schema-9782950.md",
+      "status": "ok",
+      "chars": 1105,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "返回参数",
+      "category": "",
+      "url": "https://xiaohongshu.apifox.cn/schema-9785678.md",
+      "status": "ok",
+      "chars": 607,
+      "source": "xiaohongshu.apifox.cn",
+      "kind": "apifox"
+    },
+    {
+      "title": "Product & Item APIs",
+      "url": "https://school.xiaohongshu.com/en/open/product/summary.html",
+      "status": "ok",
+      "chars": 159,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Quick Start",
+      "url": "https://school.xiaohongshu.com/en/open/quick-start/summary.html",
+      "status": "ok",
+      "chars": 123,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Home",
+      "url": "https://school.xiaohongshu.com/en/open/",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Brief",
+      "url": "https://school.xiaohongshu.com/en/open/quick-start/introduction.html",
+      "status": "ok",
+      "chars": 551,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Integration guide",
+      "url": "https://school.xiaohongshu.com/en/open/quick-start/workflow.html",
+      "status": "ok",
+      "chars": 558,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "How to Get App-key & App-secret",
+      "url": "https://school.xiaohongshu.com/en/open/quick-start/how-to-get-app-key.html",
+      "status": "ok",
+      "chars": 450,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Basic Parameters",
+      "url": "https://school.xiaohongshu.com/en/open/quick-start/system-parameter.html",
+      "status": "ok",
+      "chars": 663,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Request Example",
+      "url": "https://school.xiaohongshu.com/en/open/quick-start/sign.html",
+      "status": "ok",
+      "chars": 1639,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Response Format",
+      "url": "https://school.xiaohongshu.com/en/open/quick-start/response-format.html",
+      "status": "ok",
+      "chars": 618,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Common Data APIs",
+      "url": "https://school.xiaohongshu.com/en/open/common/summary.html",
+      "status": "ok",
+      "chars": 70,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Logistics Companies",
+      "url": "https://school.xiaohongshu.com/en/open/common/logistics-companies.html",
+      "status": "ok",
+      "chars": 329,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Logistics Modes",
+      "url": "https://school.xiaohongshu.com/en/open/common/logistics-mode.html",
+      "status": "ok",
+      "chars": 942,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Brand Search",
+      "url": "https://school.xiaohongshu.com/en/open/common/brand-search.html",
+      "status": "ok",
+      "chars": 645,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Category List",
+      "url": "https://school.xiaohongshu.com/en/open/common/category-list.html",
+      "status": "ok",
+      "chars": 1077,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Category Variants",
+      "url": "https://school.xiaohongshu.com/en/open/common/category-variants.html",
+      "status": "ok",
+      "chars": 776,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Category Attributes",
+      "url": "https://school.xiaohongshu.com/en/open/common/category-attributes.html",
+      "status": "ok",
+      "chars": 938,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Attributes Values",
+      "url": "https://school.xiaohongshu.com/en/open/common/attributes-values.html",
+      "status": "ok",
+      "chars": 683,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Origin Companies",
+      "url": "https://school.xiaohongshu.com/en/open/common/origin-companies.html",
+      "status": "ok",
+      "chars": 3610,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Units",
+      "url": "https://school.xiaohongshu.com/en/open/common/units.html",
+      "status": "ok",
+      "chars": 307,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Order & Package APIs",
+      "url": "https://school.xiaohongshu.com/en/open/package/summary.html",
+      "status": "ok",
+      "chars": 285,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Recommended Usage",
+      "url": "https://school.xiaohongshu.com/en/open/package/recommended_usage.html",
+      "status": "ok",
+      "chars": 1132,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Latest Packages",
+      "url": "https://school.xiaohongshu.com/en/open/package/latest-packages.html",
+      "status": "ok",
+      "chars": 1698,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Status",
+      "url": "https://school.xiaohongshu.com/en/open/package/packages-status.html",
+      "status": "ok",
+      "chars": 858,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package List",
+      "url": "https://school.xiaohongshu.com/en/open/package/packages-list.html",
+      "status": "ok",
+      "chars": 1847,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Details",
+      "url": "https://school.xiaohongshu.com/en/open/package/package-detail.html",
+      "status": "ok",
+      "chars": 3141,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Ship",
+      "url": "https://school.xiaohongshu.com/en/open/package/package-shipped.html",
+      "status": "ok",
+      "chars": 675,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Transfer Batch",
+      "url": "https://school.xiaohongshu.com/en/open/package/transfer-batch.html",
+      "status": "ok",
+      "chars": 1479,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Transfer Ship",
+      "url": "https://school.xiaohongshu.com/en/open/package/ship-transfer-batch.html",
+      "status": "ok",
+      "chars": 298,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Canceling List",
+      "url": "https://school.xiaohongshu.com/en/open/package/packages-canceling-list.html",
+      "status": "ok",
+      "chars": 1910,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Cacneling Audit",
+      "url": "https://school.xiaohongshu.com/en/open/package/package-canceling-audit.html",
+      "status": "ok",
+      "chars": 1056,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Inventory APIs",
+      "url": "https://school.xiaohongshu.com/en/open/inventory/summary.html",
+      "status": "ok",
+      "chars": 114,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Set Inventory",
+      "url": "https://school.xiaohongshu.com/en/open/inventory/sync.html",
+      "status": "ok",
+      "chars": 632,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Increase/Decrease",
+      "url": "https://school.xiaohongshu.com/en/open/inventory/increment.html",
+      "status": "ok",
+      "chars": 457,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Get Current",
+      "url": "https://school.xiaohongshu.com/en/open/inventory/retrieve.html",
+      "status": "ok",
+      "chars": 198,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Inventroy Decrease（Callback）",
+      "url": "https://school.xiaohongshu.com/en/open/inventory/callback-change.html",
+      "status": "ok",
+      "chars": 1207,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Inventory Cancel（Callback）",
+      "url": "https://school.xiaohongshu.com/en/open/inventory/callback-cancel.html",
+      "status": "ok",
+      "chars": 1180,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "RED items",
+      "url": "https://school.xiaohongshu.com/en/open/product/product-structure.html",
+      "status": "ok",
+      "chars": 1151,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Status code in Item APIs",
+      "url": "https://school.xiaohongshu.com/en/open/product/product-status.html",
+      "status": "ok",
+      "chars": 837,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPU",
+      "url": "https://school.xiaohongshu.com/en/open/product/create-spu.html",
+      "status": "ok",
+      "chars": 9175,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPL",
+      "url": "https://school.xiaohongshu.com/en/open/product/create-spl.html",
+      "status": "ok",
+      "chars": 8721,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPL ITEM",
+      "url": "https://school.xiaohongshu.com/en/open/product/create-spl-item.html",
+      "status": "ok",
+      "chars": 5209,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPV",
+      "url": "https://school.xiaohongshu.com/en/open/product/create-spv.html",
+      "status": "ok",
+      "chars": 6837,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create Item",
+      "url": "https://school.xiaohongshu.com/en/open/product/create-item.html",
+      "status": "ok",
+      "chars": 5616,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPU",
+      "url": "https://school.xiaohongshu.com/en/open/product/update-spu.html",
+      "status": "ok",
+      "chars": 1781,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPL",
+      "url": "https://school.xiaohongshu.com/en/open/product/update-spl.html",
+      "status": "ok",
+      "chars": 1440,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPL Item",
+      "url": "https://school.xiaohongshu.com/en/open/product/update-spl-item.html",
+      "status": "ok",
+      "chars": 4133,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPV",
+      "url": "https://school.xiaohongshu.com/en/open/product/update-spv.html",
+      "status": "ok",
+      "chars": 2381,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPV custom",
+      "url": "https://school.xiaohongshu.com/en/open/product/update-spv-custom.html",
+      "status": "ok",
+      "chars": 2383,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit Item",
+      "url": "https://school.xiaohongshu.com/en/open/product/update-item.html",
+      "status": "ok",
+      "chars": 1868,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit Item Logistics Mode",
+      "url": "https://school.xiaohongshu.com/en/open/product/update-item-logistics.html",
+      "status": "ok",
+      "chars": 569,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Submit Review",
+      "url": "https://school.xiaohongshu.com/en/open/product/spl-item-submit.html",
+      "status": "ok",
+      "chars": 2262,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Set an Item On/Off Shelf Status",
+      "url": "https://school.xiaohongshu.com/en/open/product/availability.html",
+      "status": "ok",
+      "chars": 1714,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Item List Basic",
+      "url": "https://school.xiaohongshu.com/en/open/product/item-list-lite.html",
+      "status": "ok",
+      "chars": 2279,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Item List",
+      "url": "https://school.xiaohongshu.com/en/open/product/item-list.html",
+      "status": "ok",
+      "chars": 6328,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "SPU Detail",
+      "url": "https://school.xiaohongshu.com/en/open/product/spu-detail.html",
+      "status": "ok",
+      "chars": 6537,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Item Detail",
+      "url": "https://school.xiaohongshu.com/en/open/product/product-detail.html",
+      "status": "ok",
+      "chars": 6320,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Error Codes",
+      "url": "https://school.xiaohongshu.com/en/open/error-codes.html",
+      "status": "ok",
+      "chars": 2064,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Callback",
+      "url": "https://school.xiaohongshu.com/en/open/callback.html",
+      "status": "ok",
+      "chars": 1079,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Sandbox",
+      "url": "https://school.xiaohongshu.com/en/open/sandbox.html",
+      "status": "ok",
+      "chars": 3110,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "FAQ",
+      "url": "https://school.xiaohongshu.com/en/open/faq.html",
+      "status": "ok",
+      "chars": 1113,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Contact",
+      "url": "https://school.xiaohongshu.com/en/open/contact.html",
+      "status": "ok",
+      "chars": 458,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "History",
+      "url": "https://school.xiaohongshu.com/en/open/history.html",
+      "status": "ok",
+      "chars": 1630,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Product & Item APIs（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/summary.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Quick Start（中文）",
+      "url": "https://school.xiaohongshu.com/open/quick-start/summary.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Home（中文）",
+      "url": "https://school.xiaohongshu.com/open/",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Brief（中文）",
+      "url": "https://school.xiaohongshu.com/open/quick-start/introduction.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Integration guide（中文）",
+      "url": "https://school.xiaohongshu.com/open/quick-start/workflow.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "How to Get App-key & App-secret（中文）",
+      "url": "https://school.xiaohongshu.com/open/quick-start/how-to-get-app-key.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Basic Parameters（中文）",
+      "url": "https://school.xiaohongshu.com/open/quick-start/system-parameter.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Request Example（中文）",
+      "url": "https://school.xiaohongshu.com/open/quick-start/sign.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Response Format（中文）",
+      "url": "https://school.xiaohongshu.com/open/quick-start/response-format.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Common Data APIs（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/summary.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Logistics Companies（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/logistics-companies.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Logistics Modes（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/logistics-mode.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Brand Search（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/brand-search.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Category List（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/category-list.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Category Variants（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/category-variants.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Category Attributes（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/category-attributes.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Attributes Values（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/attributes-values.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Origin Companies（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/origin-companies.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Units（中文）",
+      "url": "https://school.xiaohongshu.com/open/common/units.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Order & Package APIs（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/summary.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Recommended Usage（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/recommended_usage.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Latest Packages（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/latest-packages.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Status（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/packages-status.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package List（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/packages-list.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Details（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/package-detail.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Ship（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/package-shipped.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Transfer Batch（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/transfer-batch.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Transfer Ship（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/ship-transfer-batch.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Canceling List（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/packages-canceling-list.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Cacneling Audit（中文）",
+      "url": "https://school.xiaohongshu.com/open/package/package-canceling-audit.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Inventory APIs（中文）",
+      "url": "https://school.xiaohongshu.com/open/inventory/summary.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Set Inventory（中文）",
+      "url": "https://school.xiaohongshu.com/open/inventory/sync.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Increase/Decrease（中文）",
+      "url": "https://school.xiaohongshu.com/open/inventory/increment.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Get Current（中文）",
+      "url": "https://school.xiaohongshu.com/open/inventory/retrieve.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Inventroy Decrease（Callback）（中文）",
+      "url": "https://school.xiaohongshu.com/open/inventory/callback-change.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Inventory Cancel（Callback）（中文）",
+      "url": "https://school.xiaohongshu.com/open/inventory/callback-cancel.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "RED items（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/product-structure.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Status code in Item APIs（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/product-status.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPU（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/create-spu.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPL（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/create-spl.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPL ITEM（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/create-spl-item.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create SPV（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/create-spv.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Create Item（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/create-item.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPU（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/update-spu.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPL（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/update-spl.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPL Item（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/update-spl-item.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPV（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/update-spv.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit SPV custom（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/update-spv-custom.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit Item（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/update-item.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Edit Item Logistics Mode（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/update-item-logistics.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Submit Review（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/spl-item-submit.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Set an Item On/Off Shelf Status（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/availability.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Item List Basic（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/item-list-lite.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Item List（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/item-list.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "SPU Detail（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/spu-detail.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Item Detail（中文）",
+      "url": "https://school.xiaohongshu.com/open/product/product-detail.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Error Codes（中文）",
+      "url": "https://school.xiaohongshu.com/open/error-codes.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Callback（中文）",
+      "url": "https://school.xiaohongshu.com/open/callback.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Sandbox（中文）",
+      "url": "https://school.xiaohongshu.com/open/sandbox.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "FAQ（中文）",
+      "url": "https://school.xiaohongshu.com/open/faq.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Contact（中文）",
+      "url": "https://school.xiaohongshu.com/open/contact.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "History（中文）",
+      "url": "https://school.xiaohongshu.com/open/history.html",
+      "status": "empty",
+      "chars": 0,
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "自有保税仓如何接入？",
+      "url": "https://school.xiaohongshu.com/en/open/bonded/workflow.html",
+      "status": "failed",
+      "error": "Command '['curl', '--compressed', '-L', '--fail', '--max-time', '25', '-s', 'https://school.xiaohongshu.com/en/open/bonded/workflow.html']' returned non-zero exit status 56.",
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "Package Details",
+      "url": "https://school.xiaohongshu.com/en/open/package/packages-detail.html",
+      "status": "failed",
+      "error": "Command '['curl', '--compressed', '-L', '--fail', '--max-time', '25', '-s', 'https://school.xiaohongshu.com/en/open/package/packages-detail.html']' returned non-zero exit status 56.",
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    },
+    {
+      "title": "package shipping",
+      "url": "https://school.xiaohongshu.com/en/open/package/packages-shipped.html",
+      "status": "failed",
+      "error": "Command '['curl', '--compressed', '-L', '--fail', '--max-time', '25', '-s', 'https://school.xiaohongshu.com/en/open/package/packages-shipped.html']' returned non-zero exit status 56.",
+      "source": "school.xiaohongshu.com",
+      "kind": "legacy"
+    }
+  ]
+}

@@ -1,19 +1,19 @@
 # FashMaker 自定义图片 / 视频模型开发规格
 
-版本：v1.0 · 2026-11-10。状态：开发交付草案，依据已确认需求制定；本文新增技术默认值是本次明确的实现口径，不表示已有线上服务或供应商已经完成适配。
+版本：v1.1 · 2026-11-12。状态：开发交付草案，依据已确认需求制定；本文新增技术默认值是本次明确的实现口径，不表示已有线上服务或供应商已经完成适配。
 
-目标用户：使用自有供应商额度的电商商家、内容运营和工作空间管理员。需求来源为本项目用户确认：文字固定平台模型；客户只配置图片、视频模型；配置后进入各功能模型选项；模型选择在设置末尾；所有页面使用统一侧栏。
+目标用户：使用自有供应商额度的电商商家、内容运营和工作空间管理员。需求来源为本项目最新确认：客户可配置图片、视频与文案模型；各类型独立选平台或某个自配模型为默认，全部同类型配置进入生成选项，无选择框时直接取默认；模型选择在设置末尾；所有页面使用统一侧栏。
 
-优先级 P0。本文覆盖模型配置、能力适配、调用及结果归档这一完整功能。UI 演示见 [配置流程](custom-models-flow.md)，通用商品字段见 [开发字段契约](developer-field-contract.md)，机器校验见 [配置 JSON Schema](contracts/custom-model-config.schema.json)。本文描述正式服务开发目标，当前 HTML 仍仅本机演示。
+优先级 P0。本文覆盖模型配置、能力适配、调用及结果归档这一完整功能。UI 演示见 [配置流程](custom-models-flow.md)，通用商品字段见 [开发字段契约](developer-field-contract.md)，图片/视频正式 DTO 机器校验见 [配置 JSON Schema](contracts/custom-model-config.schema.json)，其保留 v1 媒体接口范围，不校验新增文案 DTO；三类本地存储另见[路由 Schema](contracts/local-model-routing.schema.json)。本文描述正式服务开发目标，当前 HTML 仍仅本机演示。
 
 ## 1. 交付范围与决策
 
 1. 配置归属当前工作空间，默认所有空间成员可使用，只有 owner/admin 可管理。其他空间不能列举、使用或读取配置。个人空间中的本人视为 owner。
-2. 仅 `image` / `video` 两种类型。所有商品分析、文案、提示词与分镜继续使用平台文字服务，不提供客户文字模型入口。
+2. 支持 `image` / `video` / `text` 三种类型。商品分析、文案、提示词与分镜等无选择框入口使用默认文案模型，AI 参考图无选择框入口使用默认图片模型。有选择框时本次选择优先。
 3. 保留平台模型；提供按类型的空间默认模型，不要求每个步骤重新选择。保存模型不自动替换默认模型，也不覆盖当前任务。用户主动设为默认后只影响之后新建任务。
 4. 支持明确协议的服务；不承诺任意供应商 API 可直接填写使用。不提供用户上传执行代码、任意请求模板或自定义请求头。
-5. 首期注册两个适配器：`image-api-v1` 和 `video-gateway-v1`。前者定义本文的图片生成/编辑兼容契约；后者定义本文的视频网关契约。二者均为 FashMaker 接入契约，不等同于任何供应商已兼容声明。供应商不符合契约时，由后端实现新的、经过验收的适配器后才能接入。
-6. 自有模型费用由客户供应商结算；平台文字、存储、工作流服务费用沿现有套餐，不在本功能中虚构价格。提交前显示模型来源与可能产生第三方费用，不静默回退至平台或另一家服务。
+5. 原图片/视频契约的两个适配器为：`image-api-v1` 和 `video-gateway-v1`。前者定义本文的图片生成/编辑兼容契约；后者定义本文的视频网关契约。v1.1 文案增加 text-chat-v1，详细 DTO 见末节，仍待后端适配。二者均为 FashMaker 接入契约，不等同于任何供应商已兼容声明。供应商不符合契约时，由后端实现新的、经过验收的适配器后才能接入。
+6. 自有模型费用由客户供应商结算；平台服务、存储、工作流费用沿现有套餐，不在本功能中虚构价格。提交前显示模型来源与可能产生第三方费用，不静默回退至平台或另一家服务。
 7. 允许保存未测试配置；未通过连通性测试不可提交真实生成任务。能力声明和测试通过都不代表商品保真质量保证。
 8. 上线不迁移浏览器中的测试密钥。现有本地元数据可通过显式导入表单带入待确认信息，必须重新填 Key、保存并测试；不自动发起网络请求。
 
@@ -47,7 +47,7 @@ kind 和 adapterKey 创建后不可变，需新增配置完成类型切换。配
 
 模型下拉位于设置末尾、生成说明与按钮之前；图文笔记在输入框之后、发送操作前。批量全局和单任务覆盖模型均为最后参数。禁用不相关参数时展示理由。
 
-分组为「平台模型」「我的模型」。仅展示类型匹配、未删除且有 use 权限的配置；停用/未测试/能力不满足项显示禁用和具体原因；不可用的历史选择保留只读占位。未选择过时：优先空间默认且适配当前功能，否则使用该功能平台默认；首次初始化允许此规则，已经选定后的失效不得自动换模型。
+分组为「平台模型」「我的模型」。仅展示类型匹配、未删除且有 use 权限的配置；停用/未测试/能力不满足项显示禁用和具体原因；不可用的历史选择保留只读占位。新建任务未选择过时：优先空间默认；默认为平台时使用该功能平台默认。有自配默认但能力不满足时显示原因并要求选择可用模型，不静默切换供应商。没有选择框的步骤直接解析该类型默认并验证能力，失败时提示前往模型管理修改默认，不自动改用其他模型。已经选定后的失效不得自动换模型。
 
 切换模型后先计算参数交集。原参数不支持时列出不兼容项，用户确认调整后才应用：比例取模型声明顺序中第一个共同值；清晰度取最低共同值；时长取最小共同值。无共同值时禁止选择。取消保留原模型和参数。模型不能修改需求要求的输出张数，模型单次只出一张时由工作流拆分调用。
 
@@ -76,8 +76,8 @@ PATCH：省略表示不改；明确 nullable 字段的 null 表示清空；其�
 | id | UUID，不可空 | 服务端生成，稳定关联 ID |
 | workspaceId | UUID，不可空 | 登录上下文；禁止请求覆盖 |
 | name | string 1–50 | 必填，trim，允许重复；仅显示，不用于路由 |
-| kind | image / video | 必填，创建后不可改 |
-| adapterKey | image-api-v1 / video-gateway-v1 | 必填，必须与 kind 对应，创建后不可改 |
+| kind | image / video / text | 必填，创建后不可改 |
+| adapterKey | image-api-v1 / video-gateway-v1 / text-chat-v1 | 必填，必须与 kind 对应，创建后不可改 |
 | modelId | string 1–150 | 必填，区分大小写，完整匹配供应商模型 ID |
 | endpoints | EndpointSet | 必填，见 3.3 |
 | capabilities | CapabilitySet | 必填，见 3.4；经适配器约束裁剪，不允许声明适配器不支持的能力 |
@@ -146,7 +146,7 @@ kind / adapterKey / modelId / endpoints / capabilities / generationDefaults 或�
 
 ### 3.6 默认关系 ModelPreference
 
-`workspaceId:UUID` + `kind:image|video` 唯一；`source:platform|custom`；`modelConfigId:UUID|null`（custom必填，platform须null）；`platformModelId:string|null`（platform必填）；`revision:integer≥1`；`updatedAt:datetime`；`updatedBy:UUID`。平台 model ID 取现有模型目录，不使用显示名称作 ID。默认模型必须 enabled、测试通过且类型匹配；不要求适配所有功能，新任务依 2.4 选择。每类型只能有一条关系。
+`workspaceId:UUID` + `kind:image|video|text` 唯一；`source:platform|custom`；`modelConfigId:UUID|null`（custom必填，platform须null）；`platformModelId:string|null`（platform必填）；`revision:integer≥1`；`updatedAt:datetime`；`updatedBy:UUID`。平台 model ID 取现有模型目录，不使用显示名称作 ID。默认模型必须 enabled、测试通过且类型匹配；不要求适配所有功能，新任务依 2.4 选择。每类型只能有一条关系。
 
 ### 3.7 TestResult / ModelTest
 
@@ -174,9 +174,9 @@ kind / adapterKey / modelId / endpoints / capabilities / generationDefaults 或�
 | batch-image | image | imageToImage | 至少3个商品任务，二次确认直接生图；分别校验覆盖模型 |
 | tryon / repose / multi-model / multi-product | image | imageToImage | 一般至少2张；多模特逐人物拆分，多商品逐商品拆分，再计算每次实际参考图数 |
 | outfit-separation | image | imageToImage，1张 | 单张平铺合集图，不拆单品资产 |
-| graphic-notes | image | 无素材textToImage；有素材imageToImage | 只负责配图，文案走平台；配图数量由原有功能需求决定 |
+| graphic-notes | image | 无素材textToImage；有素材imageToImage | 只负责配图，文案走默认文案模型；配图数量由原有功能需求决定 |
 | product-video | video | imageToVideo，至少1张商品图 | 时长/比例/清晰度取交集；需口播时依平台配音合成，不能假定视频模型有声音 |
-| viral-remix | video | imageToVideo | 原视频由平台分析成文字镜头，未上传原视频给供应商；固定15秒需模型支持15秒 |
+| viral-remix | video | imageToVideo | 原视频由默认文案模型分析成文字镜头，未上传原视频给供应商；固定15秒需模型支持15秒 |
 | digital-human | video | avatarSpeech、supportsAudioInput=true，至少人物/商品2张 | 平台生成或取得授权音频，传供应商同步口型；普通imageToVideo不满足，置禁用并说明 |
 | model-integration-test | 对应类型 | 管理员显式选择的一项已声明operation | 无productId，单输出，真实费用确认 |
 
@@ -203,7 +203,7 @@ AI 人物参考图属于 image 子任务，使用空间默认可兼容图片模�
 | POST /model-configs/{id}/tests | admin | `{mode:"probe"}`，必传Idempotency-Key | 202 `{data:ModelTest}` |
 | GET /model-configs/{id}/tests/{testId} | admin | 无 | 200 `{data:ModelTest}` |
 | POST /model-configs/{id}/trial-generations | admin | TrialRequest，必传Idempotency-Key | 202 `{data:GenerationTaskView}` |
-| GET /model-preferences | member | 无 | 200 `{items:ModelPreference[]}`，固定image、video两项 |
+| GET /model-preferences | member | 无 | 200 `{items:ModelPreference[]}`，固定image、video、text三项 |
 | PUT /model-preferences/{kind} | admin | PreferencePut，If-Match必传 | 200 `{data:ModelPreference}` |
 | POST /model-compatibility | member | CompatibilityRequest | 200 `{data:CompatibilityResult}`，不发起模型调用 |
 | POST /generation-tasks | member | GenerationRequest，必传Idempotency-Key | 202 `{data:GenerationTaskView}` |
@@ -232,7 +232,7 @@ admin 指 owner/admin；member 包括有 use 权限的普通成员。无权读�
 
 `GenerationParameters` = `{ratio:string,resolution:string,durationSeconds?:integer,outputCount:integer}`。video durationSeconds必填、outputCount=1；image不允许durationSeconds，outputCount1–4；业务要求总张数由父任务管理。提示词通过引用而非普通客户直接覆盖后台系统提示词。
 
-`GenerationRequest` = `{clientRequestId:UUID,feature,operation,modelSelection,parameters,inputAssetIds:UUID[],audioAssetId?:UUID,contentPlanId:UUID,contentPlanRevision:integer,productId?:UUID,batchId?:UUID,parentTaskId?:UUID,acknowledgement:{thirdPartyUsage:boolean,configRevision:integer|null}}`。custom时thirdPartyUsage必须true、configRevision必须等于expectedRevision；platform时thirdPartyUsage=false、configRevision=null。contentPlan是平台文字服务或模板生成的已确认内容；服务端校验归属、版本和非空最终提示词。没有提示词确认步骤的功能在提交前内部建立计划，不额外要求用户操作。纯上传productId=null；库商品需要稳定productId；批量父任务创建子任务，子任务不重新弹费用确认。
+`GenerationRequest` = `{clientRequestId:UUID,feature,operation,modelSelection,parameters,inputAssetIds:UUID[],audioAssetId?:UUID,contentPlanId:UUID,contentPlanRevision:integer,productId?:UUID,batchId?:UUID,parentTaskId?:UUID,acknowledgement:{thirdPartyUsage:boolean,configRevision:integer|null}}`。custom时thirdPartyUsage必须true、configRevision必须等于expectedRevision；platform时thirdPartyUsage=false、configRevision=null。contentPlan是默认文案服务或模板生成的已确认内容；服务端校验归属、版本和非空最终提示词。没有提示词确认步骤的功能在提交前内部建立计划，不额外要求用户操作。纯上传productId=null；库商品需要稳定productId；批量父任务创建子任务，子任务不重新弹费用确认。
 
 `TrialRequest` = `{clientRequestId:UUID,operation,parameters,inputAssetIds:UUID[],audioAssetId?:UUID,prompt:string1–2000,acknowledgement:{thirdPartyUsage:true,configRevision:integer}}`。不接受productId/batchId；测试素材归当前空间或平台许可示例。服务器内部创建contentPlan、feature=model-integration-test，使用当前模型revision并复用generation流程。
 
@@ -512,3 +512,25 @@ ratio、resolution为规范化语义，不等价于供应商原始参数。实�
 ## 14. 原型进度补充（2026-11-12）
 
 已补齐独立模型管理页面、本机默认模型、启停、筛选详情及检查/试生成演示；精确字段与行为见[模型管理流程](model-management-flow.md)。本补充更新第13节“默认/启停未实现”的界面进度，RBAC、空间默认持久化、真实测试passed、完整能力配置与真实调用仍待后端实现。当前format_valid只代表本地格式通过；不能代替第2节及第3.7节真实passed，也不因此满足上线验收。
+
+## v1.1 三类默认与文案接入扩展（2026-11-12）
+
+本节与更新后的第 1 节、字段契约共同覆盖旧版「文案固定平台」规定；未更新的 EndpointSet、CapabilitySet、GenerationRequest、图片/视频探测与网关细节明确仅适用于 image/video，不可用于 text。当前仅实现本机演示的配置、默认解析与路由，不代表以下正式接口已接入。
+
+### 默认与路由
+
+ModelPreference 按 workspaceId + kind=image|video|text 各保留一条；source=platform|custom；custom 指向一个已启用、正式服务测试通过且类型匹配的 modelConfigId。设置平台不隐藏自配模型；所有有权限且类型匹配的已配置模型进入生成选择框，停用/未验证/能力不足显示禁用原因。有选择框的本次值优先，无选择框直接用该类型默认。图片参考图步骤不得误用页面的视频选择值。
+
+删除/停用默认项需确认，事务内恢复该类型平台默认；其他类型不变。重新启用不会自动恢复默认。保存新配置不会替换默认；新建按当前默认初始化，已打开任务保留本次选择。没有选择框的生成步骤在提交时锁定默认 ID、revision 和安全快照；之后修改默认不改变已接受任务。平台默认与本次选择相互独立。
+
+### 文案正式 DTO 与适配边界（待开发）
+
+- TextConfigCreate：name（trim后1–50）、kind 固定 text、adapterKey 固定 text-chat-v1、modelId（1–150）、endpoint（完整 HTTPS 地址）、apiKey（服务端保密输入）、enabled（默认 true）。返回实体沿用 ModelConfig 的租户、revision、credentialConfigured、检查状态与时间字段；不返回 Key。PATCH 可更新名称、endpoint、modelId、enabled、apiKey，类型与适配器不可改；endpoint/modelId/Key 修改使连接检查失效。测试/删除/默认权限和租户隔离沿用原规则。
+- text-chat-v1 是待实现的内部适配器标识，不宣称兼容任意供应商。适配器将业务系统提示词、用户输入和可选已授权图片引用转换成供应商请求。商品图识别必须支持图文输入；结构化脚本/卖点需验证 JSON 输出及业务 Schema；不支持时显式报能力不匹配。
+- TextGenerationRequest：clientRequestId、feature（product-analysis / copywriting / prompt-planning / script-planning / content-package / graphic-notes）、modelSelection（沿用 source/id/revision 结构）、input（业务文本与受控素材 ID）、promptVersion、productId?、parentTaskId?。modelSelection 由本次选择或类型默认在服务端解析后锁定；不能由客户端传任意系统提示词替换后台业务规则。
+- 输出：taskId、status、modelSnapshot、result（由对应业务 Schema 校验的文字/结构化结果）、usage（供应商提供才填写）。不把纯文字结果归档成图片/视频资产；历史按业务规则保存结果及模型元信息，图文笔记仍不保存对话/输入。文案试生成只创建文案测试结果，不产生图片资产。
+- 失败：鉴权、连接、额度、能力或结构校验失败均显示原因，不静默回退平台/其他模型。密钥加密、日志脱敏、SSRF、权限、异步幂等、超时与限流沿用媒体服务同等级要求。供应商计费不在原型中模拟扣款。
+
+### 原型与验收
+
+本地 text-chat 为占位协议，不等于 text-chat-v1 已实现。元数据和默认存 localStorage，测试 Key 仅 sessionStorage；不联网。shared 模块 resolve(kind, select?) 统一解析；文案按钮没有新增选择框，直接取 text 默认，AI 模特与数字人参考图直接取 image 默认。既有图片/视频下拉展示全部同类型配置，停用可见禁选。新增验收：配置两个图片模型、一个视频模型、一个文案模型；分别设默认并刷新；平台和自配切换不隐藏配置；修改默认不覆盖跨页已有选择；无框按钮解析正确类型；停用/删除默认只重置同类；启用不复原默认；密钥不进入快照/历史。

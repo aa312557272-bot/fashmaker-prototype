@@ -297,7 +297,7 @@
 
 ## 11. 自定义图片 / 视频模型（2026-11-10）
 
-本节扩展各功能原有模型枚举。详情长图、商品套图、批量生图、AI 换装四类任务、穿搭分离、图文笔记使用 image；商品生视频、爆款复刻、数字人口播使用 video。文字固定平台模型。原先没有模型字段的页面新增模型下拉，默认平台图片/视频模型；原有模型默认值不变。
+本节扩展各功能原有模型枚举。详情长图、商品套图、批量生图、AI 换装四类任务、穿搭分离、图文笔记使用 image；商品生视频、爆款复刻、数字人口播使用 video。文案可配置 text 模型，商品分析、文案、提示词和脚本等无选择框的入口使用默认文案模型。原先没有模型字段的页面新增模型下拉，默认平台图片/视频模型；未设置自配默认时，原有平台模型默认值不变。
 
 | 字段 | 选项 / 约束 |
 | --- | --- |
@@ -329,6 +329,158 @@
 本页此前的localStorage/sessionStorage、image-api/video-task和格式检查属于当前静态原型；正式开发采用规格中的服务端安全存储、image-api-v1/video-gateway-v1及真实测试契约。此次只交付开发文档，HTML并未因此获得真实模型调用、空间默认、能力检测或线上存储。既有商品与任务规则继续适用；具体接入行为以新规格为准。
 
 
+## 小红书店铺发布（待开发，2026-11-11）
+
+[单平台上架开发规格](xiaohongshu-publishing-development.md)第5节为拟新增字段口径，区分商品共用信息、每店发布配置及SKU；第6节为后台对象及拟建内部接口。本文现有原型字段、默认值与生成归档规则不因此改变，尚无对应HTML实现。正式接入按类目动态规则校验，不将生成输入图数量限制当平台发布上限。
+
+发布保持稳定productId并另存shopConnectionId、平台itemId及skuId映射；每次提交保存不可变快照。销售价格、库存、品牌、资质不使用AI虚构或静默默认值。凭证只在服务端加密保存，不进入任务快照。发布记录不重复创建AI生成资产。历史复用创建新任务并重新校验授权与规则。
+
+### 小红书店铺商品导入字段（v1.1，待开发）
+
+统一新增来源字段：platform=xiaohongshu、sellerId、shopConnectionId、externalItemId、externalSkuId映射、sourceSnapshot、lastAppliedSnapshot、fetchedAt、remoteUpdatedAt/contentHash、localRevision、dirtyFields、conflicts、sourceStatus、素材fileStatus及mediaRole。去重键为workspaceId/platform/sellerId/externalItemId，不按标题；同源重复导入复用productId。缺字段标未知，不清空本地。
+
+来源图片/视频保存为sourceType=platform-sync的上传素材；平台地址不是已存文件，封面未就绪只保留待处理项。销售数据单独保存带时间来源快照，不自动写回。ShopSyncTask及内部接口、完整字段映射/分页/覆盖规则以[小红书规格第9节](xiaohongshu-publishing-development.md#9-授权店铺商品导入与持续同步)为准，不改变现有原型枚举及生成归档口径。
+
+
+## 店铺管理与小红书 Demo 实际字段（2026-11-11）
+
+本节是当前实现口径，区别于前述正式规格。完整流程见[店铺管理](shop-management-flow.md)。
+
+| 字段/位置 | 当前选项、默认及限制 |
+| --- | --- |
+| 平台 | 仅小红书，所有操作为演示 |
+| 示例店铺 | xhs-life 生活选物店 / xhs-fashion 服饰精选店；首次无连接；模拟连接弹窗默认生活店，必须勾选说明 |
+| 同步选择 | 默认0个；选品/全选当前结果/全店；每店初始6个示例商品，5在售1下架；搜索按标题 |
+| 商品来源 | source.platform=xiaohongshu、shopId、shopName、itemId、skuId、base.name/desc、conflicts、syncedAt、remoteRevision、sales.price/stock/buyable |
+| 商品ID与去重 | xhs-shopId-itemId；重复导入保持ID；跨店同名不合并；商品列表打开及批量操作用productId |
+| 来源筛选 | 全部/手动/已连接或断开的各来源店；同步状态 全部/已关联/冲突/手动 |
+| 来源素材 | 示例链接，本机保存引用；上传素材分类，来源标签“小红书来源 · 演示预览”；不进入AI生成 |
+| 差异 | 只演示标题和描述；base/local/remote比较，冲突默认保留本地；需先保存编辑；未解决冲突阻止回写 |
+| 发布目标 | 导入商品锁定来源店铺及itemId；普通商品可选已连接店，默认第一家 |
+| 发布标题/描述 | 必填；输入框分别最多120字符/500字符，120为演示限制并非平台统一上限 |
+| 示例类目 | 服饰/上衣、服饰/卫衣、箱包/双肩包、数码/耳机、美妆/香水、家居/水杯；普通商品默认空，来源商品带入示例 |
+| 品牌说明 | 默认“示例无品牌（演示）”，可编辑，不代表资质校验 |
+| SKU | 仅一条规格；规格名称必填；来源带入默认规格；普通商品为空；售价>0且最多两位小数，存整数分；库存非负整数且不得空 |
+| 物流 | 默认空；商家包邮/买家承担运费，两项均为48小时内示例，必选 |
+| 图片用途 | 不使用/主图/详情图/主图及详情；默认首图兼用；至少一张主图和详情图；视频与演示封面排除 |
+| 确认与结果 | 预览后勾确认；默认模拟待审核；可切模拟已上架/模拟审核不通过；拒绝原因为固定示例 |
+| 同步历史 | tasks保存id、shopId/name、time、逐项itemId/productId/name/status及demo=true |
+| 发布历史 | publications保存id、productId、shopId/name、itemId、mode、time、status、snapshot、reason、demo=true；快照不随商品编辑改变 |
+| 连接中断 | 保留商品/历史，禁止同步与回写，重新连接可恢复 |
+
+localStorage键为fashmaker-shop-demo-v1，与既有商品库分开。模拟审核通过后本机来源版本更新，新品保存平台映射；不创建真实平台商品。生产所需的完整分页、真实素材文件、动态属性、多SKU、版本锁、凭证、权限与任务事务仍按正式开发规格实现，不把Demo简化当作线上交付。
+
+## 商品详情独立页（2026-11-11，以此覆盖原抽屉与单 SKU 演示约定）
+
+- 路由 `product-detail.html?tab=products&product=<id>`；商品库点击直接进入，不提供快速预览抽屉。
+- 稳定 `id`、原 `name/desc/usp/assets` 和 AI 结果关联规则不变；新公共字段保存于商品 `commerce`。
+- `commerce.code/brand/category/material/origin/tags`：字符串，默认空，依次为内部货号、品牌、内部分类、材质、产地、逗号分隔标签。内部分类不是平台类目。
+- `commerce.weight/length/width/height`：重量 kg、包装长宽高 cm，默认空，非负小数输入；为本地资料，不直接映射平台。
+- `commerce.shipFrom/afterSale/attributes`：发货地、售后说明、平台属性备注，默认空。备注不替代动态类目属性校验。
+- `commerce.dispatch`：默认空；枚举 24 小时内、48 小时内、72 小时内、预售（需平台校验）。
+- `commerce.skus`：至少一项，可新增删除；`code/spec/barcode/price/stock/image` 为编码、规格名、可选条码、元售价、库存、可选规格图 URL。默认首项规格为默认规格，来源商品带来源 SKU 编码和销售快照，其他默认空。
+- 保存：标题及每项规格名必填；非空 SKU 编码唯一；售价允许空，非空须正数且最多两位小数；库存允许空，非空须非负整数。发布：首 SKU 在发布面板必填售价库存，后续 SKU 必须同时有编码、规格、售价库存。
+- 发布面板使用 commerce.brand 和首 SKU 规格/价格/库存作为初始值。面板编辑首 SKU，其他 SKU 按商品资料快照提交。记录 snapshot.skus 保存全部 SKU；首 SKU 以发布面板值覆盖快照，价格单位为元字符串，顶层 snapshot.price 仍为分整数。
+- 状态：无提交记录显示未发布；最新记录显示模拟待审核、模拟已上架、模拟审核不通过。完整历史显示店铺、商品 ID、时间、原因及 JSON 提交快照。状态不代表真实平台。
+- 底部按钮：返回商品库、保存修改、保存并发布到店铺（无来源）/保存并更新原商品（有来源）。保存留页；发布必须先保存。原店更新锁定来源 ID。
+- 详细交互见 [product-detail-flow.md](product-detail-flow.md)。多 SKU 仅演示本地保存、校验和提交快照，来源同步仍限标题/描述。
+
+## 商品列表发布状态与操作（2026-11-11）
+- 新增 UI 字段 publicationStatus：由 publications 中稳定 productId 最新记录计算；无记录为未发布，其他枚举模拟待审核/模拟已上架/模拟审核不通过。仅为最近一次发布结果；来源商品是否在售继续由来源销售快照表达，不混用。
+- 商品卡片展示状态、最新记录店铺及发布按钮；表格独立发布状态和操作列。来源同步状态保留在来源筛选及详情，不替代发布状态。
+- 发布状态筛选默认全部，与搜索/店铺/同步状态叠加；隐藏卡片从可见 ID 集合剔除，批量全选不包含隐藏商品。
+- 按钮默认发布商品，有来源更新商品；最新失败重新发布；最新模拟待审核禁用并显示审核中。多店铺完整状态见详情历史。
+- 跳转 product-detail.html?tab=products&product=<id>&action=publish，经详情保存与校验后自动打开发布面板；消费 action 后移除，不自动提交。批量模式不启动发布。
+
+
 ## 2026-11-12 模型管理补齐
 
 原「自定义模型」入口升级为独立[模型管理页面](../model-management.html)。已实现本机图片/视频分类、平台/自定义列表、搜索筛选、默认设置、启停、详情、编辑删除、格式检查与试生成流程；新增字段与精确口径见[模型管理流程](model-management-flow.md)，试生成文本见[提示词](model-management-prompt.md)。检查成功仅format_valid，不等于真实连接passed；未引入真实模型调用、能力探测或线上密钥存储。本修订替代此前“尚无独立管理页面/默认设置”的当前原型描述，正式服务要求不变。
+
+## 2026-11-12 个人菜单与会员充值
+
+- 账号名称沿用 Ricky Tang、头像 R、空间为个人空间，积分余额由当前空间本地流水计算，使用独立账户演示存储。参考图的私人账号与 1745 余额不作为默认数据。
+- 菜单顺序：账号、积分充值、邀请有礼、联系我们、积分明细、订单明细、当前团队、账号管理、退出系统。积分与订单打开账户中心；当前团队支持切换及创建团队演示；邀请有礼进入邀请奖励筛选。其余占位项不执行真实账号操作。
+- 版本顺序：自定义模型版 / 个人版 / 团队版。个人999元/年、团队1999元/年；个人不含团队管理，团队含，其他付费功能及服务相同。团队赠送积分多于个人，两者具体额度待定；不沿用截图旧值。精确枚举见[个人菜单与会员流程](account-membership-flow.md)。
+- 自定义模型版：price=0（文案免费），teamManagement=false（不含团队管理，其他权益开放），giftCredits=0（不赠送积分）；主按钮固定「去配置模型」，目标 model-management.html。仅为套餐展示口径，不新增真实鉴权或会员状态。
+- 弹窗默认关闭；头像打开菜单，充值关闭菜单并打开弹窗；关闭按钮、外部点击和 Esc 关闭，焦点返回入口。桌面及中屏三列，窄屏一列滚动。
+- 全部账号与付款行为为静态演示，无支付、会员开通、余额修改；自备模型供应商费用独立结算。
+
+## 模型默认与自动路由 v1.1（2026-11-12）
+
+本节覆盖此前「文案固定平台」「仅两类模型」约定；与[模型管理流程](model-management-flow.md)一致。
+
+| 字段 / 行为 | 统一口径 |
+| --- | --- |
+| kind | image / video / text，分别图片 / 视频 / 文案，创建后不可变 |
+| protocol（本地） | image-api / video-task / text-chat，与 kind 一一对应 |
+| 默认设置 | 三类分别可选平台或某个已启用的同类配置；默认平台，保存新模型不自动改默认 |
+| 存储 | fashmaker-model-preferences-v1：image?/video?/text?=配置 ID；字段缺失表示平台；不存显示名作 ID |
+| 有选择框 | 本次选值优先，保留所有平台选项和全部同类型配置，独立于默认来源 |
+| 无选择框 | 点击时取对应类型默认；文案帮写/分析/提示词/脚本走 text，AI 模特与数字人参考图走 image |
+| enabled | 默认 true；false 仍在选择框显示但不可选，不能设默认；已选失效项保留占位并拦截该类生成 |
+| 删除/停用默认 | 确认后仅该类型恢复平台；启用不恢复旧默认；历史和资产保留 |
+| 新建/已打开任务 | 新建应用默认；已打开草稿保留本次选择；批量单项覆盖优先于全局 |
+| 元信息 | resolve 返回 id/name/kind/source，自配补 modelId/protocol/endpoint；不得带 Key。modelConfig 补无选择框默认元信息 |
+| 演示边界 | 只保存、解析与展示模型选择，不发送接口，不生成真实内容，不以格式通过代表连通性通过 |
+
+原正式 JSON Schema 的图片/视频 API DTO 仍见原文件；新增本地三类型/默认结构见[本地模型路由 Schema](contracts/local-model-routing.schema.json)，不可混作生产配置接口。文案正式接入扩展见开发规格 v1.1 追加节。
+
+### 模型操作可见性修正（2026-11-12）
+
+自定义模型行将「停用 / 启用」和「删除」固定显示在独立操作排，编辑、测试等放在下一排，不依赖悬停。已启用模型显示停用，已停用显示启用。当前类型未配置自定义模型时，列表上方说明并提供添加入口；平台行标注平台内置模型，不提供删除或启停。此修正不注入虚构配置或测试 Key，不改变默认与归档规则。
+
+## 会员套餐 v1.1（2026-11-13）
+
+个人版 priceYear=999，teamManagement=false；团队版 priceYear=1999，teamManagement=true；两者其他功能权益与服务完全一致。giftCredits=null（待定），且团队额度确定后须高于个人额度；界面不把 null 显示为0。删除尝鲜/基础/企业版，不保留旧原价、赠送额度、积分价值、充值单价、折扣或推荐比例。自定义模型版继续免费、创作功能开放、不含团队管理、赠送积分0。所有购买咨询仅本地提示，不执行支付。
+
+## 套餐功能清单 v1.3（2026-11-13）
+
+三版本统一功能枚举：创作工具=[视频创作,详情长图,商品套图,商品生视频,爆款复刻,AI 换装,穿搭分离,数字人口播,图文笔记]；管理功能=[店铺管理]。卡片不展示首页、资产库、创作记录、设置、模型管理。仅调整套餐文案，不改变真实侧栏或新增魅力画布实现。团队权益单列teamManagement：个人false，团队true，自定义模型false。价格、积分待定及模型跳转不变。详见[会员流程](account-membership-flow.md)。
+
+## 套餐补充权益 v1.4（2026-11-13）
+
+在v1.3核心清单后新增 exclusiveFeatures=[无限画布全部组件,批量视频生成,团队管理,自主配置大模型 API]，otherBenefits=[1v1专属客服,去除品牌水印]。团队管理仅在此处出现，个人及自定义模型false、团队true；其他新增权益三版均勾选，保持个人/团队其他功能与服务一致。每卡16条，不变更价格与积分待定规则，不新增真实服务。
+
+套餐 v1.5：创作工具不单列魅力画布，画布权益只保留独家功能「无限画布全部组件」，核心功能10项+独家功能4项+其他权益2项。
+
+## 会员购买方式 v1.7（2026-11-13）
+
+billingTab=month/year/topup，初始及每次打开year，切换不持久化、不写会员余额。年费个人999/团队1999；月费null（显示价格待定/月，不能除12推算）；两周期赠送积分null（待定）。自定义免费、giftCredits=0、teamManagement=false，两周期权益不变。积分包示例数组（价格元，baseCredits/bonusCredits/bonusExpiryMonths）：新手38/3800/0/null；轻享98/9800/1100/1；进阶198/19800/5000/1；高级698/69800/30000/6。充值永久有效，赠送依单独期限，均为截图参考演示配置。选择套餐仅本地提示，不下单、不支付、不增加积分；不展示未确认折扣、节省比例、生成产量或免排队承诺。[完整交互](account-membership-flow.md)。
+
+## 账户中心与多团队 v1.0（2026-11-13）
+
+以[账户中心流程](account-center-flow.md)为新增模块统一口径，覆盖旧菜单固定0余额/充值记录/团队仅占位约定。URL tab=credits/orders/members，workspace为稳定空间ID，invite为仅本地演示邀请token。
+
+| 对象/字段 | 实现口径 |
+| --- | --- |
+| 存储 | localStorage fashmaker-account-center-v1：version=1,currentWorkspaceId,workspaces[],ledger[],orders[] |
+| workspace | id,name,kind(personal/team),plan,createdAt,members[]；当前空间跨页保留，新建团队版演示不产生购买 |
+| 团队名 | trim后必填1–50，同一本机已有团队不可同名；ID为UUID衍生，不能用名字关联 |
+| member | id,name,email,note,role(owner/admin/member),status(active/invited/canceled/removed),joinedAt,lastLoginAt,quota；邀请可含invitedAt/token |
+| 邀请字段 | email必填有效≤254且trim小写；note≤100；role默认member可选admin；quota空=null不限，否则≥0安全整数，0有效 |
+| 邀请状态 | 新建invited不发邮件；显式模拟接受为active；取消canceled/移除removed保留归属，token接受或取消后清理；所有者不可移除或降级 |
+| ledger | id,workspaceId,title,type,delta,memberId,memberName,memberEmail,at,demo=true，可有relatedId/orderId |
+| type/delta | consume负数；refund/recharge/gift/invite_reward正数。邀请好友奖励进入同一明细，团队邀请不自动奖励 |
+| 余额 | 当前空间按at升序逐笔累计delta，列表倒序；筛选不重算历史余额；原消费及退款分别保留，不双重抵扣 |
+| 成员累计用量 | max(0,-sum(当前团队该成员consume/refund的delta))；删除成员不删流水快照 |
+| order | id,workspaceId,title,type(membership/credits),period,amountCents整数分,status(pending/paid/closed/refunded),createdAt,paidAt可空,memberId/name,baseCredits,bonusCredits,demo=true |
+| 筛选分页 | 流水关键词/类型/成员/起止日期交集，日期上海时区含全天；订单关键词/类型/状态；成员用户名邮箱/状态；分页5/10/20/50默认20，筛选回第一页 |
+| 示例 | personal余额420，两个示例团队余额各3820；新团队0且无订单；示例邀请/注册奖励不构成正式奖励额度规则 |
+| 限制 | 隔离只覆盖新增账目与成员，不代表现有商品资产模型已做租户隔离；无真实鉴权、支付、邀请邮件、额度执行或创作自动扣费 |
+
+三购买Tab及所有咨询按钮保持只展示，不创建paid订单、到账流水或变更会员。个人和自定义模型版仍不含团队协作；新建团队是明确标记的团队版演示空间。存储失败不报成功，表单保留输入；正式服务仍需事务、权限、订单回调幂等及服务端积分账本。
+
+## 派送积分与记录 v1.1（2026-11-13）
+
+入口：仅积分明细的「派送积分」「派送记录」，成员管理不显示。来源固定当前账号个人账户personal；目标须为本人active owner/admin团队。amount必填正安全整数≤提交时个人最新余额，note选填trim≤200，当前空间变更后不允许提交旧表单。个人transfer_out负值、目标transfer_in正值，同transferId，独立流水id，sourceWorkspaceId/name、targetWorkspaceId/name、counterpartyWorkspaceId/name、linkedLedgerId、成员快照、note、at、demo=true。单次完整存储写入两条，失败不写任一条；transferId幂等，相同ID内容不符拒绝。原数据直接兼容，不预置假派送记录。
+
+派送记录字段=派送单号、来源账号、接收团队、变动积分、操作成员、时间、备注，仅当前空间；类型可筛transfer_in/transfer_out/transfer组合。详情可查对方流水。余额一减一增守恒，累计获得计入派送收入，消费及成员用量不计派送；无付款订单、无真实线上划转。不支持团队向个人或团队互转。[完整流程](account-center-flow.md)。
+
+账户中心操作可见性v1.2：rechargeAccount仅tab=credits可见；openTransfer/openTransferRecords仅credits渲染；members与orders不显示充值升级，members不显示派送操作。账目及派送逻辑不变。
+
+当前团队入口v1.3：头像菜单当前团队行右侧固定「切换」，整行直达当前workspace的members页，不再有菜单内二级团队面板。个人与多团队切换/创建统一在账户中心页面完成；账号余额与数据规则不变。
+
+## 独立文档交付（2026-11-13）
+
+价格、会员权益及积分包以[价格体系](pricing-system.md)为主文档；菜单、团队、积分/订单/成员、派送及按钮可见性以[个人菜单与账户中心](personal-menu-flow.md)为主文档。原混合文档仅保留导航，不再重复维护规则。当前实现数据仍以本文及[账户中心流程](account-center-flow.md)为准。
