@@ -446,7 +446,7 @@ localStorage键为fashmaker-shop-demo-v1，与既有商品库分开。模拟审�
 
 ## 会员购买方式 v1.7（2026-11-13）
 
-billingTab=month/year/topup，初始及每次打开year，切换不持久化、不写会员余额。年费个人999/团队1999；月费null（显示价格待定/月，不能除12推算）；两周期赠送积分null（待定）。自定义免费、giftCredits=0、teamManagement=false，两周期权益不变。积分包示例数组（价格元，baseCredits/bonusCredits/bonusExpiryMonths）：新手38/3800/0/null；轻享98/9800/1100/1；进阶198/19800/5000/1；高级698/69800/30000/6。充值永久有效，赠送依单独期限，均为截图参考演示配置。选择套餐仅本地提示，不下单、不支付、不增加积分；不展示未确认折扣、节省比例、生成产量或免排队承诺。[完整交互](account-membership-flow.md)。
+billingTab=month/year/topup，初始及每次打开为 year。个人月付 99 元，每月 700 积分，年付 999 元，一次性发放 8400 积分；团队月付 199 元，每月 1600 积分，年付 1999 元，一次性发放 19200 积分。年付积分自发放起有效 1 年。自定义免费、giftCredits=0、teamManagement=false。充值包（价格元/baseCredits/bonusCredits/bonusExpiryMonths）：新手 38/190/0/null；轻享 98/450/55/1；进阶 198/880/150/1；高级 698/2850/800/6。充值积分永久有效，赠送积分单独计算有效期。用量示例按 1 积分/张与 10 积分/条分别计算，结果取整数。切换和选择仅影响弹窗展示，不下单、不支付、不增加积分。[完整交互](pricing-system.md)。
 
 ## 账户中心与多团队 v1.0（2026-11-13）
 

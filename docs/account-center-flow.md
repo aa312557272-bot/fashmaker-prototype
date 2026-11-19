@@ -41,7 +41,7 @@ ledger每条还含workspaceId、memberId、memberName、memberEmail、demo=true�
 
 顶部显示当前空间套餐、余额；下方为订单号、商品/套餐、类型、周期、支付金额、状态、下单时间、支付时间、操作人、详情。订单类型membership会员/credits积分包；状态pending待支付、paid已支付、closed已关闭、refunded已退款；金额以amountCents整数分存储，展示两位小数元。未支付时间null展示暂无。
 
-每条订单保留workspaceId、memberId/name、baseCredits、bonusCredits及demo=true。只读详情展示空间、状态、时间、积分与演示说明。可按订单号/商品搜索、类型及状态筛选，分页同积分页。示例团队各1条已支付新手积分包，关联同空间3800充值流水；个人及新团队无订单。未确认的会员赠送值不伪造数字。
+每条订单保留workspaceId、memberId/name、baseCredits、bonusCredits及demo=true。只读详情展示空间、状态、时间、积分与演示说明。可按订单号/商品搜索、类型及状态筛选，分页同积分页。示例团队各1条已支付新手积分包，关联同空间3800充值流水；个人及新团队无订单。示例订单保留历史数据，当前价格与会员赠送额度见[价格体系](pricing-system.md)。
 
 本次没有创建/支付/退款订单的操作。现有购买咨询与积分包选择不改变订单数、余额或会员。
 
