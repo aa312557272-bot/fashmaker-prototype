@@ -9,8 +9,8 @@
  document.body.append(menu);
  const plans=[
  {name:'自定义模型版',style:'custom',description:'自备模型，灵活创作',teamManagement:false},
- {name:'个人版',year:{price:999,credits:8400},month:{price:99,credits:700},style:'personal',description:'一个人，也能高效创作',teamManagement:false},
- {name:'团队版',year:{price:1999,credits:19200},month:{price:199,credits:1600},style:'team',description:'共享创作能力，协同管理团队',teamManagement:true}
+ {name:'个人版',year:{price:999,credits:6600},month:{price:99,credits:550},style:'personal',description:'一个人，也能高效创作',teamManagement:false},
+ {name:'团队版',year:{price:1999,credits:15600},month:{price:199,credits:1300},style:'team',description:'共享创作能力，协同管理团队',teamManagement:true}
  ];
  const numbers=n=>n.toLocaleString('en-US');
  const capacity=credits=>`最多 ${numbers(credits)} 张图或 ${numbers(Math.floor(credits/10))} 条视频`;
@@ -27,7 +27,7 @@
   card.querySelector('.fm-plan-points').innerHTML=planPoints(plan.month.credits,'每月发放');
  }
  year.after(month);
- const packs=[{name:'新手套餐',price:38,credits:190,bonus:0},{name:'轻享套餐',price:98,credits:450,bonus:55,months:1},{name:'进阶套餐',price:198,credits:880,bonus:150,months:1},{name:'高级套餐',price:698,credits:2850,bonus:800,months:6}];
+ const packs=[{name:'新手套餐',price:38,credits:300,bonus:0},{name:'轻享套餐',price:98,credits:750,bonus:50,months:1},{name:'进阶套餐',price:198,credits:1500,bonus:150,months:1},{name:'高级套餐',price:698,credits:5200,bonus:650,months:6}];
  const topup=document.createElement('section');topup.id='fmBilling-topup';topup.className='fm-billing-panel';topup.setAttribute('role','tabpanel');topup.setAttribute('aria-labelledby','fmTab-topup');topup.hidden=true;
  topup.innerHTML=`<div class="fm-topup-heading"><h3>平台积分补充包</h3><p>单独购买积分，用于平台生图、改图和视频等功能。按需补充，不改变当前会员版本。</p></div><div class="fm-topup-grid">${packs.map(pack=>`<article class="fm-credit-pack"><h3>${pack.name}</h3><div class="fm-plan-price"><small>¥</small> ${pack.price} <small>/ 单次充值</small></div><div class="fm-credit-amount">${numbers(pack.credits+pack.bonus)} <small>积分</small></div><p class="fm-credit-bonus">${pack.bonus?`含 ${numbers(pack.credits)} 充值积分及 ${numbers(pack.bonus)} 赠送积分`:'按需购买，轻量补充'}</p><ul><li>充值积分永久有效</li><li>${pack.bonus?`赠送积分有效期 ${pack.months} 个月`:'不含赠送积分'}</li><li>适用于平台图片与视频功能</li><li>${capacity(pack.credits+pack.bonus)}</li></ul><button type="button" class="fm-plan-cta" data-credit-pack="${pack.name}">选择此套餐</button></article>`).join('')}</div><p class="fm-topup-note">生成数量分别按全部积分用于 GPT Image 2 1K 图片（1 积分/张）或 Seedance 2.0 Mini 480p、5 秒无参考视频（10 积分/条）计算，含有效期内用完的赠送积分。</p>`;
  month.after(topup);
@@ -39,6 +39,11 @@
  tabs.addEventListener('click',e=>{const tab=e.target.closest('[data-billing-tab]');if(tab)selectBilling(tab.dataset.billingTab)});
  tabs.addEventListener('keydown',e=>{const buttons=[...tabs.querySelectorAll('[role=tab]')],index=buttons.indexOf(document.activeElement);if(index<0||!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?buttons.length-1:(index+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;selectBilling(buttons[next].dataset.billingTab);buttons[next].focus()});
  topup.querySelectorAll('[data-credit-pack]').forEach(button=>button.onclick=()=>{recharge.querySelector('.fm-recharge-feedback').textContent='已选择'+button.dataset.creditPack+'。当前为静态演示，未创建订单、付款或增加积分。'});
+ const videoPricing=document.createElement('details');
+ videoPricing.className='fm-topup-note';
+ const videoSeconds=[5,10,15,30];
+ videoPricing.innerHTML=`<summary>查看视频时长扣分示例</summary><p>Seedance 2.0 Mini · 480p · 无参考视频 · 2 积分/秒</p><ul>${videoSeconds.map(seconds=>`<li>${seconds} 秒 · ${seconds*2} 积分（按 ¥0.10/分折算 ¥${(seconds*2/10).toFixed(2)}）</li>`).join('')}</ul><p>30 秒用于多段视频预算，单次支持时长以模型为准。</p>`;
+ recharge.querySelector('.fm-recharge-note').before(videoPricing);
  recharge.querySelector('.fm-recharge-note').textContent='静态原型演示，不产生真实付款、会员开通或积分变动。图片与视频共用积分；预计用量按 1K 图片 1 积分/张、480p 无参考 5 秒视频 10 积分/条计算。自备模型费用由供应商结算。';
  function openRecharge(){selectBilling('year');recharge.showModal();recharge.scrollTop=0;}
  selectBilling('year');
