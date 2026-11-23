@@ -12,3 +12,17 @@
 
 
 .fm-team-switch-label{margin-left:auto;flex-shrink:0;color:#7b838c;font-size:13px}.fm-profile-menu [data-account-action=team]{background:#f6f6f7}
+
+.fm-checkout-price{display:block;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;font-family:inherit}
+.fm-checkout-price:hover{text-decoration:underline;text-underline-offset:.14em}
+.fm-checkout-price:focus-visible,.fm-wechat-checkout button:focus-visible{outline:2px solid #087a49;outline-offset:4px}
+.fm-wechat-checkout{box-sizing:border-box;width:min(420px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);border:1px solid #e4e7e3;border-radius:22px;padding:0;background:#fff;color:#19221d;font:15px/1.5 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;box-shadow:0 24px 80px #14261c33}
+.fm-wechat-checkout::backdrop{background:#10251a65}
+.fm-wechat-checkout header{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;border-bottom:1px solid #e8eee8}
+.fm-wechat-checkout h2{font-size:18px;margin:0}
+.fm-wechat-checkout button{width:40px;height:40px;border:0;border-radius:10px;background:#f0f5f1;color:#344139;font-size:24px;cursor:pointer}
+.fm-wechat-content{text-align:center;padding:18px 24px 24px}
+.fm-wechat-content p{margin:8px 0}
+.fm-wechat-content strong{display:block;font-size:38px;line-height:1.15;font-variant-numeric:tabular-nums}
+.fm-wechat-content img{display:block;width:min(208px,100%);height:auto;margin:18px auto 10px;border:1px solid #e8eee8;border-radius:12px;image-rendering:pixelated}
+.fm-wechat-content .fm-wechat-demo{margin-bottom:0;color:#5f6d64;font-size:13px}

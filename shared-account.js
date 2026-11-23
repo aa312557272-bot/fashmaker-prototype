@@ -1,5 +1,5 @@
 (()=>{
- const css=document.createElement('link');css.rel='stylesheet';css.href='shared-account.css?v=20261113-team-link-4';document.head.append(css);
+ const css=document.createElement('link');css.rel='stylesheet';css.href='shared-account.css?v=20261123-wechat';document.head.append(css);
  const svg=(path)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${path}"/></svg>`;
  const icons={gift:'M12 3v18M3 8h18v5H3Zm2 5v8h14v-8M12 8C4 8 6 1 10 4Zm0 0c8 0 6-7 2-4Z',contact:'M21 11a9 9 0 0 1-9 9H4l1-5a9 9 0 1 1 16-4Z',credits:'M4 4h16v16H4ZM8 15v-3m4 3V8m4 7v-5',card:'M3 5h18v14H3Zm0 5h18M7 15h3',team:'M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM2 21v-2a6 6 0 0 1 12 0v2m2-16a4 4 0 0 1 0 8m1 3a5 5 0 0 1 5 5',user:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM6 19a6 6 0 0 1 12 0',exit:'M10 4h10v16H10M4 12h11m-7-4-4 4 4 4'};
  const menu=document.createElement('dialog');menu.className='fm-profile-menu';menu.id='fmProfileMenu';menu.setAttribute('aria-label','个人菜单');
@@ -17,7 +17,7 @@
  const planPoints=(credits,expiry)=>`<b>赠送 ${numbers(credits)} 积分</b><small>${expiry}</small><small>${capacity(credits)}</small>`;
  const featureGroups=[{title:'创作工具',items:['视频创作','详情长图','商品套图','商品生视频','爆款复刻','AI 换装','穿搭分离','数字人口播','图文笔记']},{title:'管理功能',items:['店铺管理']}];
  const recharge=document.createElement('dialog');recharge.className='fm-recharge-dialog';recharge.id='fmRechargeDialog';recharge.setAttribute('aria-labelledby','fmRechargeTitle');
- recharge.innerHTML=`<button type="button" class="fm-recharge-close" data-dismiss aria-label="关闭充值弹窗">×</button><header><h2 id="fmRechargeTitle">选择适合你的创作方案</h2><p>个人与团队，核心创作功能一致；团队版增加团队管理与更多积分</p></header><div class="fm-plan-grid">${plans.map(p=>`<article class="fm-plan ${p.style}">${p.style==='team'?'<span class="fm-plan-badge">团队协作</span>':''}${p.style==='custom'?'<span class="fm-plan-badge">自备模型 · 免费使用</span>':''}<h3>${p.name}</h3><div class="fm-plan-price">${p.style==='custom'?'免费':`<small>¥</small> ${numbers(p.year.price)} <small>/ 年</small>`}</div><p class="fm-plan-offer">${p.description}</p>${p.style==='custom'?'<a class="fm-plan-cta" href="model-management.html">去配置模型</a>':`<button type="button" class="fm-plan-cta" data-contact>咨询${p.name}</button>`}<div class="fm-plan-points">${p.style==='custom'?'<b>不赠送积分</b><small>配置自己的图片 / 视频 / 文案模型</small>':planPoints(p.year.credits,'一次性到账，自发放起有效 1 年')}</div>${featureGroups.map(group=>`<h4>${group.title}</h4><ul>${group.items.map(name=>`<li><span>✓</span>${name}</li>`).join('')}</ul>`).join('')}<h4 class="fm-other-heading">独家功能</h4><ul><li><span>✓</span>无限画布全部组件</li><li><span>✓</span>批量视频生成</li><li class="${p.teamManagement?'':'unavailable'}"><span>${p.teamManagement?'✓':'×'}</span>团队管理</li><li><span>✓</span>自主配置大模型 API</li></ul><h4 class="fm-other-heading">其他权益</h4><ul><li><span>✓</span>1v1专属客服</li><li><span>✓</span>去除品牌水印</li></ul></article>`).join('')}</div><p class="fm-plan-comparison">个人版与团队版的其他功能和服务一致，团队版额外提供团队管理及更多积分。</p><p class="fm-recharge-note">静态原型演示，不产生真实付款、会员开通或积分变动。自备模型费用由供应商结算。</p><p class="fm-recharge-feedback" role="status"></p>`;
+ recharge.innerHTML=`<button type="button" class="fm-recharge-close" data-dismiss aria-label="关闭充值弹窗">×</button><header><h2 id="fmRechargeTitle">选择适合你的创作方案</h2><p>个人与团队，核心创作功能一致；团队版增加团队管理与更多积分</p></header><div class="fm-plan-grid">${plans.map(p=>`<article class="fm-plan ${p.style}">${p.style==='team'?'<span class="fm-plan-badge">团队协作</span>':''}${p.style==='custom'?'<span class="fm-plan-badge">自备模型 · 免费使用</span>':''}<h3>${p.name}</h3><div class="fm-plan-price">${p.style==='custom'?'免费':`<small>¥</small> ${numbers(p.year.price)} <small>/ 年</small>`}</div><p class="fm-plan-offer">${p.description}</p>${p.style==='custom'?'<a class="fm-plan-cta" href="model-management.html">去配置模型</a>':`<button type="button" class="fm-plan-cta" data-checkout>微信支付</button>`}<div class="fm-plan-points">${p.style==='custom'?'<b>不赠送积分</b><small>配置自己的图片 / 视频 / 文案模型</small>':planPoints(p.year.credits,'一次性到账，自发放起有效 1 年')}</div>${featureGroups.map(group=>`<h4>${group.title}</h4><ul>${group.items.map(name=>`<li><span>✓</span>${name}</li>`).join('')}</ul>`).join('')}<h4 class="fm-other-heading">独家功能</h4><ul><li><span>✓</span>无限画布全部组件</li><li><span>✓</span>批量视频生成</li><li class="${p.teamManagement?'':'unavailable'}"><span>${p.teamManagement?'✓':'×'}</span>团队管理</li><li><span>✓</span>自主配置大模型 API</li></ul><h4 class="fm-other-heading">其他权益</h4><ul><li><span>✓</span>1v1专属客服</li><li><span>✓</span>去除品牌水印</li></ul></article>`).join('')}</div><p class="fm-plan-comparison">个人版与团队版的其他功能和服务一致，团队版额外提供团队管理及更多积分。</p><p class="fm-recharge-note">静态原型演示，不产生真实付款、会员开通或积分变动。自备模型费用由供应商结算。</p><p class="fm-recharge-feedback" role="status"></p>`;
  const year=document.createElement('section');year.id='fmBilling-year';year.className='fm-billing-panel';year.setAttribute('role','tabpanel');year.setAttribute('aria-labelledby','fmTab-year');
  const grid=recharge.querySelector('.fm-plan-grid'),comparison=recharge.querySelector('.fm-plan-comparison');grid.before(year);year.append(grid,comparison);
  const month=year.cloneNode(true);month.id='fmBilling-month';month.setAttribute('aria-labelledby','fmTab-month');month.hidden=true;
@@ -29,7 +29,7 @@
  year.after(month);
  const packs=[{name:'新手套餐',price:38,credits:300,bonus:0},{name:'轻享套餐',price:98,credits:750,bonus:50,months:1},{name:'进阶套餐',price:198,credits:1500,bonus:150,months:1},{name:'高级套餐',price:698,credits:5200,bonus:650,months:6}];
  const topup=document.createElement('section');topup.id='fmBilling-topup';topup.className='fm-billing-panel';topup.setAttribute('role','tabpanel');topup.setAttribute('aria-labelledby','fmTab-topup');topup.hidden=true;
- topup.innerHTML=`<div class="fm-topup-heading"><h3>平台积分补充包</h3><p>单独购买积分，用于平台生图、改图和视频等功能。按需补充，不改变当前会员版本。</p></div><div class="fm-topup-grid">${packs.map(pack=>`<article class="fm-credit-pack"><h3>${pack.name}</h3><div class="fm-plan-price"><small>¥</small> ${pack.price} <small>/ 单次充值</small></div><div class="fm-credit-amount">${numbers(pack.credits+pack.bonus)} <small>积分</small></div><p class="fm-credit-bonus">${pack.bonus?`含 ${numbers(pack.credits)} 充值积分及 ${numbers(pack.bonus)} 赠送积分`:'按需购买，轻量补充'}</p><ul><li>充值积分永久有效</li><li>${pack.bonus?`赠送积分有效期 ${pack.months} 个月`:'不含赠送积分'}</li><li>适用于平台图片与视频功能</li><li>${capacity(pack.credits+pack.bonus)}</li></ul><button type="button" class="fm-plan-cta" data-credit-pack="${pack.name}">选择此套餐</button></article>`).join('')}</div><p class="fm-topup-note">生成数量分别按全部积分用于 GPT Image 2 1K 图片（1 积分/张）或 Seedance 2.0 Mini 480p、5 秒无参考视频（10 积分/条）计算，含有效期内用完的赠送积分。</p>`;
+ topup.innerHTML=`<div class="fm-topup-heading"><h3>平台积分补充包</h3><p>单独购买积分，用于平台生图、改图和视频等功能。按需补充，不改变当前会员版本。</p></div><div class="fm-topup-grid">${packs.map(pack=>`<article class="fm-credit-pack"><h3>${pack.name}</h3><div class="fm-plan-price"><small>¥</small> ${pack.price} <small>/ 单次充值</small></div><div class="fm-credit-amount">${numbers(pack.credits+pack.bonus)} <small>积分</small></div><p class="fm-credit-bonus">${pack.bonus?`含 ${numbers(pack.credits)} 充值积分及 ${numbers(pack.bonus)} 赠送积分`:'按需购买，轻量补充'}</p><ul><li>充值积分永久有效</li><li>${pack.bonus?`赠送积分有效期 ${pack.months} 个月`:'不含赠送积分'}</li><li>适用于平台图片与视频功能</li><li>${capacity(pack.credits+pack.bonus)}</li></ul><button type="button" class="fm-plan-cta" data-checkout>微信支付</button></article>`).join('')}</div><p class="fm-topup-note">生成数量分别按全部积分用于 GPT Image 2 1K 图片（1 积分/张）或 Seedance 2.0 Mini 480p、5 秒无参考视频（10 积分/条）计算，含有效期内用完的赠送积分。</p>`;
  month.after(topup);
  const tabs=document.createElement('div');tabs.className='fm-billing-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','购买方式');
  tabs.innerHTML=[['month','按月'],['year','按年'],['topup','充值积分包']].map(([id,label])=>`<button type="button" role="tab" id="fmTab-${id}" data-billing-tab="${id}" aria-controls="fmBilling-${id}" aria-selected="${id==='year'}" tabindex="${id==='year'?0:-1}">${label}</button>`).join('');
@@ -38,7 +38,36 @@
  function selectBilling(id){recharge.dataset.billing=id;for(const tab of tabs.querySelectorAll('[role=tab]')){const active=tab.dataset.billingTab===id;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1}for(const [key,panel] of Object.entries(panels))panel.hidden=key!==id;recharge.querySelector('.fm-recharge-feedback').textContent='';}
  tabs.addEventListener('click',e=>{const tab=e.target.closest('[data-billing-tab]');if(tab)selectBilling(tab.dataset.billingTab)});
  tabs.addEventListener('keydown',e=>{const buttons=[...tabs.querySelectorAll('[role=tab]')],index=buttons.indexOf(document.activeElement);if(index<0||!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?buttons.length-1:(index+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;selectBilling(buttons[next].dataset.billingTab);buttons[next].focus()});
- topup.querySelectorAll('[data-credit-pack]').forEach(button=>button.onclick=()=>{recharge.querySelector('.fm-recharge-feedback').textContent='已选择'+button.dataset.creditPack+'。当前为静态演示，未创建订单、付款或增加积分。'});
+ const checkout=document.createElement('dialog');
+ checkout.className='fm-wechat-checkout';
+ checkout.setAttribute('aria-labelledby','fmWechatTitle');
+ checkout.innerHTML=`<header><h2 id="fmWechatTitle">微信扫码支付</h2><button type="button" data-dismiss aria-label="关闭微信支付">×</button></header><div class="fm-wechat-content"><p data-checkout-name></p><strong data-checkout-amount></strong><img src="assets/wechat-pay-demo.gif" width="208" height="208" alt="微信支付演示二维码"><p>请使用微信扫一扫</p><p class="fm-wechat-demo">演示二维码 · 不会产生付款</p></div>`;
+ document.body.append(checkout);
+ function bindCheckout(card,label,price){
+  const display=card.querySelector('.fm-plan-price');
+  const priceButton=document.createElement('button');
+  priceButton.type='button';
+  priceButton.className='fm-plan-price fm-checkout-price';
+  priceButton.innerHTML=display.innerHTML;
+  priceButton.setAttribute('aria-label',`${label}，¥${price}，微信支付`);
+  display.replaceWith(priceButton);
+  const open=()=>{
+   checkout.querySelector('[data-checkout-name]').textContent=label;
+   checkout.querySelector('[data-checkout-amount]').textContent='¥'+price.toFixed(2);
+   checkout.showModal();
+  };
+  for(const button of [priceButton,card.querySelector('[data-checkout]')]){
+   button.setAttribute('aria-haspopup','dialog');
+   button.addEventListener('click',open);
+  }
+ }
+ for(const plan of plans.filter(plan=>plan.month)){
+  bindCheckout(year.querySelector('.fm-plan.'+plan.style),plan.name+' · 年付',plan.year.price);
+  bindCheckout(month.querySelector('.fm-plan.'+plan.style),plan.name+' · 月付',plan.month.price);
+ }
+ topup.querySelectorAll('.fm-credit-pack').forEach((card,index)=>{
+  const pack=packs[index];bindCheckout(card,pack.name,pack.price);
+ });
  const videoPricing=document.createElement('details');
  videoPricing.className='fm-topup-note';
  const videoSeconds=[5,10,15,30];
@@ -56,7 +85,7 @@
  function openMenu(event){opener=event.currentTarget;const rect=opener.getBoundingClientRect();menu.style.left=Math.max(12,Math.min(rect.left,innerWidth-312))+'px';menu.style.top=Math.max(12,Math.min(rect.bottom+8,innerHeight-570))+'px';menu.showModal();opener.setAttribute('aria-expanded','true')}
  triggers.forEach(t=>{if(t.tagName!=='BUTTON'){t.setAttribute('role','button');t.tabIndex=0;t.setAttribute('aria-label','打开个人菜单');t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMenu(e)}})}t.addEventListener('click',openMenu)});
  menu.addEventListener('close',()=>{if(opener){opener.setAttribute('aria-expanded','false');opener.focus()}});
- [menu,recharge].forEach(d=>{d.querySelector('[data-dismiss]').onclick=()=>d.close();d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()})});
+ [menu,recharge,checkout].forEach(d=>{d.querySelector('[data-dismiss]').onclick=()=>d.close();d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()})});
  menu.querySelector('[data-recharge]').onclick=()=>{menu.close();openRecharge()};
  document.querySelectorAll('.top-actions .credit').forEach(b=>b.addEventListener('click',()=>openRecharge()));
  menu.querySelectorAll('[data-account-action]').forEach(b=>b.onclick=()=>inform(`${b.querySelector('span').textContent.replace('当前团队','')}：当前为静态演示，暂未接入账号服务。`));
@@ -70,5 +99,4 @@
  menu.querySelector('[data-account-action=card]').onclick=()=>navigate('orders',accountStore.current().id);
  menu.querySelector('[data-account-action=gift]').onclick=()=>{const url=new URL('account-center.html',location.href);url.search=new URLSearchParams({tab:'credits',workspace:accountStore.current().id,type:'invite_reward'}).toString();location.href=url.href};
  window.FashAccountUI={openRecharge};window.addEventListener('fashmaker-account-changed',syncWorkspace);syncWorkspace();
- recharge.querySelectorAll('[data-contact]').forEach(b=>b.onclick=()=>{recharge.querySelector('.fm-recharge-feedback').textContent='当前为静态演示，暂未接入客服与支付服务。'});
 })();
