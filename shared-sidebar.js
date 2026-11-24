@@ -31,7 +31,7 @@
  mobile.className='fm-mobile-nav fm-sidebar';
  mobile.innerHTML=`<summary>FashMaker · 功能导航</summary><nav aria-label="移动端主导航">${navigation}${historyButton}</nav>`;
  side.after(mobile);
- const loadAccount=()=>{const script=document.createElement('script');script.src='shared-account.js?v=20261123-choose';document.body.append(script)};if(window.FashAccountStore)loadAccount();else{const script=document.createElement('script');script.src='account-store.js?v=20261113-transfers-2';script.onload=loadAccount;document.body.append(script)};
+ const loadAccount=()=>{const script=document.createElement('script');script.src='shared-account.js?v=20261124-ocp';document.body.append(script)};if(window.FashAccountStore)loadAccount();else{const script=document.createElement('script');script.src='account-store.js?v=20261113-transfers-2';script.onload=loadAccount;document.body.append(script)};
  const css=document.createElement('link');css.rel='stylesheet';css.href='shared-sidebar.css?v=20261124-nav';document.head.append(css);
  for(const button of [side,mobile].map(shell=>shell.querySelector('[data-shell-history]'))){
    button.onclick=()=>{
