@@ -1,24 +1,26 @@
 # FashMaker 商品内容创作原型文档
 
-本目录记录最新原型的页面字段、任务状态、历史、资产归档与开发交付。文档统一链接到本仓库 `main` 分支，不再使用旧 Gist 副本；原型链接指向同步后的 GitHub Pages。最近更新：2026-11-13。
+本目录记录最新原型的页面字段、任务状态、历史、资产归档与开发交付。下表使用同一目录下的相对链接，可访问当前版本的 Demo 与文档。最近更新：2026-11-24。
 
 当前 HTML 为静态交互演示，使用本机浏览器存储，不调用真实 AI 服务。开发文档中的正式服务目标不代表已上线。
 
 | 功能 | 最新开发 / 流程文档 | 最新原型 |
 | --- | --- | --- |
-| 商品详情长图 | [detail-page-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/detail-page-flow.md) | [index.html](https://aa312557272-bot.github.io/fashmaker-prototype/index.html?v=20261110-layout-4) |
-| 商品套图 | [product-suite-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/product-suite-flow.md) | [product-suite.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html?v=20261110-layout-4) |
-| AI 换装 / 改姿势 / 多模特 / 多商品 | [ai-tryon-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/ai-tryon-flow.md) | [ai-tryon.html](https://aa312557272-bot.github.io/fashmaker-prototype/ai-tryon.html?v=20261110-layout-4) |
-| 穿搭分离 | [outfit-separation-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/outfit-separation-flow.md) | [outfit-separation.html](https://aa312557272-bot.github.io/fashmaker-prototype/outfit-separation.html?v=20261110-layout-4) |
-| 图文笔记 Agent | [graphic-notes-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/graphic-notes-flow.md) | [graphic-notes.html](https://aa312557272-bot.github.io/fashmaker-prototype/graphic-notes.html?v=20261110-layout-4) |
-| 数字人口播 | [digital-human-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/digital-human-flow.md) | [digital-human.html](https://aa312557272-bot.github.io/fashmaker-prototype/digital-human.html?v=20261110-layout-4) |
-| 商品生视频 | [product-video-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/product-video-flow.md) | [product-video.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-video.html?v=20261110-layout-4) |
-| 爆款复刻 · 结构复刻 | [viral-remix-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/viral-remix-flow.md) | [viral-remix.html](https://aa312557272-bot.github.io/fashmaker-prototype/viral-remix.html?v=20261110-layout-4) |
-| 批量生图 | [batch-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/batch-flow.md) | [batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html?v=20261110-layout-4) |
+| 商品详情长图 | [detail-page-flow.md](detail-page-flow.md) | [index.html](../index.html) |
+| 商品套图 | [product-suite-flow.md](product-suite-flow.md) | [product-suite.html](../product-suite.html) |
+| AI 换装 / 改姿势 / 多模特 / 多商品 | [ai-tryon-flow.md](ai-tryon-flow.md) | [ai-tryon.html](../ai-tryon.html) |
+| 穿搭分离 | [outfit-separation-flow.md](outfit-separation-flow.md) | [outfit-separation.html](../outfit-separation.html) |
+| 图文笔记 Agent | [graphic-notes-flow.md](graphic-notes-flow.md) | [graphic-notes.html](../graphic-notes.html) |
+| 数字人口播 | [digital-human-flow.md](digital-human-flow.md) | [digital-human.html](../digital-human.html) |
+| 商品生视频 | [product-video-flow.md](product-video-flow.md) | [product-video.html](../product-video.html) |
+| 爆款复刻 · 结构复刻 | [viral-remix-flow.md](viral-remix-flow.md) | [viral-remix.html](../viral-remix.html) |
+| 批量生图 | [batch-flow.md](batch-flow.md) | [batch.html](../batch.html) |
 | 店铺管理 · 小红书导入与回写演示 | [shop-management-flow.md](shop-management-flow.md) | [shop-management.html](../shop-management.html) |
-| 资产库与商品库 | [asset-library-flow.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/asset-library-flow.md) | [asset-library.html](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html?v=20261110-layout-4) |
+| 资产库与商品库 | [asset-library-flow.md](asset-library-flow.md) | [asset-library.html](../asset-library.html) |
+| 商品详情 · 从商品库进入 | [product-detail-flow.md](product-detail-flow.md) | [商品库](../asset-library.html?tab=products) |
+| 总后台 · 用户积分 | [total-admin-flow.md](total-admin-flow.md)、[admin-points-flow.md](admin-points-flow.md) | [总后台总览](../total-admin.html)、[用户积分](../admin-points.html) |
 | 账户中心 · 积分 / 订单 / 多团队成员 | [account-center-flow.md](account-center-flow.md) | [账户中心](../account-center.html?tab=credits) |
-| 自定义图片 / 视频 / 文案模型 | [custom-models-development.md](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/docs/custom-models-development.md) | [模型管理](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html?v=20261112-model-management) |
+| 自定义图片 / 视频 / 文案模型 | [custom-models-development.md](custom-models-development.md) | [模型管理](../model-management.html) |
 
 自定义模型的[配置流程](custom-models-flow.md)、[完整字段与接口规格](custom-models-development.md)及[JSON Schema](contracts/custom-model-config.schema.json)为同一交付，完整规格包含 30 条验收用例。图片、视频、文案分别可设平台或某个自配模型为默认；有选择框使用本次选择，无选择框采用该类型默认。
 
@@ -35,7 +37,7 @@
 
 ## 共同交互原则
 
-1. 所有页面使用统一侧栏，品牌、216px宽度、菜单顺序及底部账号区一致，仅当前功能高亮变化。已移除顶部横向快捷导航。
+1. 工作台桌面端使用统一 216px 侧栏，窄屏使用同源折叠功能导航。总后台从工作台品牌区的「总后台」入口进入，用户积分为总后台子模块；前后台积分演示采用各自的本地数据。批量生图从详情长图或商品套图进入，商品详情从商品库进入。
 2. 模型选择统一位于设置末尾、生成操作之前。保存的图片/视频配置全部加入对应类型功能下拉，文案默认用于没有选择框的写作与分析入口；当前原型只按类型演示，正式服务还需能力校验和服务端鉴权。
 3. 当前任务占据右侧工作区；历史通过「历史」抽屉查看。新建清空本次输入与商品关联；历史再次生成复制为新任务，不覆盖旧记录。
 4. 历史保存完整输入、素材、生成内容与结果。图文笔记例外：仅保存结果版本、必要模型元信息、关联和发布状态，不保存对话或输入快照。
@@ -80,7 +82,7 @@
 
 ## 店铺管理 Demo 已接入（2026-11-11）
 
-[当前交互流程](shop-management-flow.md)覆盖模拟连接、选品/全店导入、来源筛选、标题描述差异、图片新品发布/原商品回写与记录；[正式开发规格](xiaohongshu-publishing-development.md)仍描述待接入的真实服务目标。当前以本机示例链接和单规格模拟，不调用小红书接口、不下载真实商品原文件。全站管理区域新增店铺管理，窄屏保留入口。
+[当前交互流程](shop-management-flow.md)覆盖模拟连接、选品/全店导入、来源筛选、标题描述差异、图片新品发布/原商品回写与记录；[正式开发规格](xiaohongshu-publishing-development.md)仍描述待接入的真实服务目标。当前以本机示例链接和单规格模拟，不调用小红书接口、不下载真实商品原文件。全站管理区域新增店铺管理，窄屏通过统一功能导航进入。
 
 ## 商品详情独立页（2026-11-11）
 商品库点击直接进入 [product-detail.html](../product-detail.html)（需携带 product ID，通常从商品库进入）；新增商品资料、SKU、履约、发布按钮及状态历史。交互与实现边界见 [product-detail-flow.md](product-detail-flow.md)，统一字段见字段字典末节。平台类目及物流仍为本地示例配置。
@@ -90,7 +92,11 @@
 
 ## 模型管理页面（2026-11-12）
 
-[模型管理原型](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html?v=20261112-model-management)已补齐图片/视频/文案页签、平台/自定义列表、搜索及筛选、详情、默认模型、启停、添加/编辑/删除、检查及试生成流程。[交互与本地字段](model-management-flow.md)、[试生成提示词与边界](model-management-prompt.md)和[正式开发规格](custom-models-development.md)分别说明已实现演示与待接入服务。文案已支持自配模型和独立默认设置。
+[模型管理原型](../model-management.html)已补齐图片/视频/文案页签、平台/自定义列表、搜索及筛选、详情、默认模型、启停、添加/编辑/删除、检查及试生成流程。[交互与本地字段](model-management-flow.md)、[试生成提示词与边界](model-management-prompt.md)和[正式开发规格](custom-models-development.md)分别说明已实现演示与待接入服务。文案已支持自配模型和独立默认设置。
+
+## 模型厂商管理（2026-11-24）
+
+模型管理新增「厂商管理」视图，可创建和编辑厂商共享协议、接口地址及会话Key，并对厂商整体启停。模型关联所属厂商；修改共享参数同步影响其下全部模型，停用厂商使子模型不可用，重新启用恢复模型自身启停状态。旧版模型自动迁移到兼容厂商。详见[模型管理流程](model-management-flow.md#厂商统一管理2026-11-24)和[字段契约](developer-field-contract.md#模型厂商管理扩展2026-11-24)。 页面现采用账户中心式左侧「厂商管理 / 模型管理」导航，厂商为模型父级；可按厂商名称搜索，并以列表查看状态、模型数量和接口信息。详见[左侧层级导航修订](model-management-flow.md#左侧层级导航修订2026-11-24)及[厂商搜索与列表](model-management-flow.md#厂商名称搜索与列表展示2026-11-24)。
 
 ## 个人菜单与会员充值（2026-11-12）
 
@@ -125,3 +131,5 @@
 账户中心操作已收敛：充值/升级、派送记录、派送积分仅保留在积分明细页；成员管理和订单明细移除相关入口。
 
 头像菜单当前团队行已改为右侧「切换」文案，点击直接进入成员管理页，在页面顶部选择框切换团队。
+
+模型管理页新增右下角可关闭的悬浮官方套餐宣传海报示范，点击「查看套餐优惠」调起原有三Tab价格弹窗；布局和边界见[模型管理流程](model-management-flow.md)与[价格体系](pricing-system.md)。

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fash 积分 · FashMaker 总后台</title>
+<link rel="stylesheet" href="admin-points.css">
+<script src="admin-points.js" defer></script>
+</head>
+<body>
+<header class="top"><a class="admin-home-link" href="total-admin.html"><strong><span class="brand">F</span> FashMaker</strong><span>总后台</span></a><span class="demo">演示数据</span><a class="workspace-link" href="index.html">返回工作台</a></header>
+<div class="layout">
+<aside><nav aria-label="总后台导航"><a href="total-admin.html">⌂　总览</a><span class="nav-group">计费与积分</span><a href="admin-points.html" aria-current="page">☆　Fash 积分</a><a href="admin-points.html#settings">⚙　注册积分配置</a></nav></aside>
+<main>
+<h1>Fash 积分</h1>
+<div class="tabs" role="group" aria-label="积分管理页面">
+<button type="button" data-tab="users" aria-pressed="true" aria-controls="users">用户积分</button>
+<button type="button" data-tab="settings" aria-pressed="false" aria-controls="settings">注册积分配置</button>
+</div>
+<section id="users">
+<div class="action">
+<div><h2>调整用户积分</h2><p>选择用户后可增加或扣减积分，确认后生成一条流水。</p></div>
+<button type="button" class="primary" id="adjust-top">调整积分</button>
+</div>
+<section class="card" aria-labelledby="table-title">
+<div class="table-tools">
+<div><h2 id="table-title">用户积分</h2><p>累计数据覆盖全部历史，余额显示当前可用积分。</p></div>
+<div class="filters">
+<input id="search" type="search" aria-label="搜索用户" placeholder="搜索用户 ID、用户名或邮箱">
+<select id="balance-filter" aria-label="余额筛选"><option value="">全部余额</option><option value="positive">有余额</option><option value="zero">零余额</option></select>
+</div>
+</div>
+<div class="table-scroll" tabindex="0" role="region" aria-label="用户积分表格">
+<table aria-labelledby="table-title">
+<thead><tr><th scope="col">用户</th><th scope="col" class="numeric"><button data-sort="earned">累计获得 ↕</button></th><th scope="col" class="numeric"><button data-sort="spent">累计消费 ↕</button></th><th scope="col" class="numeric"><button data-sort="balance">当前余额 ↕</button></th><th scope="col">操作</th></tr></thead>
+<tbody id="user-rows"></tbody>
+</table>
+</div>
+<div class="pagination"><span id="row-count" aria-live="polite"></span><button id="prev">上一页</button><button id="next">下一页</button></div>
+</section>
+</section>
+<section id="settings" class="card settings" hidden>
+<h2>新用户注册积分</h2><p>适用于之后注册的新用户。</p>
+<form id="settings-form"><label for="default-points">默认赠送积分</label><div class="settings-controls"><input id="default-points" type="number" min="0" max="1000000000" step="1" required><button class="primary">保存配置</button></div></form>
+</section>
+</main>
+</div>
+<div id="notice" role="status"></div>
+<dialog id="adjust-dialog" aria-labelledby="adjust-title">
+<form id="adjust-form">
+<div class="dialog-head"><h2 id="adjust-title">调整积分</h2><button type="button" class="close" data-close="adjust-dialog" aria-label="关闭">×</button></div>
+<div class="dialog-body">
+<label for="user-choice">选择用户</label><select id="user-choice" required></select>
+<div id="adjust-fields">
+<div class="form-grid"><div><label for="direction">调整类型</label><select id="direction"><option value="add">增加积分</option><option value="deduct">扣减积分</option></select></div><div><label for="amount">积分数量</label><input id="amount" type="number" min="1" max="1000000000" step="1" placeholder="输入正整数" required></div></div>
+<label for="reason">调整说明 <span class="muted">（选填）</span></label><input id="reason" maxlength="120" placeholder="如活动补发、人工纠正" aria-describedby="reason-help">
+<p id="reason-help" class="meta field-help">确认后，可在该用户的「流水 → 调整说明」查看。</p>
+</div>
+<div id="balance-preview" class="balance-preview" aria-live="polite"></div>
+<div id="confirmation" hidden></div>
+<p id="adjust-error" class="error" role="alert" hidden></p>
+</div>
+<div class="dialog-footer"><button type="button" id="adjust-back">取消</button><button class="primary" id="adjust-submit">核对调整</button></div>
+</form>
+</dialog>
+<dialog class="ledger" id="ledger-dialog" aria-labelledby="ledger-title">
+<div class="dialog-head"><div><h2 id="ledger-title">积分流水</h2><p id="ledger-user"></p></div><button type="button" class="close" data-close="ledger-dialog" aria-label="关闭">×</button></div>
+<div class="dialog-body">
+<div id="ledger-summary" class="ledger-summary"></div>
+<label for="ledger-filter">流水类型</label><select id="ledger-filter"><option value="">全部类型</option><option value="grant">积分获得</option><option value="spend">业务消费</option><option value="add">人工增加</option><option value="deduct">人工扣减</option></select>
+<div class="table-scroll" tabindex="0" role="region" aria-label="积分流水表格"><table><thead><tr><th scope="col">时间 / 操作人</th><th scope="col">类型</th><th scope="col">使用功能</th><th scope="col">调整说明</th><th scope="col" class="numeric">变动</th><th scope="col" class="numeric">变动后余额</th></tr></thead><tbody id="ledger-rows"></tbody></table></div>
+</div>
+</dialog>
+</body>
+</html>

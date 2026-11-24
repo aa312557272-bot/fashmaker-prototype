@@ -14,7 +14,7 @@
 @media(max-width:680px){.app{display:block}.sidebar{display:none}.config{height:auto;max-height:none;border-right:0}.config-content{padding:16px}.generate-dock{position:sticky;bottom:0}.workspace{min-height:75vh}.canvas{padding:16px}.results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.long-art{height:300px}.art-title{font-size:16px}.art-product{height:120px}.canvas-head p{line-height:1.6}.preview-layout{grid-template-columns:1fr}.preview-art{height:60vh}.task-line{align-items:flex-start}.results-actions{width:100%;margin-left:0}.top-actions .pill:not(.active){display:none}}
  .panel-title-name{white-space:nowrap;flex:none}.batch-link{display:inline-flex;align-items:center;justify-content:center;gap:5px;flex:none;margin-left:auto;border:1px solid #4a514c;border-radius:9px;background:#242925;color:#f1f4f1;padding:7px 9px;font-size:10px;white-space:nowrap;visibility:visible;opacity:1}.batch-link:hover{border-color:#4a8d68;color:#baf1cd}
 </style>
-<link rel="stylesheet" href="prototype-links.css?v=20261110-models-2"></head>
+<link rel="stylesheet" href="prototype-links.css?v=20261110-models-2"><script src="prototype-catalog.js?v=20261124-nav"></script></head>
 <body>
 <main class="app">
  <aside class="sidebar">
@@ -132,5 +132,5 @@ document.getElementById('batchCreate').onclick=()=>{const ratioMap={'Auto':'Auto
 视觉风格：${activeMode==='custom'?document.getElementById('customDirection').value:selectedStyle}`,module:'smart'},tasks:[{name:'商品任务 1',productId:window.FashLinkedProduct?.id,productName:window.FashLinkedProduct?.name,images:images.slice(0,6).map(x=>({src:x.src,name:x.name})),sellingPoints:document.getElementById('sellingPoints').value.trim(),styleMode:activeMode==='custom'?'custom':'recommended',style:selectedStyle,customStyle:document.getElementById('customDirection').value}]};window.name='fashmaker-batch:'+JSON.stringify(payload);location.href='batch.html'};
 renderUploads();renderThumbs();renderAssets();renderResults();updateTask();
 </script>
-<script src="shared-sidebar.js?v=20261113-team-link-4"></script><script src="custom-models.js?v=20261112-defaults-2"></script><script src="prototype-links.js?v=20261110-models-2"></script><script src="prototype-task-history.js?v=20261110-models-2"></script></body>
+<script src="shared-sidebar.js?v=20261124-nav"></script><script src="custom-models.js?v=20261124-nav"></script><script src="prototype-links.js?v=20261110-models-2"></script><script src="prototype-task-history.js?v=20261110-models-2"></script></body>
 </html>
