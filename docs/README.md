@@ -1,26 +1,26 @@
 # FashMaker 商品内容创作原型文档
 
-本目录记录最新原型的页面字段、任务状态、历史、资产归档与开发交付。下表使用同一目录下的相对链接，可访问当前版本的 Demo 与文档。最近更新：2026-11-24。
+本目录记录最新原型的页面字段、任务状态、历史、资产归档与开发交付。表格中的 Demo 链接指向 GitHub Pages 在线演示；文档链接仍指向 GitHub 仓库内的 Markdown。最近更新：2026-11-24。
 
 当前 HTML 为静态交互演示，使用本机浏览器存储，不调用真实 AI 服务。开发文档中的正式服务目标不代表已上线。
 
-| 功能 | 最新开发 / 流程文档 | 最新原型 |
+| 功能 | 最新开发 / 流程文档 | 在线 Demo |
 | --- | --- | --- |
-| 商品详情长图 | [detail-page-flow.md](detail-page-flow.md) | [index.html](../index.html) |
-| 商品套图 | [product-suite-flow.md](product-suite-flow.md) | [product-suite.html](../product-suite.html) |
-| AI 换装 / 改姿势 / 多模特 / 多商品 | [ai-tryon-flow.md](ai-tryon-flow.md) | [ai-tryon.html](../ai-tryon.html) |
-| 穿搭分离 | [outfit-separation-flow.md](outfit-separation-flow.md) | [outfit-separation.html](../outfit-separation.html) |
-| 图文笔记 Agent | [graphic-notes-flow.md](graphic-notes-flow.md) | [graphic-notes.html](../graphic-notes.html) |
-| 数字人口播 | [digital-human-flow.md](digital-human-flow.md) | [digital-human.html](../digital-human.html) |
-| 商品生视频 | [product-video-flow.md](product-video-flow.md) | [product-video.html](../product-video.html) |
-| 爆款复刻 · 结构复刻 | [viral-remix-flow.md](viral-remix-flow.md) | [viral-remix.html](../viral-remix.html) |
-| 批量生图 | [batch-flow.md](batch-flow.md) | [batch.html](../batch.html) |
-| 店铺管理 · 小红书导入与回写演示 | [shop-management-flow.md](shop-management-flow.md) | [shop-management.html](../shop-management.html) |
-| 资产库与商品库 | [asset-library-flow.md](asset-library-flow.md) | [asset-library.html](../asset-library.html) |
-| 商品详情 · 从商品库进入 | [product-detail-flow.md](product-detail-flow.md) | [商品库](../asset-library.html?tab=products) |
-| 总后台 · 用户积分 | [total-admin-flow.md](total-admin-flow.md)、[admin-points-flow.md](admin-points-flow.md) | [总后台总览](../total-admin.html)、[用户积分](../admin-points.html) |
-| 账户中心 · 积分 / 订单 / 多团队成员 | [account-center-flow.md](account-center-flow.md) | [账户中心](../account-center.html?tab=credits) |
-| 自定义图片 / 视频 / 文案模型 | [custom-models-development.md](custom-models-development.md) | [模型管理](../model-management.html) |
+| 商品详情长图 | [detail-page-flow.md](detail-page-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/index.html) |
+| 商品套图 | [product-suite-flow.md](product-suite-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/product-suite.html) |
+| AI 换装 / 改姿势 / 多模特 / 多商品 | [ai-tryon-flow.md](ai-tryon-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/ai-tryon.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/ai-tryon.html) |
+| 穿搭分离 | [outfit-separation-flow.md](outfit-separation-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/outfit-separation.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/outfit-separation.html) |
+| 图文笔记 Agent | [graphic-notes-flow.md](graphic-notes-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/graphic-notes.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/graphic-notes.html) |
+| 数字人口播 | [digital-human-flow.md](digital-human-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/digital-human.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/digital-human.html) |
+| 商品生视频 | [product-video-flow.md](product-video-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/product-video.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/product-video.html) |
+| 爆款复刻 · 结构复刻 | [viral-remix-flow.md](viral-remix-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/viral-remix.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/viral-remix.html) |
+| 批量生图 | [batch-flow.md](batch-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/batch.html) |
+| 店铺管理 · 小红书导入与回写演示 | [shop-management-flow.md](shop-management-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/shop-management.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/shop-management.html) |
+| 资产库与商品库 | [asset-library-flow.md](asset-library-flow.md) | [打开 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/asset-library.html) |
+| 商品详情 · 从商品库进入 | [product-detail-flow.md](product-detail-flow.md) | [打开商品库 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html?tab=products) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/product-detail.html) |
+| 总后台 · 用户积分 | [total-admin-flow.md](total-admin-flow.md)、[admin-points-flow.md](admin-points-flow.md) | [总后台总览](https://aa312557272-bot.github.io/fashmaker-prototype/total-admin.html) · [用户积分](https://aa312557272-bot.github.io/fashmaker-prototype/admin-points.html) |
+| 账户中心 · 积分 / 订单 / 多团队成员 | [account-center-flow.md](account-center-flow.md) | [打开账户中心 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/account-center.html?tab=credits) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/account-center.html) |
+| 自定义图片 / 视频 / 文案模型 | [custom-models-development.md](custom-models-development.md) | [打开模型管理 Demo](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html) · [查看源码](https://github.com/aa312557272-bot/fashmaker-prototype/blob/main/model-management.html) |
 
 自定义模型的[配置流程](custom-models-flow.md)、[完整字段与接口规格](custom-models-development.md)及[JSON Schema](contracts/custom-model-config.schema.json)为同一交付，完整规格包含 30 条验收用例。图片、视频、文案分别可设平台或某个自配模型为默认；有选择框使用本次选择，无选择框采用该类型默认。
 
@@ -85,14 +85,14 @@
 [当前交互流程](shop-management-flow.md)覆盖模拟连接、选品/全店导入、来源筛选、标题描述差异、图片新品发布/原商品回写与记录；[正式开发规格](xiaohongshu-publishing-development.md)仍描述待接入的真实服务目标。当前以本机示例链接和单规格模拟，不调用小红书接口、不下载真实商品原文件。全站管理区域新增店铺管理，窄屏通过统一功能导航进入。
 
 ## 商品详情独立页（2026-11-11）
-商品库点击直接进入 [product-detail.html](../product-detail.html)（需携带 product ID，通常从商品库进入）；新增商品资料、SKU、履约、发布按钮及状态历史。交互与实现边界见 [product-detail-flow.md](product-detail-flow.md)，统一字段见字段字典末节。平台类目及物流仍为本地示例配置。
+商品库点击直接进入 [product-detail.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-detail.html)（需携带 product ID，通常从商品库进入）；新增商品资料、SKU、履约、发布按钮及状态历史。交互与实现边界见 [product-detail-flow.md](product-detail-flow.md)，统一字段见字段字典末节。平台类目及物流仍为本地示例配置。
 
 商品列表已补充发布状态列、卡片状态、发布/更新/重发操作及发布状态筛选，详见 [资产库流程](asset-library-flow.md)。所有状态均为本地模拟记录。
 
 
 ## 模型管理页面（2026-11-12）
 
-[模型管理原型](../model-management.html)已补齐图片/视频/文案页签、平台/自定义列表、搜索及筛选、详情、默认模型、启停、添加/编辑/删除、检查及试生成流程。[交互与本地字段](model-management-flow.md)、[试生成提示词与边界](model-management-prompt.md)和[正式开发规格](custom-models-development.md)分别说明已实现演示与待接入服务。文案已支持自配模型和独立默认设置。
+[模型管理原型](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html)已补齐图片/视频/文案页签、平台/自定义列表、搜索及筛选、详情、默认模型、启停、添加/编辑/删除、检查及试生成流程。[交互与本地字段](model-management-flow.md)、[试生成提示词与边界](model-management-prompt.md)和[正式开发规格](custom-models-development.md)分别说明已实现演示与待接入服务。文案已支持自配模型和独立默认设置。
 
 ## 模型厂商管理（2026-11-24）
 
@@ -122,7 +122,7 @@
 
 ## 账户中心与多团队（2026-11-13）
 
-头像菜单新增积分明细，充值记录更名订单明细，打开独立[账户中心](../account-center.html?tab=credits)的积分、订单、成员三个页签。当前团队支持个人及多个团队切换、创建和成员管理；每团队可创建待加入邀请，显式模拟接受，不发送真实邮件。积分流水同时展示消费、退款、充值、赠送和邀请好友奖励，新增成员字段。完整[交互、数据和验收](account-center-flow.md)。
+头像菜单新增积分明细，充值记录更名订单明细，打开独立[账户中心](https://aa312557272-bot.github.io/fashmaker-prototype/account-center.html?tab=credits)的积分、订单、成员三个页签。当前团队支持个人及多个团队切换、创建和成员管理；每团队可创建待加入邀请，显式模拟接受，不发送真实邮件。积分流水同时展示消费、退款、充值、赠送和邀请好友奖励，新增成员字段。完整[交互、数据和验收](account-center-flow.md)。
 
 共享本地存储fashmaker-account-center-v1，首次提供个人及两个团队示例；菜单余额改由当前空间流水计算，替代旧固定0。当前创建的团队为团队版演示空间，个人和自定义套餐仍不含团队管理；没有真实付款、奖励或会员开通。原有商品、资产和模型配置尚未因切换实现团队租户隔离。
 

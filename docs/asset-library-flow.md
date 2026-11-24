@@ -1,6 +1,6 @@
 # 资产库：功能与交互说明
 
-> 对应原型：[asset-library.html](../asset-library.html)。目标用户是管理商品信息、输入素材与生成作品的电商团队成员。
+> 对应原型：[asset-library.html](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html)。目标用户是管理商品信息、输入素材与生成作品的电商团队成员。
 
 ## 1. 信息架构
 
@@ -85,7 +85,7 @@
 已新增“从店铺导入”、来源店铺/同步状态筛选、稳定ID打开和批量操作、商品详情来源卡片、标题描述三方差异、模拟新品发布/更新回原商品。来源素材显示在上传素材，不进入AI生成；生成关联规则不变。完整已实现行为见[店铺流程](shop-management-flow.md)。此前规划中的真实授权、接口读取、文件保存、多SKU、后台同步与云服务仍未实现，静态页面仅演示。
 
 ## 2026-11-11 商品详情页面化
-商品卡片与列表现在直接进入独立 [商品详情页](../product-detail.html)，替代原抽屉；旧 `?product=` 深链自动跳转。公共资料、SKU、素材、店铺发布及状态记录见 [product-detail-flow.md](product-detail-flow.md)，字段以字典新增章节为准。
+商品卡片与列表现在直接进入独立 [商品详情页](https://aa312557272-bot.github.io/fashmaker-prototype/product-detail.html)，替代原抽屉；旧 `?product=` 深链自动跳转。公共资料、SKU、素材、店铺发布及状态记录见 [product-detail-flow.md](product-detail-flow.md)，字段以字典新增章节为准。
 
 ## 2026-11-11 列表发布操作与状态
 商品网格卡片新增发布状态、最新目标店铺和发布按钮；表格新增独立「发布状态」「操作」列。「全部发布状态」可筛选未发布、模拟待审核、模拟已上架、模拟审核不通过，与来源和同步筛选叠加；筛选后批量全选仅覆盖当前可见商品。

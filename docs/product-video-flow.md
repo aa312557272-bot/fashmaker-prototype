@@ -1,6 +1,6 @@
 # 商品生视频：功能与交互说明
 
-> 对应原型：[product-video.html](../product-video.html)。目标用户是需要从商品图快速制作电商短视频的运营与内容制作人员。
+> 对应原型：[product-video.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-video.html)。目标用户是需要从商品图快速制作电商短视频的运营与内容制作人员。
 
 ## 1. 产品目标
 

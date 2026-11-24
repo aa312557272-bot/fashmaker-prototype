@@ -1,6 +1,6 @@
 # 批量生图：功能与交互说明
 
-> 对应原型：[batch.html](../batch.html)。入口仅在[详情长图](../index.html)与[商品套图](../product-suite.html)的「批量创建任务」；不作为独立主导航 Tab。目标用户是一次处理多个商品的运营人员。
+> 对应原型：[batch.html](https://aa312557272-bot.github.io/fashmaker-prototype/batch.html)。入口仅在[详情长图](https://aa312557272-bot.github.io/fashmaker-prototype/index.html)与[商品套图](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html)的「批量创建任务」；不作为独立主导航 Tab。目标用户是一次处理多个商品的运营人员。
 
 ## 1. 任务类型与流程
 

@@ -1,7 +1,7 @@
 # FashMaker 爆款复刻 · 结构复刻开发说明
 
-> 交付状态：可进入开发拆解与联调设计。版本：2026-11-04。  
-> 对应原型：[viral-remix.html](../viral-remix.html)。字段枚举与默认值统一以 [developer-field-contract.md 第 6 节](developer-field-contract.md#6-爆款复刻--结构复刻) 为准。  
+> 交付状态：可进入开发拆解与联调设计。版本：2026-11-04。
+> 对应原型：[viral-remix.html](https://aa312557272-bot.github.io/fashmaker-prototype/viral-remix.html)。字段枚举与默认值统一以 [developer-field-contract.md 第 6 节](developer-field-contract.md#6-爆款复刻--结构复刻) 为准。
 > 本文区分已确认交互、当前原型实现和正式服务接入要求。“可开发”不表示真实解析、AI 或视频生成服务已经上线。
 
 ## 1. 目标与范围

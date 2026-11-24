@@ -1,6 +1,6 @@
 # 数字人口播：功能与交互说明
 
-原型：[digital-human.html](../digital-human.html)；统一字段：[developer-field-contract.md](developer-field-contract.md#9-数字人口播)；完整后台提示词：[digital-human-prompt.md](digital-human-prompt.md)。
+原型：[digital-human.html](https://aa312557272-bot.github.io/fashmaker-prototype/digital-human.html)；统一字段：[developer-field-contract.md](developer-field-contract.md#9-数字人口播)；完整后台提示词：[digital-human-prompt.md](digital-human-prompt.md)。
 
 ## 1. 改版范围与差异
 

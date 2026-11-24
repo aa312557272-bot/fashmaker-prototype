@@ -1,6 +1,6 @@
 # 账户中心：积分、订单与多团队成员管理
 
-版本 v1.3，2026-11-13。原型 [account-center.html](../account-center.html?tab=credits)；统一口径见[开发字段契约](developer-field-contract.md)，菜单总览见[个人菜单文档](personal-menu-flow.md)，充值与套餐见[价格体系](pricing-system.md)。设计已由用户确认。所有账户数据为当前浏览器本地演示，不连接账号、支付、邮件或真实积分服务。
+版本 v1.3，2026-11-13。原型 [account-center.html](https://aa312557272-bot.github.io/fashmaker-prototype/account-center.html?tab=credits)；统一口径见[开发字段契约](developer-field-contract.md)，菜单总览见[个人菜单文档](personal-menu-flow.md)，充值与套餐见[价格体系](pricing-system.md)。设计已由用户确认。所有账户数据为当前浏览器本地演示，不连接账号、支付、邮件或真实积分服务。
 
 ## 1. 页面与入口
 

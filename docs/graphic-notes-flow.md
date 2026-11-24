@@ -1,6 +1,6 @@
 # 图文笔记 Agent · 流程与开发说明
 
-原型：[graphic-notes.html](../graphic-notes.html)。字段以[开发字段契约](developer-field-contract.md#10-图文笔记-agent)为准；后台交付见[完整提示词](graphic-notes-prompt.md)。
+原型：[graphic-notes.html](https://aa312557272-bot.github.io/fashmaker-prototype/graphic-notes.html)。字段以[开发字段契约](developer-field-contract.md#10-图文笔记-agent)为准；后台交付见[完整提示词](graphic-notes-prompt.md)。
 
 ## 入口与创作
 

@@ -1,6 +1,6 @@
 # 商品套图：功能与交互说明
 
-> 对应原型：[product-suite.html](../product-suite.html)。目标用户是需要一次产出多种商品展示图的电商运营与设计人员。
+> 对应原型：[product-suite.html](https://aa312557272-bot.github.io/fashmaker-prototype/product-suite.html)。目标用户是需要一次产出多种商品展示图的电商运营与设计人员。
 
 ## 1. 目标与输出范围
 

@@ -1,6 +1,6 @@
 # Fash 积分后台 · 用户积分
 
-[交互原型](../admin-points.html) · [字段契约](developer-field-contract.md#总后台用户积分)
+[交互原型](https://aa312557272-bot.github.io/fashmaker-prototype/admin-points.html) · [字段契约](developer-field-contract.md#总后台用户积分)
 
 ## 操作流程
 

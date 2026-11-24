@@ -148,6 +148,6 @@
 - [价格体系与套餐权益](pricing-system.md)
 - [账户中心详细实现与字段](account-center-flow.md)
 - [统一字段契约](developer-field-contract.md)
-- [账户中心原型](../account-center.html?tab=credits)
+- [账户中心原型](https://aa312557272-bot.github.io/fashmaker-prototype/account-center.html?tab=credits)
 - [共享个人菜单](../shared-account.js)
 - [共享账户存储](../account-store.js)

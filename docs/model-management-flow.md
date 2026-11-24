@@ -1,6 +1,6 @@
 # 模型管理页面：交互与本地字段
 
-版本 v1.1，2026-11-12。原型 [model-management.html](../model-management.html)；正式服务 [完整开发规格](custom-models-development.md)，统一 [字段契约](developer-field-contract.md)。试生成示例见 [提示词](model-management-prompt.md)。本节描述实际本地演示，不替代正式服务契约。
+版本 v1.1，2026-11-12。原型 [model-management.html](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html)；正式服务 [完整开发规格](custom-models-development.md)，统一 [字段契约](developer-field-contract.md)。试生成示例见 [提示词](model-management-prompt.md)。本节描述实际本地演示，不替代正式服务契约。
 
 ## 入口与结构
 

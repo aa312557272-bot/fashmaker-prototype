@@ -1,6 +1,6 @@
 # FashMaker 穿搭分离 · 功能与开发说明
 
-对应原型：[outfit-separation.html](../outfit-separation.html)。2026-11-09 新增，方案已由用户确认。精确口径见 [开发字段契约第 8 节](developer-field-contract.md#8-穿搭分离)。
+对应原型：[outfit-separation.html](https://aa312557272-bot.github.io/fashmaker-prototype/outfit-separation.html)。2026-11-09 新增，方案已由用户确认。精确口径见 [开发字段契约第 8 节](developer-field-contract.md#8-穿搭分离)。
 
 ## 1. 入口和布局
 

@@ -1,6 +1,6 @@
 # 店铺管理与小红书商品导入：当前 Demo
 
-更新：2026-11-11。原型：[店铺管理](../shop-management.html)、[资产库](../asset-library.html?tab=products)。正式后端接入目标另见[小红书开发规格](xiaohongshu-publishing-development.md)；本页描述已经实现的静态交互。
+更新：2026-11-11。原型：[店铺管理](https://aa312557272-bot.github.io/fashmaker-prototype/shop-management.html)、[资产库](https://aa312557272-bot.github.io/fashmaker-prototype/asset-library.html?tab=products)。正式后端接入目标另见[小红书开发规格](xiaohongshu-publishing-development.md)；本页描述已经实现的静态交互。
 
 ## 1. 入口与页面
 

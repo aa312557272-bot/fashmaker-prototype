@@ -106,7 +106,7 @@
 - [个人菜单与账户中心](personal-menu-flow.md)
 - [账户中心详细流程与数据](account-center-flow.md)
 - [字段契约](developer-field-contract.md)
-- [原型公共入口](../model-management.html)
+- [原型公共入口](https://aa312557272-bot.github.io/fashmaker-prototype/model-management.html)
 - [原型实现：shared-account.js](../shared-account.js)
 
 ## 模型管理页官方套餐广告位（2026-11-23）
